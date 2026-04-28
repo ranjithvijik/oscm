@@ -302,8 +302,10 @@
         .main {
             flex: 1;
             margin-left: 280px;
+            width: calc(100% - 280px);
             min-height: 100vh;
-            background: var(--bg-main)
+            background: var(--bg-main);
+            position: relative;
         }
 
         .main-header {
@@ -311,10 +313,11 @@
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border-color);
-            padding: 16px 28px;
+            padding: 16px 40px;
             position: sticky;
             top: 0;
-            z-index: 100
+            z-index: 100;
+            width: 100%;
         }
 
         .main-header-content {
@@ -381,9 +384,10 @@
         }
 
         .main-content {
-            padding: 22px 28px;
+            padding: 22px 40px;
             max-width: 1300px;
-            margin: 0 auto
+            margin: 0 auto;
+            width: 100%;
         }
 
         .module {
@@ -2136,6 +2140,13 @@
                         <div class="nav-btn-chapter">Chapter 11</div>
                     </div>
                 </button>
+                <button class="nav-btn" data-module="service">
+                    <div class="nav-btn-icon">🎯</div>
+                    <div class="nav-btn-text">
+                        <div>Service Design</div>
+                        <div class="nav-btn-chapter">Chapter 9</div>
+                    </div>
+                </button>
             </nav>
             <nav class="nav-section">
                 <div class="nav-section-title">Quality Control</div>
@@ -2150,7 +2161,14 @@
                     <div class="nav-btn-icon">🎯</div>
                     <div class="nav-btn-text">
                         <div>Process Capability</div>
-                        <div class="nav-btn-chapter">Six Sigma</div>
+                        <div class="nav-btn-chapter">Chapter 13</div>
+                    </div>
+                </button>
+                <button class="nav-btn" data-module="sampling">
+                    <div class="nav-btn-icon">📊</div>
+                    <div class="nav-btn-text">
+                        <div>Acceptance Sampling</div>
+                        <div class="nav-btn-chapter">Chapter 13</div>
                     </div>
                 </button>
             </nav>
@@ -2168,6 +2186,23 @@
                     <div class="nav-btn-text">
                         <div>Transportation Method</div>
                         <div class="nav-btn-chapter">Chapter 15</div>
+                    </div>
+                </button>
+            </nav>
+            <nav class="nav-section">
+                <div class="nav-section-title">Lean &amp; Supply Chain</div>
+                <button class="nav-btn" data-module="lean">
+                    <div class="nav-btn-icon">🔄</div>
+                    <div class="nav-btn-text">
+                        <div>Lean Supply Chains</div>
+                        <div class="nav-btn-chapter">Chapter 14</div>
+                    </div>
+                </button>
+                <button class="nav-btn" data-module="sourcing">
+                    <div class="nav-btn-icon">🌐</div>
+                    <div class="nav-btn-text">
+                        <div>Global Sourcing</div>
+                        <div class="nav-btn-chapter">Chapter 16</div>
                     </div>
                 </button>
             </nav>
@@ -3969,6 +4004,160 @@
                 </div>
             </div>
 
+            <!-- ===== SERVICE DESIGN MODULE ===== -->
+            <div class="module" data-cmodule="service" id="service-module">
+                <header class="main-header">
+                    <div class="main-header-content">
+                        <div>
+                            <div class="breadcrumb">OSCM Simulator › Process Design</div>
+                            <h1 class="page-title"><span class="chapter-badge">🎯 Ch 9</span>Service Process Design</h1>
+                        </div>
+                        <div class="header-actions">
+                            <button class="btn btn-secondary" onclick="OSCMCanonical.openView(x27servicex27,x27theoryx27, this)">Theory</button>
+                        </div>
+                    </div>
+                </header>
+                <div class="main-content">
+                    <div class="tabs" data-canon-tags="simulator">
+                        <button class="tab active" onclick="switchTab(this,x27servicex27,x27simx27)">🔬 Simulator</button>
+                        <button class="tab" onclick="switchTab(this,x27servicex27,x27blueprintx27)">📋 Blueprint</button>
+                        <button class="tab" onclick="switchTab(this,x27servicex27,x27practicex27)">🎓 Practice</button>
+                    </div>
+
+                    <div class="tab-content active" id="service-sim">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-icon">🔺</div>
+                                <div>
+                                    <h3 class="card-title">The Service Triangle</h3>
+                                    <p class="card-subtitle">Four interconnected features of service delivery</p>
+                                </div>
+                            </div>
+                            <div class="theory-content">
+                                <p>The <strong>Service Triangle</strong> illustrates the relationships between the four key elements that must work together for successful service delivery. The customer is at the center, supported by strategy, systems, and people.</p>
+                            </div>
+                            <div class="service-triangle">
+                                <div class="triangle-node strategy">
+                                    <span style="font-size: 1.2rem;">📊</span>
+                                    <span>Service Strategy</span>
+                                </div>
+                                <div class="triangle-node systems">
+                                    <span style="font-size: 1.2rem;">⚙️</span>
+                                    <span>Systems</span>
+                                </div>
+                                <div class="triangle-node people">
+                                    <span style="font-size: 1.2rem;">👥</span>
+                                    <span>People</span>
+                                </div>
+                                <div class="triangle-center">
+                                    <span style="font-size: 1.2rem;">👤</span>
+                                    <span>Customer</span>
+                                </div>
+                            </div>
+                            <div class="grid-2 mt-4">
+                                <div class="metric-card">
+                                    <div class="metric-value">4</div>
+                                    <div class="metric-label">Triangle Features</div>
+                                </div>
+                                <div class="metric-card highlight">
+                                    <div class="metric-value">Customer</div>
+                                    <div class="metric-label">Central Focus</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card mt-4">
+                            <div class="card-header">
+                                <div class="card-icon">👥</div>
+                                <div>
+                                    <h3 class="card-title">Customer Contact Classification</h3>
+                                    <p class="card-subtitle">Service-System Design Matrix</p>
+                                </div>
+                            </div>
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Contact Level</th>
+                                        <th>Example</th>
+                                        <th>Worker Skills</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td><strong>Low</strong></td><td>Internet</td><td>Clerical</td></tr>
+                                    <tr><td><strong>Medium</strong></td><td>Phone</td><td>Procedural</td></tr>
+                                    <tr><td><strong>High</strong></td><td>Face-to-face</td><td>Diagnostic</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="service-blueprint">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-icon">📋</div>
+                                <div>
+                                    <h3 class="card-title">Service Blueprinting</h3>
+                                    <p class="card-subtitle">Visual mapping with the Line of Visibility</p>
+                                </div>
+                            </div>
+                            <div class="blueprint-container">
+                                <div class="blueprint-row">
+                                    <div class="blueprint-label">Customer</div>
+                                    <div class="blueprint-steps">
+                                        <div class="blueprint-step customer">Arrive</div>
+                                        <div class="blueprint-step customer">Order</div>
+                                        <div class="blueprint-step customer">Eat</div>
+                                    </div>
+                                </div>
+                                <div class="blueprint-row line-of-visibility">
+                                    <div class="blueprint-label">Onstage</div>
+                                    <div class="blueprint-steps">
+                                        <div class="blueprint-step onstage">Greet</div>
+                                        <div class="blueprint-step onstage">Take Order</div>
+                                        <div class="blueprint-step onstage">Serve</div>
+                                    </div>
+                                </div>
+                                <div class="blueprint-row">
+                                    <div class="blueprint-label">Backstage</div>
+                                    <div class="blueprint-steps">
+                                        <div class="blueprint-step backstage">Prep Table</div>
+                                        <div class="blueprint-step backstage">Cook</div>
+                                        <div class="blueprint-step backstage">Clean</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="service-practice">
+                        <div class="card">
+                            <div class="practice-box">
+                                <span class="practice-badge">Question</span>
+                                <div class="practice-q">This is the key feature that distinguishes a service blueprint from a normal flowchart.</div>
+                                <button class="btn btn-primary mt-3" onclick="this.nextElementSibling.classList.toggle(x27showx27)">Show Answer</button>
+                                <div class="practice-answer"><strong>Answer:</strong> Line of Visibility</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <section class="theory-section" data-canon-tags="theory">
+                        <div class="theory-header">
+                            <div class="theory-icon">📚</div>
+                            <div>
+                                <h2 class="theory-title">Service Process Design Theory</h2>
+                                <p class="theory-subtitle">Designing customer-centric delivery systems</p>
+                            </div>
+                        </div>
+                        <div class="theory-content">
+                            <p><strong>Service design</strong> differs from product design because the process IS the product. Key factors include simultaneity, lack of legal protection, and the service package.</p>
+                            <div class="citation-box">
+                                "The process and the product must be developed simultaneously; indeed, in services, the process is the product."
+                                <span class="citation-source">— Jacobs & Chase (2024, p. 229)</span>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
             <!-- ===== SQC MODULE ===== -->
             <div class="module" data-cmodule="sqc" id="sqc-module">
                 <header class="main-header">
@@ -4211,7 +4400,7 @@
                     <div class="main-header-content">
                         <div>
                             <div class="breadcrumb">OSCM Simulator › Quality Management</div>
-                            <h1 class="page-title"><span class="chapter-badge">🎯 Six Sigma</span>Process Capability (Cp
+                            <h1 class="page-title"><span class="chapter-badge">Chapter 13</span>Process Capability (Cp
                                 / Cpk)
                             </h1>
                         </div>
@@ -4404,6 +4593,102 @@
                 </div>
 
             <!-- ===== CENTROID MODULE (Enhanced) ===== -->
+            <!-- ===== SAMPLING MODULE ===== -->
+            <div class="module" data-cmodule="sampling" id="sampling-module">
+                <header class="main-header">
+                    <div class="main-header-content">
+                        <div>
+                            <div class="breadcrumb">OSCM Simulator › Quality Control</div>
+                            <h1 class="page-title"><span class="chapter-badge">📊 Ch 13</span>Acceptance Sampling</h1>
+                        </div>
+                        <div class="header-actions">
+                            <button class="btn btn-secondary" onclick="OSCMCanonical.openView(x27samplingx27,x27theoryx27, this)">Theory</button>
+                        </div>
+                    </div>
+                </header>
+                <div class="main-content">
+                    <div class="tabs" data-canon-tags="simulator">
+                        <button class="tab active" onclick="switchTab(this,x27samplingx27,x27simx27)">🔬 Simulator</button>
+                        <button class="tab" onclick="switchTab(this,x27samplingx27,x27ocx27)">📈 OC Curve</button>
+                    </div>
+
+                    <div class="tab-content active" id="sampling-sim">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-icon">🔬</div>
+                                <div>
+                                    <h3 class="card-title">Sampling Plan Calculator</h3>
+                                    <p class="card-subtitle">Design and evaluate acceptance sampling plans</p>
+                                </div>
+                            </div>
+                            <div class="grid-2">
+                                <div>
+                                    <div class="input-group">
+                                        <label class="input-label">Sample Size (n)</label>
+                                        <input type="number" id="samp-n" value="50" min="1" oninput="calcSamplingPlan()">
+                                    </div>
+                                    <div class="input-group">
+                                        <label class="input-label">Acceptance Number (c)</label>
+                                        <input type="number" id="samp-c" value="2" min="0" oninput="calcSamplingPlan()">
+                                    </div>
+                                    <div class="input-group">
+                                        <label class="input-label">Lot Proportion Defective (p)</label>
+                                        <input type="number" id="samp-p" value="0.05" min="0" max="1" step="0.01" oninput="calcSamplingPlan()">
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="metric-card highlight">
+                                        <div class="metric-value" id="samp-pa">0.541</div>
+                                        <div class="metric-label">P(Accept Lot)</div>
+                                    </div>
+                                    <div class="grid-2 mt-3">
+                                        <div class="metric-card">
+                                            <div class="metric-value" id="samp-aql">0.018</div>
+                                            <div class="metric-label">AQL (Pa=0.95)</div>
+                                        </div>
+                                        <div class="metric-card">
+                                            <div class="metric-value" id="samp-ltpd">0.115</div>
+                                            <div class="metric-label">LTPD (Pa=0.10)</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="sampling-oc">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-icon">📈</div>
+                                <div>
+                                    <h3 class="card-title">Operating Characteristic (OC) Curve</h3>
+                                    <p class="card-subtitle">Probability of acceptance vs. lot quality</p>
+                                </div>
+                            </div>
+                            <div class="oc-curve-container">
+                                <svg id="oc-curve-svg" viewBox="0 0 500 300">
+                                    <line x1="50" y1="250" x2="450" y2="250" stroke="#334155" stroke-width="2"/>
+                                    <line x1="50" y1="250" x2="50" y2="30" stroke="#334155" stroke-width="2"/>
+                                    <path id="oc-curve-path" d="M50,35 Q100,40 130,60 Q180,100 210,140 Q260,190 310,220 Q370,240 450,248" fill="none" stroke="#6366f1" stroke-width="3"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <section class="theory-section" data-canon-tags="theory">
+                        <div class="theory-header">
+                            <div class="theory-icon">📚</div>
+                            <div>
+                                <h2 class="theory-title">Acceptance Sampling Theory</h2>
+                                <p class="theory-subtitle">Statistical methods for lot acceptance decisions</p>
+                            </div>
+                        </div>
+                        <div class="theory-content">
+                            <p><strong>Acceptance sampling</strong> is performed on goods that already exist to determine what percentage of products conform to specifications.</p>
+                        </div>
+                    </section>
+                </div>
+            </div>
             <div class="module" data-cmodule="centroid" id="centroid-module">
                 <header class="main-header">
                     <div class="main-header-content">
@@ -4775,6 +5060,175 @@
                 </div>
             </div>
 
+            <!-- ===== LEAN MODULE ===== -->
+            <div class="module" data-cmodule="lean" id="lean-module">
+                <header class="main-header">
+                    <div class="main-header-content">
+                        <div>
+                            <div class="breadcrumb">OSCM Simulator › Lean Operations</div>
+                            <h1 class="page-title"><span class="chapter-badge">🔄 Ch 14</span>Lean Supply Chains</h1>
+                        </div>
+                        <div class="header-actions">
+                            <button class="btn btn-secondary" onclick="OSCMCanonical.openView(x27leanx27,x27theoryx27, this)">Theory</button>
+                        </div>
+                    </div>
+                </header>
+                <div class="main-content">
+                    <div class="tabs" data-canon-tags="simulator">
+                        <button class="tab active" onclick="switchTab(this,x27leanx27,x27simx27)">🔬 Simulator</button>
+                        <button class="tab" onclick="switchTab(this,x27leanx27,x27vsmx27)">🗺️ Value Stream Map</button>
+                    </div>
+
+                    <div class="tab-content active" id="lean-sim">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-icon">🔬</div>
+                                <div>
+                                    <h3 class="card-title">Lead Time Reduction Calculator</h3>
+                                    <p class="card-subtitle">Calculate the impact of lean improvements</p>
+                                </div>
+                            </div>
+                            <div class="grid-2">
+                                <div>
+                                    <div class="input-group">
+                                        <label class="input-label">RM Inventory (days)</label>
+                                        <input type="number" id="lean-rm" value="10" oninput="calcLeanImprovement()">
+                                    </div>
+                                    <div class="input-group">
+                                        <label class="input-label">WIP Inventory (days)</label>
+                                        <input type="number" id="lean-wip" value="14" oninput="calcLeanImprovement()">
+                                    </div>
+                                    <div class="input-group">
+                                        <label class="input-label">FG Inventory (days)</label>
+                                        <input type="number" id="lean-fg" value="10" oninput="calcLeanImprovement()">
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="metric-card highlight">
+                                        <div class="metric-value" id="lean-future-lt">5.1</div>
+                                        <div class="metric-label">Future Lead Time (Days)</div>
+                                    </div>
+                                    <div class="metric-card success mt-3">
+                                        <div class="metric-value" id="lean-reduction">85%</div>
+                                        <div class="metric-label">Lead Time Reduction</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="lean-vsm">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-icon">🗺️</div>
+                                <div>
+                                    <h3 class="card-title">Value Stream Mapping</h3>
+                                    <p class="card-subtitle">Visualizing material and information flow</p>
+                                </div>
+                            </div>
+                            <div class="vsm-container">
+                                <div class="vsm-process">
+                                    <div class="vsm-box supplier">Supplier</div>
+                                    <div class="vsm-arrow">→</div>
+                                    <div class="vsm-box inventory">RM</div>
+                                    <div class="vsm-arrow">→</div>
+                                    <div class="vsm-box process">Process</div>
+                                    <div class="vsm-arrow">→</div>
+                                    <div class="vsm-box customer">Customer</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <section class="theory-section" data-canon-tags="theory">
+                        <div class="theory-header">
+                            <div class="theory-icon">📚</div>
+                            <div>
+                                <h2 class="theory-title">Lean Supply Chain Theory</h2>
+                                <p class="theory-subtitle">Eliminating waste and maximizing value</p>
+                            </div>
+                        </div>
+                        <div class="theory-content">
+                            <p><strong>Lean production</strong> is an integrated set of activities designed to achieve high-volume production using minimal inventories.</p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <!-- ===== SOURCING MODULE ===== -->
+            <div class="module" data-cmodule="sourcing" id="sourcing-module">
+                <header class="main-header">
+                    <div class="main-header-content">
+                        <div>
+                            <div class="breadcrumb">OSCM Simulator › Global Sourcing</div>
+                            <h1 class="page-title"><span class="chapter-badge">🌐 Ch 16</span>Global Sourcing</h1>
+                        </div>
+                        <div class="header-actions">
+                            <button class="btn btn-secondary" onclick="OSCMCanonical.openView(x27sourcingx27,x27theoryx27, this)">Theory</button>
+                        </div>
+                    </div>
+                </header>
+                <div class="main-content">
+                    <div class="tabs" data-canon-tags="simulator">
+                        <button class="tab active" onclick="switchTab(this,x27sourcingx27,x27simx27)">🔬 Simulator</button>
+                        <button class="tab" onclick="switchTab(this,x27sourcingx27,x27productsx27)">📦 Product Types</button>
+                    </div>
+
+                    <div class="tab-content active" id="sourcing-sim">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-icon">💰</div>
+                                <div>
+                                    <h3 class="card-title">TCO Calculator</h3>
+                                    <p class="card-subtitle">Compare suppliers beyond unit price</p>
+                                </div>
+                            </div>
+                            <div class="grid-2">
+                                <div>
+                                    <h4 style="font-size: 0.85rem; margin-bottom: 12px;">Domestic</h4>
+                                    <input type="number" id="tco-a-price" value="100" oninput="calcTCO()">
+                                    <input type="number" id="tco-a-ship" value="5" oninput="calcTCO()">
+                                    <div class="metric-card mt-3"><div class="metric-value" id="tco-a-total">$105.00</div></div>
+                                </div>
+                                <div>
+                                    <h4 style="font-size: 0.85rem; margin-bottom: 12px;">Overseas</h4>
+                                    <input type="number" id="tco-b-price" value="75" oninput="calcTCO()">
+                                    <input type="number" id="tco-b-ship" value="15" oninput="calcTCO()">
+                                    <div class="metric-card mt-3"><div class="metric-value" id="tco-b-total">$90.00</div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="sourcing-products">
+                        <div class="card">
+                            <table class="data-table">
+                                <thead>
+                                    <tr><th>Characteristic</th><th>Functional</th><th>Innovative</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Demand</td><td>Predictable</td><td>Unpredictable</td></tr>
+                                    <tr><td>Life Cycle</td><td>Long</td><td>Short</td></tr>
+                                    <tr><td>Focus</td><td>Efficiency</td><td>Responsiveness</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <section class="theory-section" data-canon-tags="theory">
+                        <div class="theory-header">
+                            <div class="theory-icon">📚</div>
+                            <div>
+                                <h2 class="theory-title">Strategic Sourcing Theory</h2>
+                                <p class="theory-subtitle">Lowest total cost of ownership</p>
+                            </div>
+                        </div>
+                        <div class="theory-content">
+                            <p>Strategic sourcing is the development of supply channels at the lowest total cost, not just the lowest purchase price.</p>
+                        </div>
+                    </section>
+                </div>
+            </div>
             <!-- ===== FORECASTING MODULE (Enhanced) ===== -->
             <div class="module" data-cmodule="forecast" id="forecast-module">
                 <header class="main-header">
@@ -8628,15 +9082,24 @@
     }
 
     function calcCentroid() {
-        const x4 = parseFloat(document.getElementById('c4-x').value);
-        const y4 = parseFloat(document.getElementById('c4-y').value);
-        const v4 = parseFloat(document.getElementById('c4-v').value);
-        const x1 = parseFloat(document.getElementById('c-ax').value);
-        const y1 = parseFloat(document.getElementById('c-ay').value);
-        const v1 = parseFloat(document.getElementById('c-av').value);
-        const tx = (x1 * v1 + x4 * v4) / (v1 + v4);
-        const ty = (y1 * v1 + y4 * v4) / (v1 + v4);
-        document.getElementById('p-centroid-res').innerText = `X: ${tx.toFixed(1)}, Y: ${ty.toFixed(1)}`;
+        // Get all location points
+        const locations = [
+            { x: parseFloat(document.getElementById('c-ax').value) || 0, y: parseFloat(document.getElementById('c-ay').value) || 0, v: parseFloat(document.getElementById('c-av').value) || 0 },
+            { x: parseFloat(document.getElementById('c-bx').value) || 0, y: parseFloat(document.getElementById('c-by').value) || 0, v: parseFloat(document.getElementById('c-bv').value) || 0 },
+            { x: parseFloat(document.getElementById('c-cx').value) || 0, y: parseFloat(document.getElementById('c-cy').value) || 0, v: parseFloat(document.getElementById('c-cv').value) || 0 },
+            { x: parseFloat(document.getElementById('c4-x').value) || 0, y: parseFloat(document.getElementById('c4-y').value) || 0, v: parseFloat(document.getElementById('c4-v').value) || 0 }
+        ];
+
+        const totalVolume = locations.reduce((sum, loc) => sum + loc.v, 0);
+        if (totalVolume === 0) {
+            document.getElementById('p-centroid-res').innerText = 'N/A';
+            return;
+        }
+
+        const cx = locations.reduce((sum, loc) => sum + loc.x * loc.v, 0) / totalVolume;
+        const cy = locations.reduce((sum, loc) => sum + loc.y * loc.v, 0) / totalVolume;
+
+        document.getElementById('p-centroid-res').innerText = `X: ${cx.toFixed(1)}, Y: ${cy.toFixed(1)}`;
     }
 
     function calcLinearRegression() {
@@ -8662,11 +9125,17 @@
     }
 
     function calcEPQ() {
-        const D = parseFloat(document.getElementById('eoq-demand').value) || 0;
-        const S = parseFloat(document.getElementById('eoq-setup').value) || 0;
-        const H = parseFloat(document.getElementById('eoq-holding').value) || 1;
+        const D = parseFloat(document.getElementById('eoq-d').value) || 0;
+        const S = parseFloat(document.getElementById('eoq-s').value) || 0;
+        const H = parseFloat(document.getElementById('eoq-h').value) || 1;
         const p = parseFloat(document.getElementById('epq-p').value) || 1;
         const d = parseFloat(document.getElementById('epq-d').value) || 0;
+        
+        if (p <= d) {
+            document.getElementById('epq-q-res').innerText = 'N/A';
+            return;
+        }
+        
         const q = Math.sqrt((2 * D * S) / (H * (1 - d / p)));
         const tc = (D / q) * S + (q / 2) * H * (1 - d / p);
         document.getElementById('epq-q-res').innerText = Math.round(q).toLocaleString();
@@ -8674,7 +9143,83 @@
     }
 
     function calcQuantityDiscount() {
-        alert("Discount tiers evaluated. Tier 3 (500+) is the optimal feasible quantity for these parameters.");
+        const D = parseFloat(document.getElementById('eoq-d').value) || 10000;
+        const S = parseFloat(document.getElementById('eoq-s').value) || 50;
+        const I = 0.20; 
+
+        const tiers = [
+            { minQty: 0, maxQty: 99, price: 5.00 },
+            { minQty: 100, maxQty: 499, price: 4.50 },
+            { minQty: 500, maxQty: Infinity, price: 4.00 }
+        ];
+
+        let bestTC = Infinity;
+        let bestIdx = 0;
+
+        tiers.forEach((tier, idx) => {
+            const H = tier.price * I;
+            let Q = Math.sqrt((2 * D * S) / H);
+            if (Q < tier.minQty) Q = tier.minQty;
+            if (Q > tier.maxQty && tier.maxQty !== Infinity) Q = tier.maxQty;
+
+            const TC = (D / Q) * S + (Q / 2) * H + (D * tier.price);
+            const resEl = document.getElementById(`qd-tc-${idx}`);
+            if (resEl) resEl.innerText = '$' + Math.round(TC).toLocaleString();
+
+            if (TC < bestTC) {
+                bestTC = TC;
+                bestIdx = idx;
+            }
+        });
+    }
+
+    // New Module Functions
+    function calcLeanImprovement() {
+        const rm = parseFloat(document.getElementById('lean-rm').value) || 0;
+        const wip = parseFloat(document.getElementById('lean-wip').value) || 0;
+        const fg = parseFloat(document.getElementById('lean-fg').value) || 0;
+        const rmRed = (parseFloat(document.getElementById('lean-rm-red').value) || 0) / 100;
+        const wipRed = (parseFloat(document.getElementById('lean-wip-red').value) || 0) / 100;
+        const fgRed = (parseFloat(document.getElementById('lean-fg-red').value) || 0) / 100;
+
+        const futureLT = rm * (1 - rmRed) + wip * (1 - wipRed) + fg * (1 - fgRed);
+        const currentLT = rm + wip + fg;
+        const reduction = currentLT > 0 ? ((currentLT - futureLT) / currentLT) * 100 : 0;
+
+        document.getElementById('lean-future-lt').innerText = futureLT.toFixed(1);
+        document.getElementById('lean-reduction').innerText = Math.round(reduction) + '%';
+    }
+
+    function calcTCO() {
+        const aP = parseFloat(document.getElementById('tco-a-price').value) || 0;
+        const aS = parseFloat(document.getElementById('tco-a-ship').value) || 0;
+        const bP = parseFloat(document.getElementById('tco-b-price').value) || 0;
+        const bS = parseFloat(document.getElementById('tco-b-ship').value) || 0;
+        
+        document.getElementById('tco-a-total').innerText = '$' + (aP + aS).toFixed(2);
+        document.getElementById('tco-b-total').innerText = '$' + (bP + bS).toFixed(2);
+    }
+
+    function calcSamplingPlan() {
+        const n = parseFloat(document.getElementById('samp-n').value) || 50;
+        const c = parseFloat(document.getElementById('samp-c').value) || 2;
+        const p = parseFloat(document.getElementById('samp-p').value) || 0.05;
+
+        function binom(n, k) {
+            let res = 1;
+            for (let i = 0; i < k; i++) res = res * (n - i) / (i + 1);
+            return res;
+        }
+
+        let pa = 0;
+        for (let d = 0; d <= c; d++) {
+            pa += binom(n, d) * Math.pow(p, d) * Math.pow(1 - p, n - d);
+        }
+        document.getElementById('samp-pa').innerText = pa.toFixed(3);
+    }
+
+    function calcPERTActivities() {
+        const totalTE = 0; // Simplified for this patch
     }
 
     function calcMRPExample() {
