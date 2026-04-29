@@ -1,0 +1,42 @@
+name: Build & Deploy
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  build:
+    name: Build static site artifact
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js 24
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate index.html contract
+        run: node run_tests.js --fast --out QA-REPORT-build.md
+
+      - name: Upload site artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: oscm-site
+          path: |
+            index.html
+            QA.md
+            QA-REPORT-build.md
+            package.json
+            package-lock.json
+          retention-days: 30

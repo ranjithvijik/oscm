@@ -1,0 +1,23 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - npm ci
+        - npm run qa:install
+    build:
+      commands:
+        - node run_tests.js --fast --out QA-REPORT.md
+        - echo "Static build complete"
+  artifacts:
+    baseDirectory: /
+    files:
+      - index.html
+      - QA.md
+      - QA-REPORT.md
+      - package.json
+      - package-lock.json
+  cache:
+    paths:
+      - node_modules/**/*
+      - /root/.cache/ms-playwright/**/*
