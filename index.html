@@ -1149,28 +1149,6 @@
             background: var(--light-100)
         }
 
-        .highlight-cell {
-            font-weight: 700;
-            color: var(--primary)
-        }
-
-        .danger-cell {
-            color: var(--danger);
-            font-weight: 600
-        }
-
-        .chart-container {
-            background: var(--light-100);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 18px
-        }
-
-        .chart-container svg {
-            width: 100%;
-            height: 200px
-        }
-
         .chart-legend {
             display: flex;
             justify-content: center;
@@ -1609,19 +1587,8 @@
             margin: 14px 0
         }
 
-        .practice-answer {
-            display: none;
-            background: var(--bg-card);
-            border-radius: 10px;
-            padding: 14px;
-            margin-top: 14px;
-            border: 1px solid var(--border-color)
-        }
-
-        .practice-answer.show {
-            display: block;
-            animation: fadeIn .3s
-        }
+        .practice-answer { display: none; margin-top: 10px; padding: 12px; background: var(--light-100); border-radius: 8px; border-left: 4px solid var(--primary); font-size: 0.85rem; }
+        .practice-answer.show { display: block; animation: slideDown 0.3s ease; }
 
         .comparison-container {
             display: grid;
@@ -1838,6 +1805,12 @@
             margin-top: 10px
         }
 
+        .highlight-cell { background: rgba(99, 102, 241, 0.1); color: var(--primary); font-weight: 700; border-radius: 4px; padding: 2px 4px; }
+        .danger-cell { background: rgba(239, 68, 68, 0.1); color: var(--danger); font-weight: 700; border-radius: 4px; padding: 2px 4px; }
+        .success-cell { color: var(--success); font-weight: 600; }
+        .chart-container { background: var(--light-100); border: 2px solid var(--border-color); border-radius: 14px; padding: 20px; margin: 16px 0; }
+        .chart-container svg { width: 100%; height: 300px; }
+
         .legacy-mini-chart {
             background: var(--light-100);
             border: 1px solid var(--border-color);
@@ -2052,15 +2025,7 @@
         .alert-warning { background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.25); color: #92400e; }
         .alert-danger { background: rgba(239, 68, 68, 0.08); border: 1px solid rgba(239, 68, 68, 0.25); color: #991b1b; }
         .alert-info { background: rgba(99, 102, 241, 0.08); border: 1px solid rgba(99, 102, 241, 0.25); color: #3730a3; }
-        .highlight-cell { font-weight: 700; color: var(--primary); }
-        .danger-cell { color: var(--danger); font-weight: 600; }
-        .success-cell { color: var(--success); font-weight: 600; }
-        .chart-container { background: var(--light-100); border: 1px solid var(--border-color); border-radius: 14px; padding: 20px; margin: 18px 0; }
-        .discount-row { display: grid; grid-template-columns: 80px 1fr 1fr 1fr; gap: 12px; align-items: center; padding: 12px; background: var(--light-100); border-radius: 10px; margin-bottom: 10px; }
-        .discount-row.optimal { background: rgba(16, 185, 129, 0.12); border: 2px solid var(--success); }
-        .formula-reference { background: var(--light-100); border: 1px solid var(--border-color); border-radius: 10px; padding: 14px; margin: 12px 0; font-size: 0.82rem; }
-        .formula-reference-title { font-weight: 700; color: var(--text-primary); margin-bottom: 8px; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.5px; }
-        .improvement-table { font-size: 0.72rem; }
+
         /* Patch v3.3 Styles */ 
         .lookup-highlight { background: rgba(99, 102, 241, 0.15) !important; border-left: 4px solid var(--primary) !important; } 
         .highlight-text { color: var(--primary-dark); font-weight: 700; } 
@@ -2082,7 +2047,7 @@
         .key-insight { background: #eff6ff; border-radius: 8px; padding: 12px; margin-top: 15px; border: 1px solid #dbeafe; } 
         .key-insight-title { font-weight: 700; font-size: 0.85rem; color: #1e40af; margin-bottom: 4px; } 
         .key-insight-text { font-size: 0.8rem; color: #1e3a8a; } 
-        .practice-answer { display: none; background: #f0fdf4; border-radius: 8px; padding: 15px; border: 1px solid #dcfce7; color: #166534; font-size: 0.9rem; } 
+
         /* Patch v3.4 Styles */ 
         .critical-path{background:var(--danger);color:white;padding:2px 8px;border-radius:4px;font-size:.72rem;font-weight:700} 
         .transport-cell input{width:55px;padding:5px;text-align:center;font-size:.78rem} 
@@ -2097,15 +2062,7 @@
         .concept-card:hover{transform:translateY(-2px);box-shadow:var(--shadow)} 
         .concept-icon{width:32px;height:32px;border-radius:8px;background:var(--gradient-primary);display:flex;align-items:center;justify-content:center;color:white;font-size:.9rem;margin-bottom:8px} 
         .concept-title{font-size:.8rem;font-weight:700;color:var(--text-primary);margin-bottom:3px} 
-        .concept-desc{font-size:.7rem;color:var(--text-secondary);line-height:1.5}        .practice-answer.show { display: block; animation: fadeIn 0.3s ease; }    
-        /* PATCH 3.4 CSS */
-        .danger-cell { background: rgba(239, 68, 68, 0.1); color: var(--danger); font-weight: 700; border-radius: 4px; padding: 2px 4px; }
-        .highlight-cell { background: rgba(99, 102, 241, 0.1); color: var(--primary); font-weight: 700; border-radius: 4px; padding: 2px 4px; }
-        .critical-path { display: inline-block; padding: 2px 8px; border-radius: 12px; background: #fee2e2; color: #ef4444; font-size: 0.65rem; font-weight: 800; text-transform: uppercase; border: 1px solid #fecaca; }
-        .z-table { font-size: 0.72rem !important; }
-        .z-table td, .z-table th { padding: 4px 6px !important; }
-        .practice-answer { display: none; margin-top: 10px; padding: 12px; background: var(--light-100); border-radius: 8px; border-left: 4px solid var(--primary); font-size: 0.85rem; }
-        .practice-answer.show { display: block; animation: slideDown 0.3s ease; }
+        .concept-desc{font-size:.7rem;color:var(--text-secondary);line-height:1.5}
         @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
         .tab-content { display: none; }
         .tab-content.active { display: block; }
@@ -3754,15 +3711,15 @@
                             <h1 class="page-title"><span class="chapter-badge">🎯 Ch 9</span>Service Process Design</h1>
                         </div>
                         <div class="header-actions">
-                            <button class="btn btn-secondary" onclick="OSCMCanonical.openView(x27servicex27,x27theoryx27, this)">Theory</button>
+                            <button class="btn btn-secondary" onclick="OSCMCanonical.openView('service','theory', this)">Theory</button>
                         </div>
                     </div>
                 </header>
                 <div class="main-content">
                     <div class="tabs" data-canon-tags="simulator">
-                        <button class="tab active" onclick="switchTab(this,x27servicex27,x27simx27)">🔬 Simulator</button>
-                        <button class="tab" onclick="switchTab(this,x27servicex27,x27blueprintx27)">📋 Blueprint</button>
-                        <button class="tab" onclick="switchTab(this,x27servicex27,x27practicex27)">🎓 Practice</button>
+                        <button class="tab active" onclick="switchTab(this,'service','sim')">🔬 Simulator</button>
+                        <button class="tab" onclick="switchTab(this,'service','blueprint')">📋 Blueprint</button>
+                        <button class="tab" onclick="switchTab(this,'service','practice')">🎓 Practice</button>
                     </div>
 
                     <div class="tab-content active" id="service-sim">
@@ -3875,7 +3832,7 @@
                             <div class="practice-box">
                                 <span class="practice-badge">Question</span>
                                 <div class="practice-q">This is the key feature that distinguishes a service blueprint from a normal flowchart.</div>
-                                <button class="btn btn-primary mt-3" onclick="this.nextElementSibling.classList.toggle(x27showx27)">Show Answer</button>
+                                <button class="btn btn-primary mt-3" onclick="this.nextElementSibling.classList.toggle('show')">Show Answer</button>
                                 <div class="practice-answer"><strong>Answer:</strong> Line of Visibility</div>
                             </div>
                         </div>
@@ -4050,14 +4007,14 @@
                             <h1 class="page-title"><span class="chapter-badge">📊 Ch 13</span>Acceptance Sampling</h1>
                         </div>
                         <div class="header-actions">
-                            <button class="btn btn-secondary" onclick="OSCMCanonical.openView(x27samplingx27,x27theoryx27, this)">Theory</button>
+                            <button class="btn btn-secondary" onclick="OSCMCanonical.openView('sampling','theory', this)">Theory</button>
                         </div>
                     </div>
                 </header>
                 <div class="main-content">
                     <div class="tabs" data-canon-tags="simulator">
-                        <button class="tab active" onclick="switchTab(this,x27samplingx27,x27simx27)">🔬 Simulator</button>
-                        <button class="tab" onclick="switchTab(this,x27samplingx27,x27ocx27)">📈 OC Curve</button>
+                        <button class="tab active" onclick="switchTab(this,'sampling','sim')">🔬 Simulator</button>
+                        <button class="tab" onclick="switchTab(this,'sampling','oc')">📈 OC Curve</button>
                     </div>
 
                     <div class="tab-content active" id="sampling-sim">
@@ -4146,14 +4103,14 @@
                             <h1 class="page-title"><span class="chapter-badge">🎯 Ch 12</span>DPMO & DMAIC</h1>
                         </div>
                         <div class="header-actions">
-                            <button class="btn btn-secondary" onclick="OSCMCanonical.openView(x27dpmox27,x27theoryx27, this)">Theory</button>
+                            <button class="btn btn-secondary" onclick="OSCMCanonical.openView('dpmo','theory', this)">Theory</button>
                         </div>
                     </div>
                 </header>
                 <div class="main-content">
                     <div class="tabs" data-canon-tags="simulator">
-                        <button class="tab active" onclick="switchTab(this,x27dpmox27,x27simx27)">🔬 Simulator</button>
-                        <button class="tab" onclick="switchTab(this,x27dpmox27,x27dmaicx27)">🔄 DMAIC</button>
+                        <button class="tab active" onclick="switchTab(this,'dpmo','sim')">🔬 Simulator</button>
+                        <button class="tab" onclick="switchTab(this,'dpmo','dmaic')">🔄 DMAIC</button>
                     </div>
                     <div class="tab-content active" id="dpmo-sim">
                         <div class="card">
@@ -4217,13 +4174,13 @@
                             <h1 class="page-title"><span class="chapter-badge">⚠️ Ch 12</span>FMEA Risk Analysis</h1>
                         </div>
                         <div class="header-actions">
-                            <button class="btn btn-secondary" onclick="OSCMCanonical.openView(x27fmeax27,x27theoryx27, this)">Theory</button>
+                            <button class="btn btn-secondary" onclick="OSCMCanonical.openView('fmea','theory', this)">Theory</button>
                         </div>
                     </div>
                 </header>
                 <div class="main-content">
                     <div class="tabs" data-canon-tags="simulator">
-                        <button class="tab active" onclick="switchTab(this,x27fmeax27,x27simx27)">🔬 Simulator</button>
+                        <button class="tab active" onclick="switchTab(this,'fmea','sim')">🔬 Simulator</button>
                     </div>
                     <div class="tab-content active" id="fmea-sim">
                         <div class="card">
@@ -4262,13 +4219,13 @@
                             <h1 class="page-title"><span class="chapter-badge">📊 Ch 13</span>Pareto Analysis</h1>
                         </div>
                         <div class="header-actions">
-                            <button class="btn btn-secondary" onclick="OSCMCanonical.openView(x27paretox27,x27theoryx27, this)">Theory</button>
+                            <button class="btn btn-secondary" onclick="OSCMCanonical.openView('pareto','theory', this)">Theory</button>
                         </div>
                     </div>
                 </header>
                 <div class="main-content">
                     <div class="tabs" data-canon-tags="simulator">
-                        <button class="tab active" onclick="switchTab(this,x27paretox27,x27simx27)">🔬 Simulator</button>
+                        <button class="tab active" onclick="switchTab(this,'pareto','sim')">🔬 Simulator</button>
                     </div>
                     <div class="tab-content active" id="pareto-sim">
                         <div class="card">
@@ -4307,13 +4264,13 @@
                             <h1 class="page-title"><span class="chapter-badge">🐟 Ch 13</span>Fishbone Diagram</h1>
                         </div>
                         <div class="header-actions">
-                            <button class="btn btn-secondary" onclick="OSCMCanonical.openView(x27fishbonex27,x27theoryx27, this)">Theory</button>
+                            <button class="btn btn-secondary" onclick="OSCMCanonical.openView('fishbone','theory', this)">Theory</button>
                         </div>
                     </div>
                 </header>
                 <div class="main-content">
                     <div class="tabs" data-canon-tags="simulator">
-                        <button class="tab active" onclick="switchTab(this,x27fishbonex27,x27simx27)">🔬 Builder</button>
+                        <button class="tab active" onclick="switchTab(this,'fishbone','sim')">🔬 Builder</button>
                     </div>
                     <div class="tab-content active" id="fishbone-sim">
                         <div class="card">
@@ -4524,13 +4481,13 @@
                             <h1 class="page-title"><span class="chapter-badge">📍 Ch 15</span>Factor Rating Method</h1>
                         </div>
                         <div class="header-actions">
-                            <button class="btn btn-secondary" onclick="OSCMCanonical.openView(x27factorx27,x27theoryx27, this)">Theory</button>
+                            <button class="btn btn-secondary" onclick="OSCMCanonical.openView('factor','theory', this)">Theory</button>
                         </div>
                     </div>
                 </header>
                 <div class="main-content">
                     <div class="tabs" data-canon-tags="simulator">
-                        <button class="tab active" onclick="switchTab(this,x27factorx27,x27simx27)">🔬 Calculator</button>
+                        <button class="tab active" onclick="switchTab(this,'factor','sim')">🔬 Calculator</button>
                     </div>
                     <div class="tab-content active" id="factor-sim">
                         <div class="card">
@@ -6017,14 +5974,14 @@
                             <h1 class="page-title"><span class="chapter-badge">🔄 Ch 14</span>Lean Supply Chains</h1>
                         </div>
                         <div class="header-actions">
-                            <button class="btn btn-secondary" onclick="OSCMCanonical.openView(x27leanx27,x27theoryx27, this)">Theory</button>
+                            <button class="btn btn-secondary" onclick="OSCMCanonical.openView('lean','theory', this)">Theory</button>
                         </div>
                     </div>
                 </header>
                 <div class="main-content">
                     <div class="tabs" data-canon-tags="simulator">
-                        <button class="tab active" onclick="switchTab(this,x27leanx27,x27simx27)">🔬 Simulator</button>
-                        <button class="tab" onclick="switchTab(this,x27leanx27,x27vsmx27)">🗺️ Value Stream Map</button>
+                        <button class="tab active" onclick="switchTab(this,'lean','sim')">🔬 Simulator</button>
+                        <button class="tab" onclick="switchTab(this,'lean','vsm')">🗺️ Value Stream Map</button>
                     </div>
 
                     <div class="tab-content active" id="lean-sim">
@@ -6112,14 +6069,14 @@
                             <h1 class="page-title"><span class="chapter-badge">🌐 Ch 16</span>Global Sourcing</h1>
                         </div>
                         <div class="header-actions">
-                            <button class="btn btn-secondary" onclick="OSCMCanonical.openView(x27sourcingx27,x27theoryx27, this)">Theory</button>
+                            <button class="btn btn-secondary" onclick="OSCMCanonical.openView('sourcing','theory', this)">Theory</button>
                         </div>
                     </div>
                 </header>
                 <div class="main-content">
                     <div class="tabs" data-canon-tags="simulator">
-                        <button class="tab active" onclick="switchTab(this,x27sourcingx27,x27simx27)">🔬 Simulator</button>
-                        <button class="tab" onclick="switchTab(this,x27sourcingx27,x27productsx27)">📦 Product Types</button>
+                        <button class="tab active" onclick="switchTab(this,'sourcing','sim')">🔬 Simulator</button>
+                        <button class="tab" onclick="switchTab(this,'sourcing','products')">📦 Product Types</button>
                     </div>
 
                     <div class="tab-content active" id="sourcing-sim">
@@ -6526,13 +6483,13 @@
                             <h1 class="page-title"><span class="chapter-badge">⚡ Ch 4</span>Project Crashing</h1>
                         </div>
                         <div class="header-actions">
-                            <button class="btn btn-secondary" onclick="OSCMCanonical.openView(x27crashingx27,x27theoryx27, this)">Theory</button>
+                            <button class="btn btn-secondary" onclick="OSCMCanonical.openView('crashing','theory', this)">Theory</button>
                         </div>
                     </div>
                 </header>
                 <div class="main-content">
                     <div class="tabs" data-canon-tags="simulator">
-                        <button class="tab active" onclick="switchTab(this,x27crashingx27,x27simx27)">🔬 Simulator</button>
+                        <button class="tab active" onclick="switchTab(this,'crashing','sim')">🔬 Simulator</button>
                     </div>
                     <div class="tab-content active" id="crashing-sim">
                         <div class="card">
@@ -6565,13 +6522,13 @@
                             <h1 class="page-title"><span class="chapter-badge">🌳 Ch 21</span>BOM Explosion</h1>
                         </div>
                         <div class="header-actions">
-                            <button class="btn btn-secondary" onclick="OSCMCanonical.openView(x27bomx27,x27theoryx27, this)">Theory</button>
+                            <button class="btn btn-secondary" onclick="OSCMCanonical.openView('bom','theory', this)">Theory</button>
                         </div>
                     </div>
                 </header>
                 <div class="main-content">
                     <div class="tabs" data-canon-tags="simulator">
-                        <button class="tab active" onclick="switchTab(this,x27bomx27,x27simx27)">🔬 Tree Explorer</button>
+                        <button class="tab active" onclick="switchTab(this,'bom','sim')">🔬 Tree Explorer</button>
                     </div>
                     <div class="tab-content active" id="bom-sim">
                         <div class="card">
@@ -6642,13 +6599,13 @@ u2514u2500 (Level 1) Sub-O (u00D71)
                         <div class="practice-box" style="background:#f0f7ff;padding:15px;border-radius:10px;margin-bottom:15px">
                             <div style="font-weight:bold;margin-bottom:8px">Q1: DPMO Calculation</div>
                             <div>2,000 units, 33 defects, 5 opportunities per unit. What is the DPMO?</div>
-                            <button class="btn btn-primary mt-2" onclick="toggleAnswer(x27ans1x27)">Show Answer</button>
+                            <button class="btn btn-primary mt-2" onclick="toggleAns('ans1')">Show Answer</button>
                             <div id="ans1" style="display:none;margin-top:10px;padding:10px;background:white;border-radius:5px">DPMO = (33 / (2000 u00D7 5)) u00D7 1,000,000 = 3,300</div>
                         </div>
                         <div class="practice-box" style="background:#f0f7ff;padding:15px;border-radius:10px;margin-bottom:15px">
                             <div style="font-weight:bold;margin-bottom:8px">Q2: Factor Rating</div>
                             <div>Loc A: 75.25, Loc B: 74.50. Which one?</div>
-                            <button class="btn btn-primary mt-2" onclick="toggleAnswer(x27ans2x27)">Show Answer</button>
+                            <button class="btn btn-primary mt-2" onclick="toggleAns('ans2')">Show Answer</button>
                             <div id="ans2" style="display:none;margin-top:10px;padding:10px;background:white;border-radius:5px">Location A (higher score).</div>
                         </div>
                     </div>
@@ -9214,6 +9171,21 @@ u2514u2500 (Level 1) Sub-O (u00D71)
                 }
             });
 
+            // Consolidated patch initializers (3.2 + 3.3 + 3.4)
+            const patchFunctions = [
+                calcExponential, calcPoisson, buildLqTable, highlightLqTable,
+                calcQueueCost, calcNewsvendor, buildRegTable, calcRegression, calcRisk,
+                calcFMEA, calcDPMO, calcPareto, drawFishbone, calcFactorRating,
+                calcCrash, calcBOM, buildPChart, buildCChart, buildZTable,
+                calcTransport, calcWMA, calcHolts, calcSeasonal, buildTrackingSignal,
+                calcConfig, calcPertVariance
+            ];
+            patchFunctions.forEach(fn => {
+                if (typeof fn === 'function') {
+                    try { fn(); } catch (e) { console.warn('Patch init warning:', e.message); }
+                }
+            });
+
             // Generate starting practice problems
             const practiceFunctions = [genPractice, genBePractice, genQPractice, genEoqPractice];
             practiceFunctions.forEach(fn => {
@@ -9502,10 +9474,7 @@ u2514u2500 (Level 1) Sub-O (u00D71)
         }
     }
 
-    document.addEventListener('DOMContentLoaded', () => {
-        // Initialize patch calculations
-        if (document.getElementById('pert-var-table')) calcPertVariance();
-    });
+
     // --- Patch v3.2 JS Integration ---
     function calcFMEA() {
         let totalRPN = 0, highestRPN = 0, count = 0;
@@ -9795,26 +9764,7 @@ u2514u2500 (Level 1) Sub-O (u00D71)
         setText("risk-total-score",totalScore);
     }
 
-    function initPatch33(){
-        calcExponential(); calcPoisson(); buildLqTable(); highlightLqTable();
-        calcQueueCost(); calcNewsvendor(); buildRegTable(); calcRegression(); calcRisk();
-    }
-    document.addEventListener("DOMContentLoaded", initPatch33);
-
-    function initPatch32() {
-        if(document.getElementById("fmea-table")) calcFMEA();
-        if(document.getElementById("dpmo-units")) calcDPMO();
-        if(document.getElementById("pareto-svg")) calcPareto();
-        if(document.getElementById("fishbone-svg")) drawFishbone();
-        if(document.getElementById("factor-table")) calcFactorRating();
-        if(document.getElementById("crash-table")) calcCrash();
-        if(document.getElementById("bom-qty")) calcBOM();
-    }
-    document.addEventListener("DOMContentLoaded", initPatch32);
-
-    function toggleAnswer(id) {
-        const e = document.getElementById(id); if (e) e.style.display = e.style.display === "none" ? "block" : "none";
-    }
+    function toggleAns(id){const e=document.getElementById(id);if(e)e.classList.toggle('show');}
     
     // ============================================================
     // PATCH 3.4 - FINAL 100% COVERAGE
@@ -10012,22 +9962,6 @@ u2514u2500 (Level 1) Sub-O (u00D71)
         setText('cfg-total',total.toLocaleString());setText('cfg-components',components);
         setText('cfg-comp-text',components);setText('cfg-config-text',total.toLocaleString());
     }
-
-    function initPatch34(){
-        if(getEl('pc-body')) buildPChart();
-        if(getEl('cc-body')) buildCChart();
-        if(getEl('cpk-usl')) calcCpk();
-        if(getEl('lb-prodtime')) calcLineBalance();
-        if(getEl('pert-te')) calcPERTProb();
-        if(getEl('z-table-body')) buildZTable();
-        if(getEl('transport-table')) calcTransport();
-        if(getEl('wma-w1')) calcWMA();
-        if(getEl('holt-alpha')) calcHolts();
-        if(getEl('si-overall')) calcSeasonal();
-        if(getEl('ts-body')) buildTrackingSignal();
-        if(getEl('cfg-total')) calcConfig();
-    }
-    document.addEventListener('DOMContentLoaded', initPatch34);
 </script>
 </body>
 
