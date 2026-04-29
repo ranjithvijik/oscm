@@ -4042,6 +4042,292 @@
                 </div>
             </div>
 
+            <div class="module" data-cmodule="sampling" id="sampling-module">
+                <header class="main-header">
+                    <div class="main-header-content">
+                        <div>
+                            <div class="breadcrumb">OSCM Simulator › Quality Control</div>
+                            <h1 class="page-title"><span class="chapter-badge">📊 Ch 13</span>Acceptance Sampling</h1>
+                        </div>
+                        <div class="header-actions">
+                            <button class="btn btn-secondary" onclick="OSCMCanonical.openView(x27samplingx27,x27theoryx27, this)">Theory</button>
+                        </div>
+                    </div>
+                </header>
+                <div class="main-content">
+                    <div class="tabs" data-canon-tags="simulator">
+                        <button class="tab active" onclick="switchTab(this,x27samplingx27,x27simx27)">🔬 Simulator</button>
+                        <button class="tab" onclick="switchTab(this,x27samplingx27,x27ocx27)">📈 OC Curve</button>
+                    </div>
+
+                    <div class="tab-content active" id="sampling-sim">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-icon">🔬</div>
+                                <div>
+                                    <h3 class="card-title">Sampling Plan Calculator</h3>
+                                    <p class="card-subtitle">Design and evaluate acceptance sampling plans</p>
+                                </div>
+                            </div>
+                            <div class="grid-2">
+                                <div>
+                                    <div class="input-group">
+                                        <label class="input-label">Sample Size (n)</label>
+                                        <input type="number" id="samp-n" value="50" min="1" oninput="calcSamplingPlan()">
+                                    </div>
+                                    <div class="input-group">
+                                        <label class="input-label">Acceptance Number (c)</label>
+                                        <input type="number" id="samp-c" value="2" min="0" oninput="calcSamplingPlan()">
+                                    </div>
+                                    <div class="input-group">
+                                        <label class="input-label">Lot Proportion Defective (p)</label>
+                                        <input type="number" id="samp-p" value="0.05" min="0" max="1" step="0.01" oninput="calcSamplingPlan()">
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="metric-card highlight">
+                                        <div class="metric-value" id="samp-pa">0.541</div>
+                                        <div class="metric-label">P(Accept Lot)</div>
+                                    </div>
+                                    <div class="grid-2 mt-3">
+                                        <div class="metric-card">
+                                            <div class="metric-value" id="samp-aql">0.018</div>
+                                            <div class="metric-label">AQL (Pa=0.95)</div>
+                                        </div>
+                                        <div class="metric-card">
+                                            <div class="metric-value" id="samp-ltpd">0.115</div>
+                                            <div class="metric-label">LTPD (Pa=0.10)</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="sampling-oc">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-icon">📈</div>
+                                <div>
+                                    <h3 class="card-title">Operating Characteristic (OC) Curve</h3>
+                                    <p class="card-subtitle">Probability of acceptance vs. lot quality</p>
+                                </div>
+                            </div>
+                            <div class="oc-curve-container">
+                                <svg id="oc-curve-svg" viewBox="0 0 500 300">
+                                    <line x1="50" y1="250" x2="450" y2="250" stroke="#334155" stroke-width="2"/>
+                                    <line x1="50" y1="250" x2="50" y2="30" stroke="#334155" stroke-width="2"/>
+                                    <path id="oc-curve-path" d="M50,35 Q100,40 130,60 Q180,100 210,140 Q260,190 310,220 Q370,240 450,248" fill="none" stroke="#6366f1" stroke-width="3"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <section class="theory-section" data-canon-tags="theory">
+                        <div class="theory-header">
+                            <div class="theory-icon">📚</div>
+                            <div>
+                                <h2 class="theory-title">Acceptance Sampling Theory</h2>
+                                <p class="theory-subtitle">Statistical methods for lot acceptance decisions</p>
+                            </div>
+                        </div>
+                        <div class="theory-content">
+                            <p><strong>Acceptance sampling</strong> is performed on goods that already exist to determine what percentage of products conform to specifications.</p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <!-- ===== DPMO MODULE ===== -->
+            <div class="module" data-cmodule="dpmo" id="dpmo-module">
+                <header class="main-header">
+                    <div class="main-header-content">
+                        <div>
+                            <div class="breadcrumb">OSCM Simulator › Six Sigma</div>
+                            <h1 class="page-title"><span class="chapter-badge">🎯 Ch 12</span>DPMO & DMAIC</h1>
+                        </div>
+                        <div class="header-actions">
+                            <button class="btn btn-secondary" onclick="OSCMCanonical.openView(x27dpmox27,x27theoryx27, this)">Theory</button>
+                        </div>
+                    </div>
+                </header>
+                <div class="main-content">
+                    <div class="tabs" data-canon-tags="simulator">
+                        <button class="tab active" onclick="switchTab(this,x27dpmox27,x27simx27)">🔬 Simulator</button>
+                        <button class="tab" onclick="switchTab(this,x27dpmox27,x27dmaicx27)">🔄 DMAIC</button>
+                    </div>
+                    <div class="tab-content active" id="dpmo-sim">
+                        <div class="card">
+                            <div class="card-header"><div class="card-icon">🧮</div><div><h3 class="card-title">DPMO Calculator</h3><p class="card-subtitle">Calculate sigma level from defect data</p></div></div>
+                            <div class="grid-2">
+                                <div>
+                                    <div class="input-group"><label class="input-label">Total Units Inspected</label><input type="number" id="dpmo-units" value="2000" oninput="calcDPMO()"></div>
+                                    <div class="input-group"><label class="input-label">Total Defects Found</label><input type="number" id="dpmo-defects" value="33" oninput="calcDPMO()"></div>
+                                    <div class="input-group"><label class="input-label">Opportunities per Unit</label><input type="number" id="dpmo-opp" value="5" oninput="calcDPMO()"></div>
+                                </div>
+                                <div>
+                                    <div class="grid-2">
+                                        <div class="metric-card highlight"><div class="metric-value" id="dpmo-result">3,300</div><div class="metric-label">DPMO</div></div>
+                                        <div class="metric-card success"><div class="metric-value" id="dpmo-sigma">4.2u03C3</div><div class="metric-label">Sigma Level</div></div>
+                                    </div>
+                                    <div class="grid-2 mt-3">
+                                        <div class="metric-card"><div class="metric-value" id="dpmo-dpu">0.0165</div><div class="metric-label">DPU</div></div>
+                                        <div class="metric-card"><div class="metric-value" id="dpmo-yield">98.4%</div><div class="metric-label">Yield</div></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="alert alert-info mt-4" id="dpmo-interpretation"><div class="alert-icon">📊</div><div>With 2,000 units, 33 defects, and 5 opportunities per unit: <strong>DPMO = 3,300</strong> u2248 <strong>4.2 sigma</strong> process.</div></div>
+                        </div>
+                    </div>
+                    <div class="tab-content" id="dpmo-dmaic">
+                        <div class="card">
+                            <div class="grid-5 mb-4">
+                                <div class="dmaic-phase define" style="background:linear-gradient(135deg,#6366f1,#818cf8);padding:10px;border-radius:8px;color:white;text-align:center"><div style="font-size:1.5rem;font-weight:900">D</div><div style="font-size:0.6rem">Define</div></div>
+                                <div class="dmaic-phase measure" style="background:linear-gradient(135deg,#3b82f6,#60a5fa);padding:10px;border-radius:8px;color:white;text-align:center"><div style="font-size:1.5rem;font-weight:900">M</div><div style="font-size:0.6rem">Measure</div></div>
+                                <div class="dmaic-phase analyze" style="background:linear-gradient(135deg,#10b981,#34d399);padding:10px;border-radius:8px;color:white;text-align:center"><div style="font-size:1.5rem;font-weight:900">A</div><div style="font-size:0.6rem">Analyze</div></div>
+                                <div class="dmaic-phase improve" style="background:linear-gradient(135deg,#f59e0b,#fbbf24);padding:10px;border-radius:8px;color:white;text-align:center"><div style="font-size:1.5rem;font-weight:900">I</div><div style="font-size:0.6rem">Improve</div></div>
+                                <div class="dmaic-phase control" style="background:linear-gradient(135deg,#ef4444,#f87171);padding:10px;border-radius:8px;color:white;text-align:center"><div style="font-size:1.5rem;font-weight:900">C</div><div style="font-size:0.6rem">Control</div></div>
+                            </div>
+                            <table class="data-table">
+                                <thead><tr><th>Phase</th><th>Key Tools</th><th>Deliverable</th></tr></thead>
+                                <tbody>
+                                    <tr><td><strong>Define</strong></td><td>Project Charter, SIPOC</td><td>Scope</td></tr>
+                                    <tr><td><strong>Measure</strong></td><td>Process Map, DPMO</td><td>Baseline</td></tr>
+                                    <tr><td><strong>Analyze</strong></td><td>Fishbone, Pareto</td><td>Root Causes</td></tr>
+                                    <tr><td><strong>Improve</strong></td><td>Poka-yoke, Pilot</td><td>Solutions</td></tr>
+                                    <tr><td><strong>Control</strong></td><td>SPC, Control Plans</td><td>Sustainability</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <section class="theory-section" data-canon-tags="theory">
+                        <div class="theory-header"><div class="theory-icon">📚</div><div><h2 class="theory-title">Six Sigma Fundamentals</h2><p class="theory-subtitle">Defects Per Million Opportunities</p></div></div>
+                        <div class="theory-content">
+                            <p><strong>Six Sigma</strong> is a highly disciplined process that helps us focus on developing and delivering near-perfect products and services.</p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <!-- ===== FMEA MODULE ===== -->
+            <div class="module" data-cmodule="fmea" id="fmea-module">
+                <header class="main-header">
+                    <div class="main-header-content">
+                        <div>
+                            <div class="breadcrumb">OSCM Simulator › Quality Control</div>
+                            <h1 class="page-title"><span class="chapter-badge">⚠️ Ch 12</span>FMEA Risk Analysis</h1>
+                        </div>
+                        <div class="header-actions">
+                            <button class="btn btn-secondary" onclick="OSCMCanonical.openView(x27fmeax27,x27theoryx27, this)">Theory</button>
+                        </div>
+                    </div>
+                </header>
+                <div class="main-content">
+                    <div class="tabs" data-canon-tags="simulator">
+                        <button class="tab active" onclick="switchTab(this,x27fmeax27,x27simx27)">🔬 Simulator</button>
+                    </div>
+                    <div class="tab-content active" id="fmea-sim">
+                        <div class="card">
+                            <div class="card-header"><div class="card-icon">📋</div><div><h3 class="card-title">FMEA Worksheet</h3><p class="card-subtitle">RPN = Severity u00D7 Occurrence u00D7 Detection</p></div></div>
+                            <div style="overflow-x:auto">
+                                <table class="data-table fmea-table" id="fmea-table">
+                                    <thead><tr><th>Step</th><th>Failure Mode</th><th>S</th><th>O</th><th>D</th><th>RPN</th></tr></thead>
+                                    <tbody id="fmea-body">
+                                        <tr><td>Assembly</td><td>Wrong part</td><td><input type="number" value="8" min="1" max="10" id="fmea-s-1" oninput="calcFMEA()" style="width:50px"></td><td><input type="number" value="5" min="1" max="10" id="fmea-o-1" oninput="calcFMEA()" style="width:50px"></td><td><input type="number" value="7" min="1" max="10" id="fmea-d-1" oninput="calcFMEA()" style="width:50px"></td><td class="rpn-cell" id="fmea-rpn-1">280</td></tr>
+                                        <tr><td>Welding</td><td>Incomplete</td><td><input type="number" value="9" min="1" max="10" id="fmea-s-2" oninput="calcFMEA()" style="width:50px"></td><td><input type="number" value="3" min="1" max="10" id="fmea-o-2" oninput="calcFMEA()" style="width:50px"></td><td><input type="number" value="4" min="1" max="10" id="fmea-d-2" oninput="calcFMEA()" style="width:50px"></td><td class="rpn-cell" id="fmea-rpn-2">108</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="grid-3 mt-4">
+                                <div class="metric-card danger"><div class="metric-value" id="fmea-total-rpn">388</div><div class="metric-label">Total RPN</div></div>
+                                <div class="metric-card highlight"><div class="metric-value" id="fmea-highest-rpn">280</div><div class="metric-label">Highest RPN</div></div>
+                                <div class="metric-card"><div class="metric-value" id="fmea-avg-rpn">194</div><div class="metric-label">Average RPN</div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <section class="theory-section" data-canon-tags="theory">
+                        <div class="theory-header"><div class="theory-icon">📚</div><div><h2 class="theory-title">FMEA Theory</h2></div></div>
+                        <div class="theory-content">
+                            <p><strong>Failure Mode and Effects Analysis (FMEA)</strong> is a procedure for identifying potential failure modes and their causes.</p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <!-- ===== PARETO MODULE ===== -->
+            <div class="module" data-cmodule="pareto" id="pareto-module">
+                <header class="main-header">
+                    <div class="main-header-content">
+                        <div>
+                            <div class="breadcrumb">OSCM Simulator › Quality Tools</div>
+                            <h1 class="page-title"><span class="chapter-badge">📊 Ch 13</span>Pareto Analysis</h1>
+                        </div>
+                        <div class="header-actions">
+                            <button class="btn btn-secondary" onclick="OSCMCanonical.openView(x27paretox27,x27theoryx27, this)">Theory</button>
+                        </div>
+                    </div>
+                </header>
+                <div class="main-content">
+                    <div class="tabs" data-canon-tags="simulator">
+                        <button class="tab active" onclick="switchTab(this,x27paretox27,x27simx27)">🔬 Simulator</button>
+                    </div>
+                    <div class="tab-content active" id="pareto-sim">
+                        <div class="card">
+                            <div class="grid-2">
+                                <div>
+                                    <table class="data-table" id="pareto-input-table">
+                                        <thead><tr><th>Category</th><th>Freq</th></tr></thead>
+                                        <tbody>
+                                            <tr><td>Late Delivery</td><td><input type="number" value="45" class="pareto-freq" oninput="calcPareto()" style="width:70px"></td></tr>
+                                            <tr><td>Wrong Item</td><td><input type="number" value="25" class="pareto-freq" oninput="calcPareto()" style="width:70px"></td></tr>
+                                            <tr><td>Damaged</td><td><input type="number" value="15" class="pareto-freq" oninput="calcPareto()" style="width:70px"></td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div>
+                                    <div class="pareto-container" style="background:#f8fafc;padding:10px;border-radius:10px"><svg id="pareto-svg" viewBox="0 0 500 350"></svg></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <section class="theory-section" data-canon-tags="theory">
+                        <div class="theory-header"><div class="theory-icon">📚</div><div><h2 class="theory-title">Pareto Analysis</h2></div></div>
+                        <div class="theory-content">
+                            <p>Based on the 80/20 rule: 80% of problems come from 20% of causes.</p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <!-- ===== FISHBONE MODULE ===== -->
+            <div class="module" data-cmodule="fishbone" id="fishbone-module">
+                <header class="main-header">
+                    <div class="main-header-content">
+                        <div>
+                            <div class="breadcrumb">OSCM Simulator › Quality Tools</div>
+                            <h1 class="page-title"><span class="chapter-badge">🐟 Ch 13</span>Fishbone Diagram</h1>
+                        </div>
+                        <div class="header-actions">
+                            <button class="btn btn-secondary" onclick="OSCMCanonical.openView(x27fishbonex27,x27theoryx27, this)">Theory</button>
+                        </div>
+                    </div>
+                </header>
+                <div class="main-content">
+                    <div class="tabs" data-canon-tags="simulator">
+                        <button class="tab active" onclick="switchTab(this,x27fishbonex27,x27simx27)">🔬 Builder</button>
+                    </div>
+                    <div class="tab-content active" id="fishbone-sim">
+                        <div class="card">
+                            <div class="input-group"><label class="input-label">Problem (Effect)</label><input type="text" id="fishbone-problem" value="Car wont start" oninput="drawFishbone()"></div>
+                            <div class="grid-3 mb-4">
+                                <textarea id="fb-man" oninput="drawFishbone()" placeholder="Man">Dead battery</textarea>
+                                <textarea id="fb-machine" oninput="drawFishbone()" placeholder="Machine">Faulty starter</textarea>
+                                <textarea id="fb-method" oninput="drawFishbone()" placeholder="Method">No maintenance</textarea>
+                            </div>
+                            <div class="fishbone-container" style="background:#f8fafc;padding:10px;border-radius:10px;overflow-x:auto"><svg id="fishbone-svg" width="800" height="400" viewBox="0 0 800 400"></svg></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="module" data-cmodule="centroid" id="centroid-module">
                 <header class="main-header">
                     <div class="main-header-content">
@@ -5452,15 +5738,19 @@
                         </div>
                     </div>
                 </div>
-            </div>                </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
+
             <!-- ===== SCHEDULING MODULE ===== -->
+            <div class="module" data-cmodule="scheduling" id="scheduling-module">
                 <header class="main-header">
                     <div class="main-header-content">
                         <div>
                             <div class="breadcrumb">OSCM Simulator › Operations Scheduling</div>
-                            <h1 class="page-title"><span class="chapter-badge">📅 Ch 22</span>Job Sequencing & Priority
+                            <h1 class="page-title"><span class="chapter-badge">📅 Ch 22</span>Job Sequencing &amp; Priority
                                 Rules</h1>
                         </div>
                     </div>
@@ -5646,6 +5936,14 @@
                                                     type="number" value="9" min="1" /></td>
                                         </tr>
                                         <!-- Added Job E to match textbook complexity -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- ============================================================ -->
             <!-- MODULE 4: NEWSVENDOR (SINGLE-PERIOD) MODULE -->
             <!-- ============================================================ -->
@@ -5660,6 +5958,175 @@
                 </div>
 
                 <div class="theory-section">
+            <div class="module" data-cmodule="lean" id="lean-module">
+                <header class="main-header">
+                    <div class="main-header-content">
+                        <div>
+                            <div class="breadcrumb">OSCM Simulator › Lean Operations</div>
+                            <h1 class="page-title"><span class="chapter-badge">🔄 Ch 14</span>Lean Supply Chains</h1>
+                        </div>
+                        <div class="header-actions">
+                            <button class="btn btn-secondary" onclick="OSCMCanonical.openView(x27leanx27,x27theoryx27, this)">Theory</button>
+                        </div>
+                    </div>
+                </header>
+                <div class="main-content">
+                    <div class="tabs" data-canon-tags="simulator">
+                        <button class="tab active" onclick="switchTab(this,x27leanx27,x27simx27)">🔬 Simulator</button>
+                        <button class="tab" onclick="switchTab(this,x27leanx27,x27vsmx27)">🗺️ Value Stream Map</button>
+                    </div>
+
+                    <div class="tab-content active" id="lean-sim">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-icon">🔬</div>
+                                <div>
+                                    <h3 class="card-title">Lead Time Reduction Calculator</h3>
+                                    <p class="card-subtitle">Calculate the impact of lean improvements</p>
+                                </div>
+                            </div>
+                            <div class="grid-2">
+                                <div>
+                                    <div class="input-group">
+                                        <label class="input-label">RM Inventory (days)</label>
+                                        <input type="number" id="lean-rm" value="10" oninput="calcLeanImprovement()">
+                                    </div>
+                                    <div class="input-group">
+                                        <label class="input-label">WIP Inventory (days)</label>
+                                        <input type="number" id="lean-wip" value="14" oninput="calcLeanImprovement()">
+                                    </div>
+                                    <div class="input-group">
+                                        <label class="input-label">FG Inventory (days)</label>
+                                        <input type="number" id="lean-fg" value="10" oninput="calcLeanImprovement()">
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="metric-card highlight">
+                                        <div class="metric-value" id="lean-future-lt">5.1</div>
+                                        <div class="metric-label">Future Lead Time (Days)</div>
+                                    </div>
+                                    <div class="metric-card success mt-3">
+                                        <div class="metric-value" id="lean-reduction">85%</div>
+                                        <div class="metric-label">Lead Time Reduction</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="lean-vsm">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-icon">🗺️</div>
+                                <div>
+                                    <h3 class="card-title">Value Stream Mapping</h3>
+                                    <p class="card-subtitle">Visualizing material and information flow</p>
+                                </div>
+                            </div>
+                            <div class="vsm-container">
+                                <div class="vsm-process">
+                                    <div class="vsm-box supplier">Supplier</div>
+                                    <div class="vsm-arrow">→</div>
+                                    <div class="vsm-box inventory">RM</div>
+                                    <div class="vsm-arrow">→</div>
+                                    <div class="vsm-box process">Process</div>
+                                    <div class="vsm-arrow">→</div>
+                                    <div class="vsm-box customer">Customer</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <section class="theory-section" data-canon-tags="theory">
+                        <div class="theory-header">
+                            <div class="theory-icon">📚</div>
+                            <div>
+                                <h2 class="theory-title">Lean Supply Chain Theory</h2>
+                                <p class="theory-subtitle">Eliminating waste and maximizing value</p>
+                            </div>
+                        </div>
+                        <div class="theory-content">
+                            <p><strong>Lean production</strong> is an integrated set of activities designed to achieve high-volume production using minimal inventories.</p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <!-- ===== SOURCING MODULE ===== -->
+            <div class="module" data-cmodule="sourcing" id="sourcing-module">
+                <header class="main-header">
+                    <div class="main-header-content">
+                        <div>
+                            <div class="breadcrumb">OSCM Simulator › Global Sourcing</div>
+                            <h1 class="page-title"><span class="chapter-badge">🌐 Ch 16</span>Global Sourcing</h1>
+                        </div>
+                        <div class="header-actions">
+                            <button class="btn btn-secondary" onclick="OSCMCanonical.openView(x27sourcingx27,x27theoryx27, this)">Theory</button>
+                        </div>
+                    </div>
+                </header>
+                <div class="main-content">
+                    <div class="tabs" data-canon-tags="simulator">
+                        <button class="tab active" onclick="switchTab(this,x27sourcingx27,x27simx27)">🔬 Simulator</button>
+                        <button class="tab" onclick="switchTab(this,x27sourcingx27,x27productsx27)">📦 Product Types</button>
+                    </div>
+
+                    <div class="tab-content active" id="sourcing-sim">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-icon">💰</div>
+                                <div>
+                                    <h3 class="card-title">TCO Calculator</h3>
+                                    <p class="card-subtitle">Compare suppliers beyond unit price</p>
+                                </div>
+                            </div>
+                            <div class="grid-2">
+                                <div>
+                                    <h4 style="font-size: 0.85rem; margin-bottom: 12px;">Domestic</h4>
+                                    <input type="number" id="tco-a-price" value="100" oninput="calcTCO()">
+                                    <input type="number" id="tco-a-ship" value="5" oninput="calcTCO()">
+                                    <div class="metric-card mt-3"><div class="metric-value" id="tco-a-total">$105.00</div></div>
+                                </div>
+                                <div>
+                                    <h4 style="font-size: 0.85rem; margin-bottom: 12px;">Overseas</h4>
+                                    <input type="number" id="tco-b-price" value="75" oninput="calcTCO()">
+                                    <input type="number" id="tco-b-ship" value="15" oninput="calcTCO()">
+                                    <div class="metric-card mt-3"><div class="metric-value" id="tco-b-total">$90.00</div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="sourcing-products">
+                        <div class="card">
+                            <table class="data-table">
+                                <thead>
+                                    <tr><th>Characteristic</th><th>Functional</th><th>Innovative</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Demand</td><td>Predictable</td><td>Unpredictable</td></tr>
+                                    <tr><td>Life Cycle</td><td>Long</td><td>Short</td></tr>
+                                    <tr><td>Focus</td><td>Efficiency</td><td>Responsiveness</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <section class="theory-section" data-canon-tags="theory">
+                        <div class="theory-header">
+                            <div class="theory-icon">📚</div>
+                            <div>
+                                <h2 class="theory-title">Strategic Sourcing Theory</h2>
+                                <p class="theory-subtitle">Lowest total cost of ownership</p>
+                            </div>
+                        </div>
+                        <div class="theory-content">
+                            <p>Strategic sourcing is the development of supply channels at the lowest total cost, not just the lowest purchase price.</p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <!-- ===== FORECASTING MODULE (Enhanced) ===== -->
                     <div class="theory-header">
                         <div class="theory-icon">📉</div>
                         <div><h2 class="theory-title">Critical Ratio</h2><p class="theory-subtitle">Finding the service level target</p></div>
