@@ -4723,7 +4723,7 @@
             </div>
 
             <div class="module" data-cmodule="aggregate" id="aggregate-module">
-            </div>                <header class="main-header">
+                <header class="main-header">
                     <div class="main-header-content">
                         <div>
                             <div class="breadcrumb">OSCM Simulator › Planning</div>
@@ -5270,6 +5270,7 @@
 
             <!-- ===== SAFETY STOCK MODULE ===== -->
             <div class="module" data-cmodule="safetystock" id="safetystock-module">
+                <header class="main-header">
                     <div class="main-header-content">
                         <div>
                             <div class="breadcrumb">OSCM Simulator › Inventory Management</div>
@@ -5935,7 +5936,6 @@
                                             <td><input id="sc-dd" onchange="updSch()" style="width:60px; padding:6px;"
                                                     type="number" value="9" min="1" /></td>
                                         </tr>
-                                        <!-- Added Job E to match textbook complexity -->
                                     </tbody>
                                 </table>
                             </div>
@@ -5958,6 +5958,57 @@
                 </div>
 
                 <div class="theory-section">
+                    <div class="theory-header">
+                        <div class="theory-icon">📉</div>
+                        <div><h2 class="theory-title">Critical Ratio</h2><p class="theory-subtitle">Finding the service level target</p></div>
+                    </div>
+                    <div class="theory-content">
+                        <p>The <strong>Newsvendor Model</strong> (or single-period model) is used when items are perishable or have a limited selling season. The goal is to balance the cost of understocking (lost profit) against the cost of overstocking (unsold items).</p>
+                        
+                        <div class="equation-box">
+                            <div class="equation-label">Costs of Mismatch</div>
+                            <div class="equation-formula">\[C_u = \text{Price} - \text{Cost} \quad | \quad C_o = \text{Cost} - \text{Salvage}\]</div>
+                            <div class="equation-description">C<sub>u</sub> = Cost of Understocking (lost profit); C<sub>o</sub> = Cost of Overstocking (loss per unsold unit).</div>
+                        </div>
+
+                        <div class="equation-box">
+                            <div class="equation-label">The Critical Ratio (Service Level)</div>
+                            <div class="equation-formula">\[P \leq \frac{C_u}{C_u + C_o}\]</div>
+                            <div class="equation-description">This ratio gives the probability that demand will be less than or equal to the optimal order quantity Q*.</div>
+                        </div>
+
+                        <div class="equation-box">
+                            <div class="equation-label">Optimal Order Quantity (Q*)</div>
+                            <div class="equation-formula">\[Q^* = \mu + z\sigma\]</div>
+                            <div class="equation-description">Where &mu; = mean demand, &sigma; = standard deviation, and z = Z-score corresponding to the critical ratio.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header"><div class="card-icon">🛍️</div><div><h3 class="card-title">Optimal Order Calculator</h3><p class="card-subtitle">Input price, cost, and demand parameters</p></div></div>
+                    <div class="grid-2">
+                        <div>
+                            <div class="input-group"><label class="input-label">Selling Price ($)</label><input type="number" id="nv-price" value="100" oninput="calcNewsvendor()"></div>
+                            <div class="input-group"><label class="input-label">Unit Cost ($)</label><input type="number" id="nv-cost" value="70" oninput="calcNewsvendor()"></div>
+                            <div class="input-group"><label class="input-label">Salvage Value ($)</label><input type="number" id="nv-salvage" value="20" oninput="calcNewsvendor()"></div>
+                            <div class="input-group"><label class="input-label">Mean Demand (&mu;)</label><input type="number" id="nv-mu" value="200" oninput="calcNewsvendor()"></div>
+                            <div class="input-group"><label class="input-label">Demand Std Dev (&sigma;)</label><input type="number" id="nv-sigma" value="40" oninput="calcNewsvendor()"></div>
+                        </div>
+                        <div>
+                            <div class="metric-card highlight mb-3"><div class="metric-value" id="nv-cr">0.375</div><div class="metric-label">Critical Ratio (P)</div></div>
+                            <div class="grid-2">
+                                <div class="metric-card"><div class="metric-value" id="nv-cu">$30</div><div class="metric-label">Cost of Under (Cu)</div></div>
+                                <div class="metric-card"><div class="metric-value" id="nv-co">$50</div><div class="metric-label">Cost of Over (Co)</div></div>
+                            </div>
+                            <div class="metric-card success mt-3"><div class="metric-value" id="nv-z">-0.32</div><div class="metric-label">Z-Score</div></div>
+                            <div class="metric-card danger mt-3"><div class="metric-value" id="nv-q">187</div><div class="metric-label">Optimal Q*</div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== LEAN MODULE ===== -->
             <div class="module" data-cmodule="lean" id="lean-module">
                 <header class="main-header">
                     <div class="main-header-content">
@@ -6124,56 +6175,6 @@
                             <p>Strategic sourcing is the development of supply channels at the lowest total cost, not just the lowest purchase price.</p>
                         </div>
                     </section>
-                </div>
-            </div>
-            <!-- ===== FORECASTING MODULE (Enhanced) ===== -->
-                    <div class="theory-header">
-                        <div class="theory-icon">📉</div>
-                        <div><h2 class="theory-title">Critical Ratio</h2><p class="theory-subtitle">Finding the service level target</p></div>
-                    </div>
-                    <div class="theory-content">
-                        <p>The <strong>Newsvendor Model</strong> (or single-period model) is used when items are perishable or have a limited selling season. The goal is to balance the cost of understocking (lost profit) against the cost of overstocking (unsold items).</p>
-                        
-                        <div class="equation-box">
-                            <div class="equation-label">Costs of Mismatch</div>
-                            <div class="equation-formula">\[C_u = \text{Price} - \text{Cost} \quad | \quad C_o = \text{Cost} - \text{Salvage}\]</div>
-                            <div class="equation-description">C<sub>u</sub> = Cost of Understocking (lost profit); C<sub>o</sub> = Cost of Overstocking (loss per unsold unit).</div>
-                        </div>
-
-                        <div class="equation-box">
-                            <div class="equation-label">The Critical Ratio (Service Level)</div>
-                            <div class="equation-formula">\[P \leq \frac{C_u}{C_u + C_o}\]</div>
-                            <div class="equation-description">This ratio gives the probability that demand will be less than or equal to the optimal order quantity Q*.</div>
-                        </div>
-
-                        <div class="equation-box">
-                            <div class="equation-label">Optimal Order Quantity (Q*)</div>
-                            <div class="equation-formula">\[Q^* = \mu + z\sigma\]</div>
-                            <div class="equation-description">Where &mu; = mean demand, &sigma; = standard deviation, and z = Z-score corresponding to the critical ratio.</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-header"><div class="card-icon">🛍️</div><div><h3 class="card-title">Optimal Order Calculator</h3><p class="card-subtitle">Input price, cost, and demand parameters</p></div></div>
-                    <div class="grid-2">
-                        <div>
-                            <div class="input-group"><label class="input-label">Selling Price ($)</label><input type="number" id="nv-price" value="100" oninput="calcNewsvendor()"></div>
-                            <div class="input-group"><label class="input-label">Unit Cost ($)</label><input type="number" id="nv-cost" value="70" oninput="calcNewsvendor()"></div>
-                            <div class="input-group"><label class="input-label">Salvage Value ($)</label><input type="number" id="nv-salvage" value="20" oninput="calcNewsvendor()"></div>
-                            <div class="input-group"><label class="input-label">Mean Demand (&mu;)</label><input type="number" id="nv-mu" value="200" oninput="calcNewsvendor()"></div>
-                            <div class="input-group"><label class="input-label">Demand Std Dev (&sigma;)</label><input type="number" id="nv-sigma" value="40" oninput="calcNewsvendor()"></div>
-                        </div>
-                        <div>
-                            <div class="metric-card highlight mb-3"><div class="metric-value" id="nv-cr">0.375</div><div class="metric-label">Critical Ratio (P)</div></div>
-                            <div class="grid-2">
-                                <div class="metric-card"><div class="metric-value" id="nv-cu">$30</div><div class="metric-label">Cost of Under (Cu)</div></div>
-                                <div class="metric-card"><div class="metric-value" id="nv-co">$50</div><div class="metric-label">Cost of Over (Co)</div></div>
-                            </div>
-                            <div class="metric-card success mt-3"><div class="metric-value" id="nv-z">-0.32</div><div class="metric-label">Z-Score</div></div>
-                            <div class="metric-card danger mt-3"><div class="metric-value" id="nv-q">187</div><div class="metric-label">Optimal Q*</div></div>
-                        </div>
-                    </div>
                 </div>
             </div>
 
