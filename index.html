@@ -841,19 +841,29 @@
             }
         }
 
-        @media(max-width:900px) {
+        @media(max-width:1200px) {
             .sidebar {
                 width: 100%;
                 height: auto;
-                position: relative
+                max-height: 340px;
+                position: relative;
+                overflow-y: auto
             }
 
             .main {
-                margin-left: 0
+                margin-left: 0;
+                width: 100%;
+                min-width: 0
             }
 
             .app {
                 flex-direction: column
+            }
+
+            .main-header,
+            .main-content {
+                padding-left: 18px;
+                padding-right: 18px
             }
 
             .theme-toggle {
@@ -865,7 +875,7 @@
             }
 
             .dashboard-overview {
-                grid-template-columns: repeat(2, 1fr)
+                grid-template-columns: 1fr
             }
         }
 
@@ -2083,7 +2093,7 @@
                 </div>
                 <div class="sidebar-stats">
                     <div class="sidebar-stat">
-                        <div class="sidebar-stat-value">17</div>
+                        <div class="sidebar-stat-value">40</div>
                         <div class="sidebar-stat-label">Modules</div>
                     </div>
                     <div class="sidebar-stat">
@@ -2405,7 +2415,7 @@
 
         <main class="main">
             <!-- ===== PERT MODULE ===== -->
-                        <div class="module" data-cmodule="pert" id="pert-module">
+                        <div class="module active" data-cmodule="pert" id="pert-module">
                 <div class="module-header">
                     <div class="module-icon">🔗</div>
                     <div>
@@ -2433,7 +2443,7 @@
                         </div>
                         <div class="equation-box">
                             <div class="equation-label">PERT Variance</div>
-                            <div class="equation-formula">\[\sigma^2 = \left\frac{b - a}{6}\right^2\]</div>
+                            <div class="equation-formula">\[\sigma^2 = \left(\frac{b - a}{6}\right)^2\]</div>
                             <div class="equation-description">Variance of each activity's time estimate.</div>
                         </div>
                         <div class="equation-box">
@@ -7000,6 +7010,12 @@ u2514u2500 (Level 1) Sub-O (u00D71)
             document.getElementById('themeBtn').textContent = '☀️';
         }
 
+        function renderMath() {
+            if (window.MathJax && typeof MathJax.typeset === 'function') {
+                MathJax.typeset();
+            }
+        }
+
         // Module Navigation
         document.querySelectorAll('.nav-btn').forEach(b => {
             b.addEventListener('click', () => {
@@ -7013,7 +7029,7 @@ u2514u2500 (Level 1) Sub-O (u00D71)
                     // Smooth scroll to top of module
                     targetModule.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
-                if (window.MathJax) MathJax.typeset();
+                renderMath();
             });
         });
 
@@ -7034,7 +7050,7 @@ u2514u2500 (Level 1) Sub-O (u00D71)
                     target.style.transition = 'opacity 0.3s ease';
                 });
             }
-            if (window.MathJax) MathJax.typeset();
+            renderMath();
         }
 
         // Enhanced Export — supports multiple formats
@@ -7119,7 +7135,7 @@ u2514u2500 (Level 1) Sub-O (u00D71)
             const nextBtn = document.getElementById('tut-next');
             if (prevBtn) prevBtn.disabled = tutStep === 1;
             if (nextBtn) nextBtn.textContent = tutStep === tutTotal ? 'Finish' : 'Next';
-            if (window.MathJax) MathJax.typeset();
+            renderMath();
         }
 
         // ==================== ANIMATION ENGINE ====================
@@ -7284,7 +7300,7 @@ u2514u2500 (Level 1) Sub-O (u00D71)
             pertHistory.push({ a, m, b, te, v, sd, timestamp: Date.now() });
             if (pertHistory.length > 50) pertHistory.shift();
 
-            if (window.MathJax) MathJax.typeset();
+            renderMath();
         }
 
         // Enhanced Practice Problem Generator with difficulty levels
@@ -7520,7 +7536,7 @@ u2514u2500 (Level 1) Sub-O (u00D71)
                 setText('be-r-m', '$' + Math.round(rev));
             }
 
-            if (window.MathJax) MathJax.typeset();
+            renderMath();
         }
 
         let beProb = {};
@@ -7733,7 +7749,7 @@ u2514u2500 (Level 1) Sub-O (u00D71)
                 });
             }
 
-            if (window.MathJax) MathJax.typeset();
+            renderMath();
         }
 
         // ============================================================
@@ -7784,7 +7800,7 @@ u2514u2500 (Level 1) Sub-O (u00D71)
                 }
             }
 
-            if (window.MathJax) MathJax.typeset();
+            renderMath();
         }
 
         // ============================================================
@@ -7803,7 +7819,7 @@ u2514u2500 (Level 1) Sub-O (u00D71)
             setText('ll-wip', w);
             setText('ll-wip2', w);
 
-            if (window.MathJax) MathJax.typeset();
+            renderMath();
         }
 
         // ============================================================
@@ -7857,7 +7873,7 @@ u2514u2500 (Level 1) Sub-O (u00D71)
                 }
             }
 
-            if (window.MathJax) MathJax.typeset();
+            renderMath();
         }
 
         // Queuing Practice Problems
@@ -8131,7 +8147,7 @@ u2514u2500 (Level 1) Sub-O (u00D71)
                 }
             }
 
-            if (window.MathJax) MathJax.typeset();
+            renderMath();
         }
 
         function addSQC(meanBias, rangeBias) {
@@ -8659,7 +8675,7 @@ u2514u2500 (Level 1) Sub-O (u00D71)
             setText('eoq-tc-m', fmtCurrency(tc));
             setText('eoq-or-m', ordersPerYear.toFixed(1));
 
-            if (window.MathJax) MathJax.typeset();
+            renderMath();
         }
 
         // EOQ Practice Problems
@@ -8803,7 +8819,7 @@ u2514u2500 (Level 1) Sub-O (u00D71)
             setText('ss-ss-m', Math.round(ss));
             setText('ss-rop-m', Math.round(rop));
 
-            if (window.MathJax) MathJax.typeset();
+            renderMath();
         }
 
         // ============================================================
@@ -9079,7 +9095,7 @@ u2514u2500 (Level 1) Sub-O (u00D71)
                     }
                 });
 
-                if (window.MathJax) MathJax.typeset();
+                renderMath();
             }
 
             function invoke(mid, action) {
@@ -9107,6 +9123,12 @@ u2514u2500 (Level 1) Sub-O (u00D71)
                 const el = document.getElementById(id);
                 if (el) el.addEventListener(evt, fn);
             };
+
+            const activeNav = document.querySelector('.nav-btn.active') || document.querySelector('.nav-btn');
+            if (activeNav && !document.querySelector('.module.active')) {
+                const initialModule = document.getElementById(activeNav.dataset.module + '-module');
+                if (initialModule) initialModule.classList.add('active');
+            }
 
             // PERT listeners
             addL('p-a', 'input', updPERT);
@@ -9202,11 +9224,11 @@ u2514u2500 (Level 1) Sub-O (u00D71)
             // Initial MathJax render with retry
             if (window.MathJax) {
                 setTimeout(() => {
-                    try { MathJax.typeset(); } catch (e) { console.warn('MathJax initial render warning:', e.message); }
+                    try { renderMath(); } catch (e) { console.warn('MathJax initial render warning:', e.message); }
                 }, 200);
                 // Second pass for any late-loading content
                 setTimeout(() => {
-                    try { MathJax.typeset(); } catch (e) { /* silent */ }
+                    try { renderMath(); } catch (e) { /* silent */ }
                 }, 1000);
             }
 
@@ -9218,6 +9240,9 @@ u2514u2500 (Level 1) Sub-O (u00D71)
 
     function calcPertVariance() {
         const rows = document.querySelectorAll('#pert-var-table tbody tr');
+        const totalVarEl = document.getElementById('pert-total-var');
+        const pathSdEl = document.getElementById('pert-path-sd');
+        if (!rows.length || !totalVarEl || !pathSdEl) return;
         let totalVar = 0;
         rows.forEach(row => {
             const a = parseFloat(row.cells[1].children[0].value) || 0;
@@ -9230,8 +9255,8 @@ u2514u2500 (Level 1) Sub-O (u00D71)
             row.cells[5].innerText = v.toFixed(3);
             totalVar += v;
         });
-        document.getElementById('pert-total-var').innerText = totalVar.toFixed(3);
-        document.getElementById('pert-path-sd').innerText = Math.sqrt(totalVar).toFixed(3);
+        totalVarEl.innerText = totalVar.toFixed(3);
+        pathSdEl.innerText = Math.sqrt(totalVar).toFixed(3);
     }
 
     function calcTargetVolume() {
