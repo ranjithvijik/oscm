@@ -1,11 +1,18 @@
 import { expect, test } from '@playwright/test';
 import {
+  assertModuleHasMeaningfulContent,
   assertModuleVisible,
   collectConsoleProblems,
-  extractNavigationModules
+  extractNavigationModules,
+  extractTabTargets,
+  openModule
 } from '../helpers/indexPage';
 
 const modules = extractNavigationModules();
+const tabTargetsByModule = extractTabTargets().reduce<Record<string, string[]>>((acc, tab) => {
+  (acc[tab.moduleId] ||= []).push(tab.targetId);
+  return acc;
+}, {});
 
 test.describe('module integration coverage', () => {
   test('loads the default page without app console errors', async ({ page }) => {
@@ -19,19 +26,52 @@ test.describe('module integration coverage', () => {
     expect(consoleProblems).toEqual([]);
   });
 
-  test('every navigation item activates a non-empty module', async ({ page }) => {
-    const consoleProblems = await collectConsoleProblems(page);
+  for (const module of modules) {
+    test(`${module.id} module opens from navigation with non-empty content`, async ({ page }) => {
+      const consoleProblems = await collectConsoleProblems(page);
 
-    await page.goto('/index.html');
+      await page.goto('/index.html');
+      await openModule(page, module.id);
+      await assertModuleHasMeaningfulContent(page, module.id);
 
-    for (const module of modules) {
-      await page.locator(`.nav-btn[data-module="${module.id}"]`).click();
-      await assertModuleVisible(page, module.id);
-      await expect(page.locator(`.nav-btn[data-module="${module.id}"]`)).toHaveClass(/active/);
-    }
+      expect(consoleProblems).toEqual([]);
+    });
+  }
 
-    expect(consoleProblems).toEqual([]);
-  });
+  for (const module of modules) {
+    test(`${module.id} module tab targets are reachable`, async ({ page }) => {
+      const consoleProblems = await collectConsoleProblems(page);
+      const targetIds = tabTargetsByModule[module.id] ?? [];
+
+      await page.goto('/index.html');
+      await openModule(page, module.id);
+
+      for (const targetId of targetIds) {
+        const tabButton = page.locator(
+          `#${module.id}-module .tab[onclick*="'${targetId.replace(`${module.id}-`, '')}'"]`
+        );
+        await expect(tabButton, `${targetId} tab button should exist`).toHaveCount(1);
+        await tabButton.click();
+        await expect(page.locator(`#${targetId}`), `${targetId} panel should become active`).toHaveClass(/active/);
+      }
+
+      expect(consoleProblems).toEqual([]);
+    });
+  }
+
+  for (const module of modules) {
+    test(`${module.id} module renders on mobile without horizontal overflow`, async ({ page }) => {
+      const consoleProblems = await collectConsoleProblems(page);
+
+      await page.setViewportSize({ width: 390, height: 900 });
+      await page.goto('/index.html');
+      await openModule(page, module.id);
+
+      const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
+      expect(overflow, `${module.id} should not horizontally overflow mobile viewport`).toBeLessThanOrEqual(1);
+      expect(consoleProblems).toEqual([]);
+    });
+  }
 
   test('responsive layout avoids horizontal document overflow', async ({ page }) => {
     const consoleProblems = await collectConsoleProblems(page);

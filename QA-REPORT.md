@@ -4,6 +4,21 @@
 
 ## Some Suites Failed
 
+## Module Coverage Update
+
+The integration module suite now expands the `index.html` navigation inventory into **122 explicit browser tests**:
+
+- 40 desktop module-open/content tests.
+- 40 per-module tab-target reachability tests.
+- 40 mobile no-horizontal-overflow tests.
+- 2 global module smoke checks.
+
+Latest direct run of `npx playwright test tests/integration/modules.spec.ts --project=chromium --reporter=line` completed with **119 passed / 122 total**. Current module-specific failures are:
+
+- `breakeven` tab target reachability: missing `breakeven-patch` panel.
+- `learning` tab target reachability: missing `learning-sim` panel.
+- `fmea` tab target reachability: browser execution failure for the module tab check.
+
 | Metric | Value |
 | --- | --- |
 | Suites Run | **1** |
