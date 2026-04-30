@@ -85,4 +85,68 @@ test.describe('module integration coverage', () => {
     expect(overflow, 'page should not horizontally overflow mobile viewport').toBeLessThanOrEqual(1);
     expect(consoleProblems).toEqual([]);
   });
+
+  test('desktop layout keeps sidebar and main content side by side', async ({ page }) => {
+    const consoleProblems = await collectConsoleProblems(page);
+
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto('/index.html');
+    await assertModuleVisible(page, 'pert');
+
+    const layout = await page.evaluate(() => {
+      const sidebar = document.querySelector('.sidebar')!.getBoundingClientRect();
+      const main = document.querySelector('.main')!.getBoundingClientRect();
+      return {
+        sidebarRight: sidebar.right,
+        mainLeft: main.left,
+        overflow: document.documentElement.scrollWidth - window.innerWidth
+      };
+    });
+
+    expect(layout.mainLeft, 'main content should start after the fixed sidebar on desktop').toBeGreaterThanOrEqual(layout.sidebarRight - 1);
+    expect(layout.overflow, 'desktop should not horizontally overflow').toBeLessThanOrEqual(1);
+    expect(consoleProblems).toEqual([]);
+  });
+
+  test('tablet layout stacks navigation above content without clipping modules', async ({ page }) => {
+    const consoleProblems = await collectConsoleProblems(page);
+
+    await page.setViewportSize({ width: 768, height: 1024 });
+    await page.goto('/index.html');
+    await openModule(page, 'forecast');
+
+    const layout = await page.evaluate(() => {
+      const sidebar = document.querySelector('.sidebar')!.getBoundingClientRect();
+      const main = document.querySelector('.main')!.getBoundingClientRect();
+      const activeModule = document.querySelector('.module.active')!.getBoundingClientRect();
+      return {
+        sidebarBottom: sidebar.bottom,
+        mainTop: main.top,
+        activeWidth: activeModule.width,
+        overflow: document.documentElement.scrollWidth - window.innerWidth
+      };
+    });
+
+    expect(layout.mainTop, 'main content should sit below tablet navigation').toBeGreaterThanOrEqual(layout.sidebarBottom - 1);
+    expect(layout.activeWidth, 'active module should fit tablet viewport').toBeLessThanOrEqual(768);
+    expect(layout.overflow, 'tablet should not horizontally overflow').toBeLessThanOrEqual(1);
+    expect(consoleProblems).toEqual([]);
+  });
+
+  test('narrow phone layout keeps critical controls reachable', async ({ page }) => {
+    const consoleProblems = await collectConsoleProblems(page);
+
+    await page.setViewportSize({ width: 360, height: 800 });
+    await page.goto('/index.html');
+    await openModule(page, 'breakeven');
+
+    await expect(page.locator('#breakeven-module .tabs')).toBeVisible();
+    await expect(page.locator('#be-fc')).toBeVisible();
+    await expect(page.locator('#be-p')).toBeVisible();
+    await expect(page.locator('#be-vc')).toBeVisible();
+
+    const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
+    expect(overflow, 'narrow phone should not horizontally overflow').toBeLessThanOrEqual(1);
+    expect(consoleProblems).toEqual([]);
+  });
 });

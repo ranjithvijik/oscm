@@ -2136,6 +2136,275 @@
         @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
         .tab-content { display: none; }
         .tab-content.active { display: block; }
+
+        /* Final responsive hardening layer: keep the simulator usable across desktop, tablet, and phone widths. */
+        html {
+            overflow-x: hidden
+        }
+
+        body,
+        .app,
+        .main,
+        .main-content,
+        .module,
+        .card,
+        .theory-section,
+        .patch-section,
+        .canonical-shell,
+        .tab-content {
+            max-width: 100%;
+            min-width: 0
+        }
+
+        .main {
+            width: auto
+        }
+
+        .main-header-content,
+        .main-content {
+            max-width: min(1300px, 100%)
+        }
+
+        .card,
+        .metric-card,
+        .theory-section,
+        .patch-section,
+        .equation-box,
+        .key-insight,
+        .alert {
+            overflow-wrap: anywhere
+        }
+
+        .grid-2,
+        .grid-3,
+        .grid-4,
+        .grid-5,
+        .concepts-grid,
+        .dashboard-overview {
+            grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr))
+        }
+
+        .tabs,
+        .canonical-tabs,
+        .btn-group,
+        .anim-controls,
+        .chart-legend,
+        .header-actions {
+            max-width: 100%;
+            flex-wrap: wrap
+        }
+
+        .tabs {
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin
+        }
+
+        .tab,
+        .canonical-tab,
+        .btn,
+        .header-btn {
+            min-height: 40px
+        }
+
+        input,
+        select,
+        textarea,
+        button {
+            max-width: 100%
+        }
+
+        .data-table {
+            min-width: max-content
+        }
+
+        .data-table th,
+        .data-table td {
+            vertical-align: top
+        }
+
+        .main-content > .data-table,
+        .card > .data-table,
+        .theory-content > .data-table,
+        .patch-section > .data-table {
+            display: block;
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch
+        }
+
+        .chart-container {
+            overflow-x: auto;
+            padding: clamp(10px, 2vw, 20px)
+        }
+
+        .chart-container svg {
+            min-width: min(520px, 100%);
+            height: auto;
+            min-height: 240px
+        }
+
+        .fishbone-container svg,
+        #fishbone-svg {
+            min-width: 720px
+        }
+
+        .bom-tree-container,
+        .gantt-container,
+        .pipeline-visual,
+        .service-triangle {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch
+        }
+
+        @media (min-width: 1201px) {
+            .main {
+                margin-left: 280px;
+                width: calc(100% - 280px)
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .sidebar {
+                position: relative;
+                width: 100%;
+                max-height: 42vh;
+                overscroll-behavior: contain
+            }
+
+            .main {
+                margin-left: 0;
+                width: 100%
+            }
+
+            .main-header-content,
+            .main-content {
+                padding-left: clamp(14px, 3vw, 28px);
+                padding-right: clamp(14px, 3vw, 28px)
+            }
+        }
+
+        @media (max-width: 700px) {
+            .sidebar-header {
+                padding: 14px 12px
+            }
+
+            .sidebar-stats {
+                grid-template-columns: repeat(2, minmax(0, 1fr))
+            }
+
+            .nav-btn {
+                min-height: 44px;
+                padding: 10px 12px
+            }
+
+            .main-header-content {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 12px
+            }
+
+            .main-content {
+                padding-top: 14px;
+                padding-bottom: 20px
+            }
+
+            .module-header,
+            .patch-section-header,
+            .theory-header,
+            .card-header {
+                align-items: flex-start;
+                gap: 10px
+            }
+
+            .module-icon,
+            .patch-icon,
+            .card-icon {
+                flex: 0 0 auto
+            }
+
+            .module-title,
+            .page-title {
+                font-size: clamp(1.15rem, 6vw, 1.5rem);
+                line-height: 1.2
+            }
+
+            .card,
+            .theory-section,
+            .patch-section,
+            .equation-box {
+                border-radius: 12px;
+                padding: 14px
+            }
+
+            .grid-2,
+            .grid-3,
+            .grid-4,
+            .grid-5,
+            .concepts-grid,
+            .dashboard-overview {
+                gap: 12px;
+                grid-template-columns: 1fr
+            }
+
+            .tabs {
+                flex-wrap: nowrap;
+                overflow-x: auto
+            }
+
+            .tab,
+            .canonical-tab,
+            .btn,
+            .header-btn {
+                justify-content: center;
+                min-height: 44px
+            }
+
+            .btn-group {
+                align-items: stretch;
+                flex-direction: column
+            }
+
+            .data-table th,
+            .data-table td {
+                padding: 8px 10px
+            }
+        }
+
+        @media (max-width: 420px) {
+            .main-header-content,
+            .main-content {
+                padding-left: 10px;
+                padding-right: 10px
+            }
+
+            .theme-toggle {
+                width: 38px;
+                height: 38px
+            }
+
+            .sidebar {
+                max-height: 46vh
+            }
+
+            .sidebar-logo {
+                align-items: flex-start
+            }
+
+            .sidebar-title {
+                font-size: 1rem
+            }
+
+            .card,
+            .theory-section,
+            .patch-section,
+            .equation-box {
+                padding: 12px
+            }
+
+            .metric-value {
+                font-size: clamp(1.15rem, 8vw, 1.8rem)
+            }
+        }
     </style>
 </head>
 
