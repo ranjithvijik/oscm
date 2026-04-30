@@ -38,7 +38,17 @@ test.describe('index.html static contract', () => {
 
     expect(html).toContain('href="assets/css/oscm.css"');
     expect(html).toContain('src="assets/js/oscm.js"');
-    expect(html).not.toContain('<style>');
+    expect(html).toContain('Critical visibility fallback');
+  });
+
+  test('does not contain hidden control characters that corrupt MathJax formulas', () => {
+    const html = readIndexHtml();
+    const invalidControls = [...html].filter((char) => {
+      const code = char.charCodeAt(0);
+      return code < 32 && !['\n', '\r', '\t'].includes(char);
+    });
+
+    expect(invalidControls).toEqual([]);
   });
 
   test('all tab buttons target a tab panel that exists in the same module', () => {

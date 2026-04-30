@@ -12,7 +12,7 @@
 
     <!-- MathJax Integration -->
     <script>
-        MathJax = {
+        window.MathJax = {
             tex: {
                 inlineMath: [['$', '$'], ['\\(', '\\)']],
                 displayMath: [['\\[', '\\]']]
@@ -24,6 +24,21 @@
     </script>
     <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
+    <style>
+        /* Critical visibility fallback. Keeps modules/tabs separated if the extracted stylesheet is delayed or unavailable. */
+        .module:not(.active),
+        .tab-content:not(.active),
+        .practice-answer:not(.show),
+        .modal-overlay:not(.active),
+        .tut-step:not(.active) {
+            display: none;
+        }
+
+        .module.active,
+        .tab-content.active {
+            display: block;
+        }
+    </style>
     <link rel="stylesheet" href="assets/css/oscm.css" />
 </head>
 
@@ -1897,17 +1912,17 @@
                         <p>When quality is measured as a proportion (defective/not defective), we use <strong>p-charts</strong>. When we count the number of defects per unit, we use <strong>c-charts</strong>. Both use 3-sigma control limits.</p>
                         <div class="equation-box">
                             <div class="equation-label">p-Chart: Center Line</div>
-                            <div class="equation-formula">\[ar{p} = rac{	ext{Total Defectives}}{	ext{Total Inspected}}\]</div>
+                            <div class="equation-formula">\[\bar{p} = \frac{\text{Total Defectives}}{\text{Total Inspected}}\]</div>
                             <div class="equation-description">The overall proportion defective across all samples.</div>
                         </div>
                         <div class="equation-box">
                             <div class="equation-label">p-Chart: Standard Deviation</div>
-                            <div class="equation-formula">\[S_p = \sqrt{rac{ar{p}(1-ar{p})}{n}}\]</div>
+                            <div class="equation-formula">\[S_p = \sqrt{\frac{\bar{p}(1-\bar{p})}{n}}\]</div>
                             <div class="equation-description">Where n = sample size. This is the standard deviation of the sampling distribution of proportions.</div>
                         </div>
                         <div class="equation-box">
                             <div class="equation-label">p-Chart: Control Limits</div>
-                            <div class="equation-formula">\[UCL = ar{p} + 3S_p \quad,\quad LCL = ar{p} - 3S_p\]</div>
+                            <div class="equation-formula">\[UCL = \bar{p} + 3S_p \quad,\quad LCL = \bar{p} - 3S_p\]</div>
                             <div class="equation-description">If LCL < 0, set LCL = 0. A z-value of 3 gives 99.7% confidence that the process is within these limits.</div>
                         </div>
                     </div>

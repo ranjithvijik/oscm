@@ -16,7 +16,10 @@
         }
 
         function renderMath() {
-            if (window.MathJax && typeof MathJax.typeset === 'function') {
+            if (!window.MathJax) return;
+            if (typeof MathJax.typesetPromise === 'function') {
+                MathJax.typesetPromise().catch(e => console.warn('MathJax render warning:', e.message));
+            } else if (typeof MathJax.typeset === 'function') {
                 MathJax.typeset();
             }
         }

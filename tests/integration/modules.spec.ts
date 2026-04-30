@@ -26,6 +26,22 @@ test.describe('module integration coverage', () => {
     expect(consoleProblems).toEqual([]);
   });
 
+  test('keeps modules separated if the extracted stylesheet is unavailable', async ({ page }) => {
+    await page.route('**/assets/css/oscm.css', async (route) => {
+      await route.fulfill({ status: 404, body: '' });
+    });
+
+    await page.goto('/index.html');
+
+    const visibleModules = await page.locator('.module').evaluateAll((modules) =>
+      modules.filter((module) => getComputedStyle(module).display !== 'none').map((module) => module.id)
+    );
+
+    expect(visibleModules).toEqual(['pert-module']);
+    await expect(page.locator('#pert-module')).toBeVisible();
+    await expect(page.locator('#breakeven-module')).toBeHidden();
+  });
+
   for (const module of modules) {
     test(`${module.id} module opens from navigation with non-empty content`, async ({ page }) => {
       const consoleProblems = await collectConsoleProblems(page);
