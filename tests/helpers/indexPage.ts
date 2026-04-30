@@ -15,9 +15,23 @@ export type TabTarget = {
 };
 
 export const indexPath = resolve(process.cwd(), 'index.html');
+export const stylesheetPath = resolve(process.cwd(), 'assets/css/oscm.css');
+export const runtimePath = resolve(process.cwd(), 'assets/js/oscm.js');
 
 export function readIndexHtml(): string {
   return readFileSync(indexPath, 'utf8');
+}
+
+export function readStylesheet(): string {
+  return readFileSync(stylesheetPath, 'utf8');
+}
+
+export function readRuntimeScript(): string {
+  return readFileSync(runtimePath, 'utf8');
+}
+
+export function readAppSource(): string {
+  return `${readIndexHtml()}\n${readStylesheet()}\n${readRuntimeScript()}`;
 }
 
 export function extractNavigationModules(html = readIndexHtml()): ModuleEntry[] {

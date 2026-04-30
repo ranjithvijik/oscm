@@ -2,11 +2,13 @@
 
 An interactive, browser-based Operations and Supply Chain Management simulator for learning quantitative models, process analysis, quality methods, supply chain decisions, inventory planning, MRP, scheduling, and exam practice.
 
-The app is intentionally simple to deploy: the main learning experience lives in `index.html`, and the automated quality system lives in the Playwright test suite. No application server is required.
+The app is intentionally simple to deploy: the learning experience is served as static files, with module markup in `index.html` and extracted CSS/JavaScript in `assets/`. The automated quality system lives in the Playwright test suite. No application server is required.
 
 ## What This Project Contains
 
-- `index.html`: the full static simulator, including navigation, learning modules, formulas, calculators, visual sections, and practice tools.
+- `index.html`: the static simulator markup, including navigation, learning modules, formulas, visual sections, and practice tools.
+- `assets/css/oscm.css`: simulator styling, responsive layout rules, visual components, and theme styles.
+- `assets/js/oscm.js`: simulator runtime behavior, calculators, navigation, chart rendering, and initialization.
 - `tests/`: Playwright unit, integration, and UAT coverage for the simulator.
 - `run_tests.js`: QA orchestrator that runs the suites and writes `QA-REPORT.md`.
 - `QA.md`: QA system documentation.
@@ -47,7 +49,7 @@ You can also open `index.html` directly in a browser, but a local HTTP server is
 
 ## Simulator Overview
 
-The simulator is organized as a single-page learning application. The left navigation lists 40 modules. Each module has a matching `*-module` content section in `index.html`, and many modules include tabs for simulator views, theory, practice, scenarios, or lookup tools.
+The simulator is organized as a static single-page learning application. The left navigation lists 40 modules. Each module has a matching `*-module` content section in `index.html`, while styling and runtime behavior live in `assets/css/oscm.css` and `assets/js/oscm.js`. Many modules include tabs for simulator views, theory, practice, scenarios, or lookup tools.
 
 Common module patterns:
 
@@ -514,12 +516,13 @@ Command:
 npm run qa:unit
 ```
 
-This suite parses `index.html` and verifies structural contracts before the browser runs:
+This suite parses the static app files and verifies structural contracts before the browser runs:
 
 - Every navigation item has one matching content module.
 - DOM IDs are unique.
-- Required runtime primitives exist.
+- Required runtime primitives exist in the extracted runtime asset.
 - Every `switchTab(this, module, tab)` call targets an existing panel in the same module.
+- `index.html` links the extracted CSS and JavaScript assets.
 
 ### Browser Integration
 
@@ -621,7 +624,7 @@ Behavior:
 - Supports manual `workflow_dispatch`.
 - Uses Node.js 24.
 - Runs fast QA with `node run_tests.js --fast --out QA-REPORT-build.md`.
-- Uploads a static site artifact containing `index.html`, QA docs, and package metadata.
+- Uploads a static site artifact containing `index.html`, `assets/`, QA docs, and package metadata.
 
 ## Deployment
 
@@ -641,6 +644,7 @@ Build behavior:
 Amplify artifact list:
 
 - `index.html`
+- `assets/**/*`
 - `QA.md`
 - `QA-REPORT.md`
 - `package.json`
@@ -652,7 +656,7 @@ For Netlify, Vercel static output, GitHub Pages, S3, CloudFront, or any static f
 
 1. Install dependencies in CI if you want QA.
 2. Run `node run_tests.js --fast --out QA-REPORT.md` as the build validation step.
-3. Publish `index.html` and documentation files.
+3. Publish `index.html`, `assets/`, and documentation files.
 
 There is no backend runtime requirement.
 

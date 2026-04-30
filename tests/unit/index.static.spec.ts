@@ -4,6 +4,7 @@ import {
   extractIds,
   extractModuleIds,
   extractNavigationModules,
+  readAppSource,
   readIndexHtml
 } from '../helpers/indexPage';
 
@@ -24,12 +25,20 @@ test.describe('index.html static contract', () => {
   });
 
   test('contains the required runtime primitives', () => {
+    const appSource = readAppSource();
+
+    expect(appSource).toContain("document.querySelectorAll('.nav-btn')");
+    expect(appSource).toContain("document.querySelectorAll('.module')");
+    expect(appSource).toContain('function switchTab');
+    expect(appSource).toContain('DOMContentLoaded');
+  });
+
+  test('loads extracted stylesheet and runtime assets', () => {
     const html = readIndexHtml();
 
-    expect(html).toContain("document.querySelectorAll('.nav-btn')");
-    expect(html).toContain("document.querySelectorAll('.module')");
-    expect(html).toContain('function switchTab');
-    expect(html).toContain('DOMContentLoaded');
+    expect(html).toContain('href="assets/css/oscm.css"');
+    expect(html).toContain('src="assets/js/oscm.js"');
+    expect(html).not.toContain('<style>');
   });
 
   test('all tab buttons target a tab panel that exists in the same module', () => {

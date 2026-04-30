@@ -21,7 +21,7 @@ import { resolve } from 'node:path';
 const TEST_MODULES = {
   unit: {
     name: 'Static Unit Contract',
-    description: 'Parses index.html and validates structural contracts.',
+    description: 'Parses static app files and validates structural contracts.',
     command: ['npx', ['playwright', 'test', 'tests/unit', '--project=chromium', '--reporter=line']]
   },
   integration: {

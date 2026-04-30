@@ -13,6 +13,7 @@ frontend:
     baseDirectory: /
     files:
       - index.html
+      - assets/**/*
       - QA.md
       - QA-REPORT.md
       - package.json

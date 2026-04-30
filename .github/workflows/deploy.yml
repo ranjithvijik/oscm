@@ -35,6 +35,7 @@ jobs:
           name: oscm-site
           path: |
             index.html
+            assets/
             QA.md
             QA-REPORT-build.md
             package.json
