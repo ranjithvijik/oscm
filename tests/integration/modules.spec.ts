@@ -27,17 +27,33 @@ test.describe('module integration coverage', () => {
   });
 
   test('keeps modules separated if the extracted stylesheet is unavailable', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
     await page.route('**/assets/css/oscm.css', async (route) => {
       await route.fulfill({ status: 404, body: '' });
     });
 
     await page.goto('/index.html');
 
-    const visibleModules = await page.locator('.module').evaluateAll((modules) =>
-      modules.filter((module) => getComputedStyle(module).display !== 'none').map((module) => module.id)
-    );
+    const fallbackLayout = await page.evaluate(() => {
+      const sidebar = document.querySelector('.sidebar')!.getBoundingClientRect();
+      const main = document.querySelector('.main')!.getBoundingClientRect();
+      const visibleModules = [...document.querySelectorAll('.module')]
+        .filter((module) => getComputedStyle(module).display !== 'none')
+        .map((module) => module.id);
 
-    expect(visibleModules).toEqual(['pert-module']);
+      return {
+        sidebarRight: sidebar.right,
+        mainLeft: main.left,
+        visibleModules,
+        overflow: document.documentElement.scrollWidth - window.innerWidth
+      };
+    });
+
+    expect(fallbackLayout.visibleModules).toEqual(['pert-module']);
+    expect(fallbackLayout.mainLeft, 'critical fallback should offset main content after sidebar').toBeGreaterThanOrEqual(
+      fallbackLayout.sidebarRight - 1
+    );
+    expect(fallbackLayout.overflow, 'critical fallback should not horizontally overflow').toBeLessThanOrEqual(1);
     await expect(page.locator('#pert-module')).toBeVisible();
     await expect(page.locator('#breakeven-module')).toBeHidden();
   });

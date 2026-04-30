@@ -25,7 +25,52 @@
     <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
     <style>
-        /* Critical visibility fallback. Keeps modules/tabs separated if the extracted stylesheet is delayed or unavailable. */
+        /* Critical layout fallback. Keeps navigation, modules, and tabs separated if the extracted stylesheet is delayed or unavailable. */
+        html {
+            box-sizing: border-box;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: inherit;
+        }
+
+        body {
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        .app {
+            display: flex;
+            min-height: 100vh;
+            width: 100%;
+        }
+
+        .sidebar {
+            position: fixed;
+            inset: 0 auto 0 0;
+            width: 280px;
+            max-width: 280px;
+            height: 100vh;
+            overflow-y: auto;
+            z-index: 1000;
+        }
+
+        .main {
+            flex: 1;
+            margin-left: 280px;
+            width: calc(100% - 280px);
+            min-width: 0;
+        }
+
+        .main-content {
+            width: 100%;
+            max-width: min(1300px, 100%);
+            margin: 0 auto;
+            padding: 22px 40px;
+        }
+
         .module:not(.active),
         .tab-content:not(.active),
         .practice-answer:not(.show),
@@ -37,6 +82,30 @@
         .module.active,
         .tab-content.active {
             display: block;
+        }
+
+        @media (max-width: 1200px) {
+            .app {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                position: relative;
+                width: 100%;
+                max-width: none;
+                height: auto;
+                max-height: 42vh;
+            }
+
+            .main {
+                margin-left: 0;
+                width: 100%;
+            }
+
+            .main-content {
+                padding-left: clamp(14px, 3vw, 28px);
+                padding-right: clamp(14px, 3vw, 28px);
+            }
         }
     </style>
     <link rel="stylesheet" href="assets/css/oscm.css" />

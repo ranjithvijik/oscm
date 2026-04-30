@@ -38,7 +38,7 @@ test.describe('index.html static contract', () => {
 
     expect(html).toContain('href="assets/css/oscm.css"');
     expect(html).toContain('src="assets/js/oscm.js"');
-    expect(html).toContain('Critical visibility fallback');
+    expect(html).toContain('Critical layout fallback');
   });
 
   test('does not contain hidden control characters that corrupt MathJax formulas', () => {
