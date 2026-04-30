@@ -32,7 +32,7 @@ const TEST_MODULES = {
   uat: {
     name: 'User Acceptance',
     description: 'Exercises learner journeys on desktop and mobile browser profiles.',
-    command: ['npx', ['playwright', 'test', 'tests/uat', '--reporter=line']]
+    command: ['npx', ['playwright', 'test', 'tests/uat', '--reporter=line', '--workers=1']]
   }
 };
 
