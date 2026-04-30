@@ -47,12 +47,14 @@ npm run qa:report       # open the latest HTML report
 
 The integration module suite currently lists **122 tests** and covers every `data-module` entry found in `index.html`.
 
-## Known Failures Caught By The Suite
+## Current Status
 
-At the time this QA system was added, the suite catches existing `index.html` issues:
+The known tab and module traversal failures caught by this suite have been fixed.
+The latest orchestrated run passes all suites:
 
-- `breakeven-patch` tab target is referenced, but the panel is `breakeven-target`.
-- `learning-sim` is referenced by a tab but is not present as a matching panel.
-- `fmea` tab reachability fails in browser execution and is now reported as its own module-specific failure.
-- Browser traversal fails around `dpmo-module`, indicating static markup and parsed browser DOM differ.
-- The UAT study journey fails around `mrp-module` because expected header selectors are missing or malformed in the parsed DOM.
+- Static unit contract: 4/4 passed.
+- Browser integration: 125/125 passed.
+- User acceptance: 6/6 passed.
+
+The browser helpers isolate local QA from third-party CDN/network failures so the
+suite reports application errors instead of internet connectivity noise.

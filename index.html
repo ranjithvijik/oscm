@@ -2530,7 +2530,7 @@
                         <button class="tab" onclick="switchTab(this,'breakeven','sens')">📊 Sensitivity</button>
                         <button class="tab" onclick="switchTab(this,'breakeven','comp')">⚖️ Comparison</button>
                         <button class="tab" onclick="switchTab(this,'breakeven','prac')">🎓 Practice</button>
-                        <button class="tab" onclick="switchTab(this,'breakeven','patch')">🎯 Target Volume</button>
+                        <button class="tab" onclick="switchTab(this,'breakeven','target')">🎯 Target Volume</button>
                     </div>
                     <div class="tab-content active" data-canon-tags="simulator theory visuals" id="breakeven-sim">
                         <section class="theory-section">
@@ -2974,6 +2974,7 @@
                         <button class="tab active" onclick="switchTab(this,'learning','sim')">🔬 Simulator</button>
                         <button class="tab" onclick="switchTab(this,'learning','cumulative')">📈 Cumulative Analysis</button>
                     </div>
+                    <div class="tab-content active" id="learning-sim" data-canon-tags="simulator theory">
                     <section class="theory-section" data-canon-tags="simulator theory">
                         <div class="theory-header">
                             <div class="theory-icon">📚</div>
@@ -3091,10 +3092,21 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <tr id="lc-row">
+                                        <td><strong>Hrs</strong></td>
+                                        <td>100.0</td>
+                                        <td>80.0</td>
+                                        <td>64.0</td>
+                                        <td>51.2</td>
+                                        <td>41.0</td>
+                                        <td>32.8</td>
+                                        <td>26.2</td>
+                                        <td>21.0</td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
+                    </div>
                     </div>
                     <div class="tab-content" id="learning-cumulative" data-canon-tags="simulator">
                         <div class="patch-section">

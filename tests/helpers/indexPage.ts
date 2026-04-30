@@ -60,6 +60,19 @@ export function duplicates(values: string[]): string[] {
 
 export async function collectConsoleProblems(page: Page): Promise<string[]> {
   const problems: string[] = [];
+  await page.route('**/*', async (route) => {
+    const requestUrl = new URL(route.request().url());
+    if (['127.0.0.1', 'localhost'].includes(requestUrl.hostname)) {
+      await route.continue();
+      return;
+    }
+
+    await route.fulfill({
+      status: 204,
+      body: ''
+    });
+  });
+
   page.on('pageerror', (error) => problems.push(`pageerror: ${error.message}`));
   page.on('console', (message) => {
     if (['error'].includes(message.type())) {
