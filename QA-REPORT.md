@@ -1,6 +1,6 @@
 # OSCM Simulator - QA Report
 
-> Generated: **2026-04-30 03:27 UTC** | Grade: **A+** | Pass Rate: **100.0%**
+> Generated: **2026-04-30 12:22 UTC** | Grade: **A+** | Pass Rate: **100.0%**
 
 ## All Suites Passed
 
@@ -10,15 +10,15 @@
 | Passed | 3 |
 | Failed | 0 |
 | Pass Rate | 100.0% `########################` |
-| Duration | 131.41s |
+| Duration | 241.82s |
 
 ## Suite Summary
 
 | Suite | Description | Command | Duration | Status |
 | --- | --- | --- | --- | --- |
-| Static Unit Contract | Parses index.html and validates structural contracts. | `npx playwright test tests/unit --project=chromium --reporter=line` | 2.08s | PASS |
-| Browser Integration | Loads index.html, checks module navigation, responsive layout, and calculators. | `npx playwright test tests/integration --project=chromium --reporter=line` | 96.94s | PASS |
-| User Acceptance | Exercises learner journeys on desktop and mobile browser profiles. | `npx playwright test tests/uat --reporter=line --workers=1` | 32.39s | PASS |
+| Static Unit Contract | Parses index.html and validates structural contracts. | `npx playwright test tests/unit --project=chromium --reporter=line` | 5.73s | PASS |
+| Browser Integration | Loads index.html, checks module navigation, responsive layout, and calculators. | `npx playwright test tests/integration --project=chromium --reporter=line` | 168.29s | PASS |
+| User Acceptance | Exercises learner journeys on desktop and mobile browser profiles. | `npx playwright test tests/uat --reporter=line --workers=1` | 67.78s | PASS |
 
 ## Details
 
@@ -26,36 +26,20 @@
 
 - Status: **PASSED**
 - Command: `npx playwright test tests/unit --project=chromium --reporter=line`
-- Duration: 2.08s
+- Duration: 5.73s
 
 <details>
 <summary>Output</summary>
 
 ```text
-Running 4 tests using 2 workers
+Running 4 tests using 4 workers
 
-
-
-
-
-
-
-
-
-[1/4] [chromium]  tests/unit/index.static.spec.ts:11:3  index.html static contract  has one unique content module for every navigation item
+[1/4] [chromium]  tests/unit/index.static.spec.ts:26:3  index.html static contract  contains the required runtime primitives
 [2/4] [chromium]  tests/unit/index.static.spec.ts:22:3  index.html static contract  does not contain duplicate DOM ids
-[3/4] [chromium]  tests/unit/index.static.spec.ts:26:3  index.html static contract  contains the required runtime primitives
+[3/4] [chromium]  tests/unit/index.static.spec.ts:11:3  index.html static contract  has one unique content module for every navigation item
 [4/4] [chromium]  tests/unit/index.static.spec.ts:35:3  index.html static contract  all tab buttons target a tab panel that exists in the same module
-  4 passed (886ms)
-[WebServer] 127.0.0.1 - - [30/Apr/2026 03:24:50] "GET /index.html HTTP/1.1" 200 -
-(node:2378) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
-(Use `node --trace-warnings ...` to show where the warning was created)
-(node:2379) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
-(Use `node --trace-warnings ...` to show where the warning was created)
-(node:2378) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
-(Use `node --trace-warnings ...` to show where the warning was created)
-(node:2379) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
-(Use `node --trace-warnings ...` to show where the warning was created)
+  4 passed (2.3s)
+[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 08:18:51] "GET /index.html HTTP/1.1" 200 -
 ```
 
 </details>
@@ -64,85 +48,85 @@ Running 4 tests using 2 workers
 
 - Status: **PASSED**
 - Command: `npx playwright test tests/integration --project=chromium --reporter=line`
-- Duration: 96.94s
+- Duration: 168.29s
 
 <details>
 <summary>Output</summary>
 
 ```text
-Running 125 tests using 2 workers
+Running 131 tests using 4 workers
+
+[1/131] [chromium]  tests/integration/calculators.spec.ts:5:3  calculator integration checks  PERT probability calculator updates from inputs
+[2/131] [chromium]  tests/integration/calculators.spec.ts:37:3  calculator integration checks  safety stock calculator updates safety stock and reorder point
+[3/131] [chromium]  tests/integration/calculators.spec.ts:54:3  calculator integration checks  line balancing calculator updates from visible input IDs
+[4/131] [chromium]  tests/integration/calculators.spec.ts:21:3  calculator integration checks  EOQ calculator updates quantity and total cost when sliders change
 
 
 
 
+[5/131] [chromium]  tests/integration/calculators.spec.ts:72:3  calculator integration checks  break-even target volume uses the canonical break-even inputs
+
+[6/131] [chromium]  tests/integration/calculators.spec.ts:90:3  calculator integration checks  transportation module renders allocation summary with total cost
+[7/131] [chromium]  tests/integration/calculators.spec.ts:103:3  calculator integration checks  PERT canonical estimates, variance builder, and animation controls render
 
 
+[8/131] [chromium]  tests/integration/calculators.spec.ts:122:3  calculator integration checks  SQC legacy x-bar and range chart containers are populated
+
+[9/131] [chromium]  tests/integration/calculators.spec.ts:135:3  calculator integration checks  forecast comparison, lean improvement, regression, and capability outputs update
+
+[10/131] [chromium]  tests/integration/modules.spec.ts:18:3  module integration coverage  loads the default page without app console errors
+[11/131] [chromium]  tests/integration/modules.spec.ts:30:5  module integration coverage  pert module opens from navigation with non-empty content
 
 
+[12/131] [chromium]  tests/integration/modules.spec.ts:30:5  module integration coverage  breakeven module opens from navigation with non-empty content
 
-[1/125] [chromium]  tests/integration/calculators.spec.ts:5:3  calculator integration checks  PERT probability calculator updates from inputs
-[2/125] [chromium]  tests/integration/calculators.spec.ts:21:3  calculator integration checks  EOQ calculator updates quantity and total cost when sliders change
+[13/131] [chromium]  tests/integration/modules.spec.ts:30:5  module integration coverage  decision module opens from navigation with non-empty content
 
+[14/131] [chromium]  tests/integration/modules.spec.ts:30:5  module integration coverage  learning module opens from navigation with non-empty content
 
-[3/125] [chromium]  tests/integration/calculators.spec.ts:37:3  calculator integration checks  safety stock calculator updates safety stock and reorder point
+[15/131] [chromium]  tests/integration/modules.spec.ts:30:5  module integration coverage  linebalance module opens from navigation with non-empty content
 
-[4/125] [chromium]  tests/integration/modules.spec.ts:18:3  module integration coverage  loads the default page without app console errors
+[16/131] [chromium]  tests/integration/modules.spec.ts:30:5  module integration coverage  queuing module opens from navigation with non-empty content
 
-[5/125] [chromium]  tests/integration/modules.spec.ts:30:5  module integration coverage  pert module opens from navigation with non-empty content
+[17/131] [chromium]  tests/integration/modules.spec.ts:30:5  module integration coverage  littles module opens from navigation with non-empty content
 
-[6/125] [chromium]  tests/integration/modules.spec.ts:30:5  module integration coverage  breakeven module opens from navigation with non-empty content
+... 327 lines omitted ...
 
-[7/125] [chromium]  tests/integration/modules.spec.ts:30:5  module integration coverage  decision module opens from navigation with non-empty content
-
-[8/125] [chromium]  tests/integration/modules.spec.ts:30:5  module integration coverage  learning module opens from navigation with non-empty content
-
-[9/125] [chromium]  tests/integration/modules.spec.ts:30:5  module integration coverage  linebalance module opens from navigation with non-empty content
-
-[10/125] [chromium]  tests/integration/modules.spec.ts:30:5  module integration coverage  queuing module opens from navigation with non-empty content
-
-[11/125] [chromium]  tests/integration/modules.spec.ts:30:5  module integration coverage  littles module opens from navigation with non-empty content
-
-[12/125] [chromium]  tests/integration/modules.spec.ts:30:5  module integration coverage  service module opens from navigation with non-empty content
-
-[13/125] [chromium]  tests/integration/modules.spec.ts:30:5  module integration coverage  sqc module opens from navigation with non-empty content
-
-... 325 lines omitted ...
-
-[WebServer] 127.0.0.1 - - [30/Apr/2026 03:26:04] "GET /index.html HTTP/1.1" 200 -
-[WebServer] 127.0.0.1 - - [30/Apr/2026 03:26:05] "GET /index.html HTTP/1.1" 200 -
-[WebServer] 127.0.0.1 - - [30/Apr/2026 03:26:06] "GET /index.html HTTP/1.1" 200 -
-[WebServer] 127.0.0.1 - - [30/Apr/2026 03:26:06] "GET /index.html HTTP/1.1" 200 -
-[WebServer] 127.0.0.1 - - [30/Apr/2026 03:26:07] "GET /index.html HTTP/1.1" 200 -
-[WebServer] 127.0.0.1 - - [30/Apr/2026 03:26:08] "GET /index.html HTTP/1.1" 200 -
-[WebServer] 127.0.0.1 - - [30/Apr/2026 03:26:08] "GET /index.html HTTP/1.1" 200 -
-[WebServer] 127.0.0.1 - - [30/Apr/2026 03:26:09] "GET /index.html HTTP/1.1" 200 -
-[WebServer] 127.0.0.1 - - [30/Apr/2026 03:26:10] "GET /index.html HTTP/1.1" 200 -
-[WebServer] 127.0.0.1 - - [30/Apr/2026 03:26:11] "GET /index.html HTTP/1.1" 200 -
-[WebServer] 127.0.0.1 - - [30/Apr/2026 03:26:11] "GET /index.html HTTP/1.1" 200 -
-[WebServer] 127.0.0.1 - - [30/Apr/2026 03:26:12] "GET /index.html HTTP/1.1" 200 -
-[WebServer] 127.0.0.1 - - [30/Apr/2026 03:26:12] "GET /index.html HTTP/1.1" 200 -
-[WebServer] 127.0.0.1 - - [30/Apr/2026 03:26:13] "GET /index.html HTTP/1.1" 200 -
-[WebServer] 127.0.0.1 - - [30/Apr/2026 03:26:13] "GET /index.html HTTP/1.1" 200 -
-[WebServer] 127.0.0.1 - - [30/Apr/2026 03:26:14] "GET /index.html HTTP/1.1" 200 -
-[WebServer] 127.0.0.1 - - [30/Apr/2026 03:26:15] "GET /index.html HTTP/1.1" 200 -
-[WebServer] 127.0.0.1 - - [30/Apr/2026 03:26:16] "GET /index.html HTTP/1.1" 200 -
-[WebServer] 127.0.0.1 - - [30/Apr/2026 03:26:16] "GET /index.html HTTP/1.1" 200 -
-[WebServer] 127.0.0.1 - - [30/Apr/2026 03:26:17] "GET /index.html HTTP/1.1" 200 -
-[WebServer] 127.0.0.1 - - [30/Apr/2026 03:26:18] "GET /index.html HTTP/1.1" 200 -
-[WebServer] 127.0.0.1 - - [30/Apr/2026 03:26:18] "GET /index.html HTTP/1.1" 200 -
-[WebServer] 127.0.0.1 - - [30/Apr/2026 03:26:19] "GET /index.html HTTP/1.1" 200 -
-[WebServer] 127.0.0.1 - - [30/Apr/2026 03:26:20] "GET /index.html HTTP/1.1" 200 -
-[WebServer] 127.0.0.1 - - [30/Apr/2026 03:26:20] "GET /index.html HTTP/1.1" 200 -
-[WebServer] 127.0.0.1 - - [30/Apr/2026 03:26:21] "GET /index.html HTTP/1.1" 200 -
-[WebServer] 127.0.0.1 - - [30/Apr/2026 03:26:22] "GET /index.html HTTP/1.1" 200 -
-[WebServer] 127.0.0.1 - - [30/Apr/2026 03:26:22] "GET /index.html HTTP/1.1" 200 -
-[WebServer] 127.0.0.1 - - [30/Apr/2026 03:26:23] "GET /index.html HTTP/1.1" 200 -
-[WebServer] 127.0.0.1 - - [30/Apr/2026 03:26:24] "GET /index.html HTTP/1.1" 200 -
-[WebServer] 127.0.0.1 - - [30/Apr/2026 03:26:24] "GET /index.html HTTP/1.1" 200 -
-[WebServer] 127.0.0.1 - - [30/Apr/2026 03:26:25] "GET /index.html HTTP/1.1" 200 -
-[WebServer] 127.0.0.1 - - [30/Apr/2026 03:26:26] "GET /index.html HTTP/1.1" 200 -
-[WebServer] 127.0.0.1 - - [30/Apr/2026 03:26:26] "GET /index.html HTTP/1.1" 200 -
-[WebServer] 127.0.0.1 - - [30/Apr/2026 03:26:27] "GET /index.html HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 08:20:58] "GET /index.html HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 08:20:59] "GET /index.html HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 08:20:59] "GET /index.html HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 08:21:02] "GET /index.html HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 08:21:02] "GET /index.html HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 08:21:02] "GET /index.html HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 08:21:05] "GET /index.html HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 08:21:05] "GET /index.html HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 08:21:06] "GET /index.html HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 08:21:09] "GET /index.html HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 08:21:09] "GET /index.html HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 08:21:10] "GET /index.html HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 08:21:10] "GET /index.html HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 08:21:13] "GET /index.html HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 08:21:13] "GET /index.html HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 08:21:13] "GET /index.html HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 08:21:14] "GET /index.html HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 08:21:17] "GET /index.html HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 08:21:18] "GET /index.html HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 08:21:18] "GET /index.html HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 08:21:18] "GET /index.html HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 08:21:22] "GET /index.html HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 08:21:23] "GET /index.html HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 08:21:23] "GET /index.html HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 08:21:23] "GET /index.html HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 08:21:27] "GET /index.html HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 08:21:27] "GET /index.html HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 08:21:27] "GET /index.html HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 08:21:28] "GET /index.html HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 08:21:32] "GET /index.html HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 08:21:32] "GET /index.html HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 08:21:32] "GET /index.html HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 08:21:33] "GET /index.html HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 08:21:37] "GET /index.html HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 08:21:37] "GET /index.html HTTP/1.1" 200 -
 ```
 
 </details>
@@ -151,7 +135,7 @@ Running 125 tests using 2 workers
 
 - Status: **PASSED**
 - Command: `npx playwright test tests/uat --reporter=line --workers=1`
-- Duration: 32.39s
+- Duration: 67.78s
 
 <details>
 <summary>Output</summary>
@@ -159,19 +143,11 @@ Running 125 tests using 2 workers
 ```text
 Running 6 tests using 1 worker
 
-
-
-
-
 [1/6] [chromium]  tests/uat/index.uat.spec.ts:21:3  user acceptance flows  student can browse the primary study journey
 
 [2/6] [chromium]  tests/uat/index.uat.spec.ts:35:3  user acceptance flows  user can switch tabs inside major modules
 
 [3/6] [chromium]  tests/uat/index.uat.spec.ts:56:3  user acceptance flows  module inventory remains discoverable to a learner
-
-
-
-
 
 [4/6] [mobile-chrome]  tests/uat/index.uat.spec.ts:21:3  user acceptance flows  student can browse the primary study journey
 
@@ -179,22 +155,14 @@ Running 6 tests using 1 worker
 
 [6/6] [mobile-chrome]  tests/uat/index.uat.spec.ts:56:3  user acceptance flows  module inventory remains discoverable to a learner
 
-  6 passed (31.5s)
-[WebServer] 127.0.0.1 - - [30/Apr/2026 03:26:29] "GET /index.html HTTP/1.1" 200 -
-(node:4728) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
-(Use `node --trace-warnings ...` to show where the warning was created)
-(node:4728) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
-(Use `node --trace-warnings ...` to show where the warning was created)
-[WebServer] 127.0.0.1 - - [30/Apr/2026 03:26:30] "GET /index.html HTTP/1.1" 200 -
-[WebServer] 127.0.0.1 - - [30/Apr/2026 03:26:34] "GET /index.html HTTP/1.1" 200 -
-[WebServer] 127.0.0.1 - - [30/Apr/2026 03:26:35] "GET /index.html HTTP/1.1" 200 -
-(node:4841) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
-(Use `node --trace-warnings ...` to show where the warning was created)
-(node:4841) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
-(Use `node --trace-warnings ...` to show where the warning was created)
-[WebServer] 127.0.0.1 - - [30/Apr/2026 03:26:45] "GET /index.html HTTP/1.1" 200 -
-[WebServer] 127.0.0.1 - - [30/Apr/2026 03:26:49] "GET /index.html HTTP/1.1" 200 -
-[WebServer] 127.0.0.1 - - [30/Apr/2026 03:26:51] "GET /index.html HTTP/1.1" 200 -
+  6 passed (1.1m)
+[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 08:21:45] "GET /index.html HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 08:21:46] "GET /index.html HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 08:21:54] "GET /index.html HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 08:21:57] "GET /index.html HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 08:22:15] "GET /index.html HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 08:22:23] "GET /index.html HTTP/1.1" 200 -
+[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 08:22:27] "GET /index.html HTTP/1.1" 200 -
 ```
 
 </details>
@@ -212,4 +180,4 @@ make t-uat
 ```
 
 ---
-Generated by `run_tests.js` at 2026-04-30 03:27 UTC
+Generated by `run_tests.js` at 2026-04-30 12:22 UTC
