@@ -1,6 +1,6 @@
 # OSCM Simulator - QA Report
 
-> Generated: **2026-04-30 15:31 UTC** | Grade: **A+** | Pass Rate: **100.0%**
+> Generated: **2026-04-30 15:44 UTC** | Grade: **A+** | Pass Rate: **100.0%**
 
 ## All Suites Passed
 
@@ -10,15 +10,15 @@
 | Passed | 3 |
 | Failed | 0 |
 | Pass Rate | 100.0% `########################` |
-| Duration | 225.06s |
+| Duration | 153.55s |
 
 ## Suite Summary
 
 | Suite | Description | Command | Duration | Status |
 | --- | --- | --- | --- | --- |
-| Static Unit Contract | Parses static app files and validates structural contracts. | `npx playwright test tests/unit --project=chromium --reporter=line` | 4.34s | PASS |
-| Browser Integration | Loads index.html, checks module navigation, responsive layout, and calculators. | `npx playwright test tests/integration --project=chromium --reporter=line` | 173.46s | PASS |
-| User Acceptance | Exercises learner journeys on desktop and mobile browser profiles. | `npx playwright test tests/uat --reporter=line --workers=1` | 47.24s | PASS |
+| Static Unit Contract | Parses static app files and validates structural contracts. | `npx playwright test tests/unit --project=chromium --reporter=line` | 2.16s | PASS |
+| Browser Integration | Loads index.html, checks module navigation, responsive layout, and calculators. | `npx playwright test tests/integration --project=chromium --reporter=line` | 116.63s | PASS |
+| User Acceptance | Exercises learner journeys on desktop and mobile browser profiles. | `npx playwright test tests/uat --reporter=line --workers=1` | 34.76s | PASS |
 
 ## Details
 
@@ -26,22 +26,38 @@
 
 - Status: **PASSED**
 - Command: `npx playwright test tests/unit --project=chromium --reporter=line`
-- Duration: 4.34s
+- Duration: 2.16s
 
 <details>
 <summary>Output</summary>
 
 ```text
-Running 6 tests using 4 workers
+Running 6 tests using 2 workers
 
-[1/6] [chromium]  tests/unit/index.static.spec.ts:27:3  index.html static contract  contains the required runtime primitives
+
+
+
+
+
+
+
+
+[1/6] [chromium]  tests/unit/index.static.spec.ts:23:3  index.html static contract  does not contain duplicate DOM ids
 [2/6] [chromium]  tests/unit/index.static.spec.ts:12:3  index.html static contract  has one unique content module for every navigation item
-[3/6] [chromium]  tests/unit/index.static.spec.ts:36:3  index.html static contract  loads extracted stylesheet and runtime assets
-[4/6] [chromium]  tests/unit/index.static.spec.ts:44:3  index.html static contract  does not contain hidden control characters that corrupt MathJax formulas
-[5/6] [chromium]  tests/unit/index.static.spec.ts:54:3  index.html static contract  all tab buttons target a tab panel that exists in the same module
-[6/6] [chromium]  tests/unit/index.static.spec.ts:23:3  index.html static contract  does not contain duplicate DOM ids
-  6 passed (2.4s)
-[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 11:28:04] "GET /index.html HTTP/1.1" 200 -
+[3/6] [chromium]  tests/unit/index.static.spec.ts:27:3  index.html static contract  contains the required runtime primitives
+[4/6] [chromium]  tests/unit/index.static.spec.ts:36:3  index.html static contract  loads extracted stylesheet and runtime assets
+[5/6] [chromium]  tests/unit/index.static.spec.ts:44:3  index.html static contract  does not contain hidden control characters that corrupt MathJax formulas
+[6/6] [chromium]  tests/unit/index.static.spec.ts:54:3  index.html static contract  all tab buttons target a tab panel that exists in the same module
+  6 passed (937ms)
+[WebServer] 127.0.0.1 - - [30/Apr/2026 15:42:26] "GET /index.html HTTP/1.1" 200 -
+(node:2464) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:2463) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:2464) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:2463) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
 ```
 
 </details>
@@ -50,24 +66,31 @@ Running 6 tests using 4 workers
 
 - Status: **PASSED**
 - Command: `npx playwright test tests/integration --project=chromium --reporter=line`
-- Duration: 173.46s
+- Duration: 116.63s
 
 <details>
 <summary>Output</summary>
 
 ```text
-Running 135 tests using 4 workers
+Running 135 tests using 2 workers
 
-[1/135] [chromium]  tests/integration/calculators.spec.ts:5:3  calculator integration checks  PERT probability calculator updates from inputs
-[2/135] [chromium]  tests/integration/calculators.spec.ts:54:3  calculator integration checks  line balancing calculator updates from visible input IDs
+
+
+
+
+
+
+
+
+[1/135] [chromium]  tests/integration/calculators.spec.ts:21:3  calculator integration checks  EOQ calculator updates quantity and total cost when sliders change
+[2/135] [chromium]  tests/integration/calculators.spec.ts:5:3  calculator integration checks  PERT probability calculator updates from inputs
+
+
+
+
+
 [3/135] [chromium]  tests/integration/calculators.spec.ts:37:3  calculator integration checks  safety stock calculator updates safety stock and reorder point
-[4/135] [chromium]  tests/integration/calculators.spec.ts:21:3  calculator integration checks  EOQ calculator updates quantity and total cost when sliders change
-
-
-
-
-
-
+[4/135] [chromium]  tests/integration/calculators.spec.ts:54:3  calculator integration checks  line balancing calculator updates from visible input IDs
 
 
 
@@ -83,52 +106,45 @@ Running 135 tests using 4 workers
 
 
 [7/135] [chromium]  tests/integration/calculators.spec.ts:103:3  calculator integration checks  PERT canonical estimates, variance builder, and animation controls render
-[8/135] [chromium]  tests/integration/calculators.spec.ts:122:3  calculator integration checks  SQC legacy x-bar and range chart containers are populated
 
 
+... 876 lines omitted ...
 
-
-
-
-[9/135] [chromium]  tests/integration/calculators.spec.ts:135:3  calculator integration checks  forecast comparison, lean improvement, regression, and capability outputs update
-
-... 875 lines omitted ...
-
-[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 11:30:44] "GET /assets/css/oscm.css HTTP/1.1" 200 -
-[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 11:30:44] "GET /assets/js/oscm.js HTTP/1.1" 200 -
-[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 11:30:44] "GET /index.html HTTP/1.1" 200 -
-[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 11:30:44] "GET /assets/css/oscm.css HTTP/1.1" 200 -
-[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 11:30:44] "GET /assets/js/oscm.js HTTP/1.1" 200 -
-[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 11:30:45] "GET /index.html HTTP/1.1" 200 -
-[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 11:30:45] "GET /assets/css/oscm.css HTTP/1.1" 200 -
-[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 11:30:45] "GET /assets/js/oscm.js HTTP/1.1" 200 -
-[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 11:30:48] "GET /index.html HTTP/1.1" 200 -
-[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 11:30:48] "GET /index.html HTTP/1.1" 200 -
-[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 11:30:48] "GET /assets/js/oscm.js HTTP/1.1" 200 -
-[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 11:30:48] "GET /assets/css/oscm.css HTTP/1.1" 200 -
-[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 11:30:48] "GET /assets/css/oscm.css HTTP/1.1" 200 -
-[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 11:30:48] "GET /assets/js/oscm.js HTTP/1.1" 200 -
-[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 11:30:48] "GET /index.html HTTP/1.1" 200 -
-[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 11:30:48] "GET /assets/css/oscm.css HTTP/1.1" 200 -
-[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 11:30:48] "GET /assets/js/oscm.js HTTP/1.1" 200 -
-[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 11:30:49] "GET /index.html HTTP/1.1" 200 -
-[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 11:30:49] "GET /assets/css/oscm.css HTTP/1.1" 200 -
-[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 11:30:49] "GET /assets/js/oscm.js HTTP/1.1" 200 -
-[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 11:30:52] "GET /index.html HTTP/1.1" 200 -
-[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 11:30:52] "GET /assets/css/oscm.css HTTP/1.1" 200 -
-[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 11:30:52] "GET /assets/js/oscm.js HTTP/1.1" 200 -
-[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 11:30:52] "GET /index.html HTTP/1.1" 200 -
-[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 11:30:52] "GET /assets/css/oscm.css HTTP/1.1" 200 -
-[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 11:30:52] "GET /assets/js/oscm.js HTTP/1.1" 200 -
-[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 11:30:53] "GET /index.html HTTP/1.1" 200 -
-[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 11:30:53] "GET /assets/css/oscm.css HTTP/1.1" 200 -
-[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 11:30:53] "GET /assets/js/oscm.js HTTP/1.1" 200 -
-[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 11:30:53] "GET /index.html HTTP/1.1" 200 -
-[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 11:30:53] "GET /assets/css/oscm.css HTTP/1.1" 200 -
-[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 11:30:53] "GET /assets/js/oscm.js HTTP/1.1" 200 -
-[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 11:30:56] "GET /index.html HTTP/1.1" 200 -
-[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 11:30:56] "GET /assets/css/oscm.css HTTP/1.1" 200 -
-[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 11:30:56] "GET /assets/js/oscm.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [30/Apr/2026 15:44:14] "GET /assets/css/oscm.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [30/Apr/2026 15:44:14] "GET /assets/js/oscm.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [30/Apr/2026 15:44:15] "GET /index.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [30/Apr/2026 15:44:15] "GET /assets/js/oscm.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [30/Apr/2026 15:44:15] "GET /assets/css/oscm.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [30/Apr/2026 15:44:15] "GET /index.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [30/Apr/2026 15:44:15] "GET /assets/css/oscm.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [30/Apr/2026 15:44:15] "GET /assets/js/oscm.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [30/Apr/2026 15:44:16] "GET /index.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [30/Apr/2026 15:44:16] "GET /assets/css/oscm.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [30/Apr/2026 15:44:16] "GET /assets/js/oscm.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [30/Apr/2026 15:44:17] "GET /index.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [30/Apr/2026 15:44:17] "GET /assets/css/oscm.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [30/Apr/2026 15:44:17] "GET /assets/js/oscm.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [30/Apr/2026 15:44:17] "GET /index.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [30/Apr/2026 15:44:17] "GET /assets/css/oscm.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [30/Apr/2026 15:44:17] "GET /assets/js/oscm.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [30/Apr/2026 15:44:18] "GET /index.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [30/Apr/2026 15:44:18] "GET /assets/js/oscm.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [30/Apr/2026 15:44:18] "GET /assets/css/oscm.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [30/Apr/2026 15:44:19] "GET /index.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [30/Apr/2026 15:44:19] "GET /assets/css/oscm.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [30/Apr/2026 15:44:19] "GET /assets/js/oscm.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [30/Apr/2026 15:44:19] "GET /index.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [30/Apr/2026 15:44:19] "GET /assets/css/oscm.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [30/Apr/2026 15:44:19] "GET /assets/js/oscm.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [30/Apr/2026 15:44:20] "GET /index.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [30/Apr/2026 15:44:20] "GET /assets/css/oscm.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [30/Apr/2026 15:44:20] "GET /assets/js/oscm.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [30/Apr/2026 15:44:21] "GET /index.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [30/Apr/2026 15:44:21] "GET /assets/css/oscm.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [30/Apr/2026 15:44:21] "GET /assets/js/oscm.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [30/Apr/2026 15:44:22] "GET /index.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [30/Apr/2026 15:44:22] "GET /assets/css/oscm.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [30/Apr/2026 15:44:22] "GET /assets/js/oscm.js HTTP/1.1" 200 -
 ```
 
 </details>
@@ -137,13 +153,17 @@ Running 135 tests using 4 workers
 
 - Status: **PASSED**
 - Command: `npx playwright test tests/uat --reporter=line --workers=1`
-- Duration: 47.24s
+- Duration: 34.76s
 
 <details>
 <summary>Output</summary>
 
 ```text
 Running 6 tests using 1 worker
+
+
+
+
 
 [1/6] [chromium]  tests/uat/index.uat.spec.ts:21:3  user acceptance flows  student can browse the primary study journey
 
@@ -154,6 +174,10 @@ Running 6 tests using 1 worker
 
 
 [3/6] [chromium]  tests/uat/index.uat.spec.ts:56:3  user acceptance flows  module inventory remains discoverable to a learner
+
+
+
+
 
 
 
@@ -169,26 +193,34 @@ Running 6 tests using 1 worker
 
 
 
-  6 passed (44.6s)
-[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 11:31:03] "GET /index.html HTTP/1.1" 200 -
-[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 11:31:04] "GET /index.html HTTP/1.1" 200 -
-[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 11:31:04] "GET /assets/css/oscm.css HTTP/1.1" 200 -
-[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 11:31:04] "GET /assets/js/oscm.js HTTP/1.1" 200 -
-[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 11:31:09] "GET /index.html HTTP/1.1" 200 -
-[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 11:31:09] "GET /assets/css/oscm.css HTTP/1.1" 200 -
-[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 11:31:09] "GET /assets/js/oscm.js HTTP/1.1" 200 -
-[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 11:31:11] "GET /index.html HTTP/1.1" 200 -
-[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 11:31:11] "GET /assets/css/oscm.css HTTP/1.1" 200 -
-[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 11:31:11] "GET /assets/js/oscm.js HTTP/1.1" 200 -
-[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 11:31:26] "GET /index.html HTTP/1.1" 200 -
-[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 11:31:26] "GET /assets/css/oscm.css HTTP/1.1" 200 -
-[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 11:31:26] "GET /assets/js/oscm.js HTTP/1.1" 200 -
-[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 11:31:31] "GET /index.html HTTP/1.1" 200 -
-[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 11:31:31] "GET /assets/css/oscm.css HTTP/1.1" 200 -
-[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 11:31:31] "GET /assets/js/oscm.js HTTP/1.1" 200 -
-[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 11:31:34] "GET /index.html HTTP/1.1" 200 -
-[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 11:31:34] "GET /assets/css/oscm.css HTTP/1.1" 200 -
-[WebServer] ::ffff:127.0.0.1 - - [30/Apr/2026 11:31:34] "GET /assets/js/oscm.js HTTP/1.1" 200 -
+  6 passed (33.8s)
+[WebServer] 127.0.0.1 - - [30/Apr/2026 15:44:24] "GET /index.html HTTP/1.1" 200 -
+(node:5270) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:5270) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] 127.0.0.1 - - [30/Apr/2026 15:44:25] "GET /index.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [30/Apr/2026 15:44:25] "GET /assets/css/oscm.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [30/Apr/2026 15:44:25] "GET /assets/js/oscm.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [30/Apr/2026 15:44:29] "GET /index.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [30/Apr/2026 15:44:29] "GET /assets/css/oscm.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [30/Apr/2026 15:44:29] "GET /assets/js/oscm.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [30/Apr/2026 15:44:31] "GET /index.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [30/Apr/2026 15:44:31] "GET /assets/css/oscm.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [30/Apr/2026 15:44:31] "GET /assets/js/oscm.js HTTP/1.1" 200 -
+(node:5391) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:5391) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] 127.0.0.1 - - [30/Apr/2026 15:44:42] "GET /index.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [30/Apr/2026 15:44:42] "GET /assets/css/oscm.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [30/Apr/2026 15:44:42] "GET /assets/js/oscm.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [30/Apr/2026 15:44:46] "GET /index.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [30/Apr/2026 15:44:46] "GET /assets/css/oscm.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [30/Apr/2026 15:44:46] "GET /assets/js/oscm.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [30/Apr/2026 15:44:48] "GET /index.html HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [30/Apr/2026 15:44:48] "GET /assets/css/oscm.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [30/Apr/2026 15:44:48] "GET /assets/js/oscm.js HTTP/1.1" 200 -
 ```
 
 </details>
@@ -206,4 +238,4 @@ make t-uat
 ```
 
 ---
-Generated by `run_tests.js` at 2026-04-30 15:31 UTC
+Generated by `run_tests.js` at 2026-04-30 15:44 UTC
