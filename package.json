@@ -1,0 +1,20 @@
+{
+  "name": "oscm-index-qa",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node run_tests.js",
+    "qa": "playwright test",
+    "qa:ci": "node run_tests.js --out QA-REPORT.md",
+    "qa:unit": "playwright test tests/unit",
+    "qa:integration": "playwright test tests/integration",
+    "qa:uat": "playwright test tests/uat",
+    "qa:headed": "playwright test --headed",
+    "qa:report": "playwright show-report",
+    "qa:install": "playwright install chromium"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.59.1"
+  }
+}
