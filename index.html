@@ -2067,6 +2067,7 @@
         .tab-content { display: none; }
         .tab-content.active { display: block; }
     </style>
+    <script src="https://cdn.plot.ly/plotly-2.32.0.min.js"></script>
 </head>
 
 <body>
@@ -2468,8 +2469,11 @@
                             <div class="input-group"><label class="input-label">Sum of CP Variances (&Sigma;&sigma;&sup2;)</label><input type="number" id="pert-var" value="11.89" step="0.1" oninput="calcPERTProb()"></div>
                         </div>
                         <div>
-                            <div class="grid-2 mb-3">
-                                <div class="metric-card highlight"><div class="metric-value" id="pert-z">-0.87</div><div class="metric-label">Z-Score</div></div>
+                            <div id="pert-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div class="grid-2 mb-3">
+                                <div id="be-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div id="lc-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div class="metric-card highlight"><div class="metric-value" id="pert-z">-0.87</div><div class="metric-label">Z-Score</div></div>
                                 <div class="metric-card danger"><div class="metric-value" id="pert-prob">19.2%</div><div class="metric-label">P(Complete by D)</div></div>
                             </div>
                             <div class="alert alert-warning"><div class="alert-icon">⚠️</div><div>Only a <strong>19%</strong> chance of completing in 35 weeks. The project manager should plan for 38+ weeks or crash critical activities.</div></div>
@@ -2654,7 +2658,9 @@
                                     </div>
                                 </div>
                                 <div class="grid-2 mt-4">
-                                    <div class="metric-card highlight">
+                                    <div id="be-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div id="lc-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div class="metric-card highlight">
                                         <div class="metric-value" id="be-u-m">1,250</div>
                                         <div class="metric-label">BEP Units</div>
                                     </div>
@@ -2695,7 +2701,8 @@
                                             id="cmp-be-p1" type="number" value="100" /></div>
                                     <div class="input-group"><label class="input-label">Variable Cost ($)</label><input
                                             id="cmp-be-vc1" type="number" value="60" /></div>
-                                    <div class="metric-card highlight mt-4">
+                                    <div id="risk-chart" style="width:100%; height:350px; margin-bottom:20px;"></div>
+<div class="metric-card highlight mt-4">
                                         <div class="metric-value" id="cmp-be-bep1">1,250</div>
                                         <div class="metric-label">BEP Units</div>
                                     </div>
@@ -2769,7 +2776,9 @@
                                     </div>
                                 </div>
                                 <div class="card">
-                                    <div class="metric-card highlight">
+                                    <div id="be-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div id="lc-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div class="metric-card highlight">
                                         <div class="metric-value" id="tv-q-result">1,875</div>
                                         <div class="metric-label">Required Units</div>
                                     </div>
@@ -3109,7 +3118,9 @@
                                 </div>
                                 <div class="card">
                                     <div class="grid-2">
-                                        <div class="metric-card highlight">
+                                        <div id="be-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div id="lc-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div class="metric-card highlight">
                                             <div class="metric-value" id="lc-unit-time">47.5</div>
                                             <div class="metric-label">Time for Unit X</div>
                                         </div>
@@ -3175,8 +3186,11 @@
                             <div class="input-group"><label class="input-label">Actual Number of Workstations</label><input type="number" id="lb-stations" value="4" oninput="calcLineBalance()"></div>
                         </div>
                         <div>
-                            <div class="grid-2 mb-3">
-                                <div class="metric-card highlight"><div class="metric-value" id="lb-cycle">60s</div><div class="metric-label">Cycle Time</div></div>
+                            <div id="pert-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div class="grid-2 mb-3">
+                                <div id="be-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div id="lc-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div class="metric-card highlight"><div class="metric-value" id="lb-cycle">60s</div><div class="metric-label">Cycle Time</div></div>
                                 <div class="metric-card"><div class="metric-value" id="lb-nmin">4</div><div class="metric-label">Min Workstations</div></div>
                             </div>
                             <div class="grid-2">
@@ -3416,7 +3430,9 @@
                                             class="equation-result" id="q-lq-r">=1.33</span></div>
                                 </div>
                                 <div class="grid-2 mt-4">
-                                    <div class="metric-card highlight">
+                                    <div id="be-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div id="lc-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div class="metric-card highlight">
                                         <div class="metric-value" id="q-rho-m">66.7%</div>
                                         <div class="metric-label">Utilization</div>
                                     </div>
@@ -3467,7 +3483,8 @@
                                             id="cmp-q-l1" type="number" value="10" /></div>
                                     <div class="input-group"><label class="input-label">Service Rate (μ)</label><input
                                             id="cmp-q-m1" type="number" value="15" /></div>
-                                    <div class="metric-card highlight mt-4">
+                                    <div id="risk-chart" style="width:100%; height:350px; margin-bottom:20px;"></div>
+<div class="metric-card highlight mt-4">
                                         <div class="metric-value" id="cmp-q-lq1">1.33</div>
                                         <div class="metric-label">Avg in Queue (Lq)</div>
                                     </div>
@@ -3535,7 +3552,9 @@
                                 </div>
                                 <div class="card">
                                     <div class="grid-2">
-                                        <div class="metric-card highlight"><div class="metric-value" id="mms-lq">0.889</div><div class="metric-label">Avg in Queue (Lq)</div></div>
+                                        <div id="be-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div id="lc-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div class="metric-card highlight"><div class="metric-value" id="mms-lq">0.889</div><div class="metric-label">Avg in Queue (Lq)</div></div>
                                         <div class="metric-card"><div class="metric-value" id="mms-wq">0.059</div><div class="metric-label">Wait in Queue (Wq)</div></div>
                                     </div>
                                     <div id="mms-comparison" class="mt-4"></div>
@@ -3560,7 +3579,9 @@
                                     <div class="input-group"><label class="input-label">Running Time (U)</label><input type="number" id="fq-u" value="100" oninput="calcFiniteQueue()"></div>
                                 </div>
                                 <div class="card">
-                                    <div class="metric-card highlight"><div class="metric-value" id="fq-l">2.54</div><div class="metric-label">Avg # in System (L)</div></div>
+                                    <div id="be-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div id="lc-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div class="metric-card highlight"><div class="metric-value" id="fq-l">2.54</div><div class="metric-label">Avg # in System (L)</div></div>
                                     <div class="metric-card mt-3"><div class="metric-value" id="fq-w">31.7</div><div class="metric-label">Avg Wait Time (W)</div></div>
                                     <div class="alert alert-info mt-4">
                                         <strong>X (Service Factor) = 0.167</strong><br>
@@ -3679,7 +3700,8 @@
                                 <div class="equation-formula"><span id="ll-f">\[I = 10 \times 5\]</span><span
                                         class="equation-result" id="ll-r2">=50</span></div>
                             </div>
-                            <div class="metric-card highlight mt-4">
+                            <div id="risk-chart" style="width:100%; height:350px; margin-bottom:20px;"></div>
+<div class="metric-card highlight mt-4">
                                 <div class="metric-value" id="ll-wip">50</div>
                                 <div class="metric-label">WIP Inventory</div>
                             </div>
@@ -3757,14 +3779,17 @@
                                     <div class="metric-value">4</div>
                                     <div class="metric-label">Triangle Features</div>
                                 </div>
-                                <div class="metric-card highlight">
+                                <div id="be-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div id="lc-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div class="metric-card highlight">
                                     <div class="metric-value">Customer</div>
                                     <div class="metric-label">Central Focus</div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="card mt-4">
+                        <div id="crash-chart" style="width:100%; height:350px; margin-bottom:20px;"></div>
+<div class="card mt-4">
                             <div class="card-header">
                                 <div class="card-icon">👥</div>
                                 <div>
@@ -3907,8 +3932,11 @@
                             </div>
                         </div>
                         <div>
-                            <div class="grid-3 mb-3">
-                                <div class="metric-card highlight"><div class="metric-value" id="pc-pbar">0.0303</div><div class="metric-label">p̄ (Center)</div></div>
+                            <div id="eoq-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div class="grid-3 mb-3">
+                                <div id="be-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div id="lc-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div class="metric-card highlight"><div class="metric-value" id="pc-pbar">0.0303</div><div class="metric-label">p̄ (Center)</div></div>
                                 <div class="metric-card danger"><div class="metric-value" id="pc-ucl">0.0600</div><div class="metric-label">UCL</div></div>
                                 <div class="metric-card success"><div class="metric-value" id="pc-lcl">0.0007</div><div class="metric-label">LCL</div></div>
                             </div>
@@ -3928,8 +3956,11 @@
                             </table>
                         </div>
                         <div>
-                            <div class="grid-3 mb-3">
-                                <div class="metric-card highlight"><div class="metric-value" id="cc-cbar">4.5</div><div class="metric-label">c̄ (Center)</div></div>
+                            <div id="eoq-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div class="grid-3 mb-3">
+                                <div id="be-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div id="lc-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div class="metric-card highlight"><div class="metric-value" id="cc-cbar">4.5</div><div class="metric-label">c̄ (Center)</div></div>
                                 <div class="metric-card danger"><div class="metric-value" id="cc-ucl">10.86</div><div class="metric-label">UCL</div></div>
                                 <div class="metric-card success"><div class="metric-value" id="cc-lcl">0.00</div><div class="metric-label">LCL</div></div>
                             </div>
@@ -3985,9 +4016,12 @@
                             <div class="input-group"><label class="input-label">Process Std Dev (&sigma;)</label><input type="number" id="cpk-sigma" value="0.00083" step="0.0001" oninput="calcCpk()"></div>
                         </div>
                         <div>
-                            <div class="grid-2 mb-3">
+                            <div id="pert-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div class="grid-2 mb-3">
                                 <div class="metric-card"><div class="metric-value" id="cpk-cp">2.01</div><div class="metric-label">Cp (Potential)</div></div>
-                                <div class="metric-card highlight"><div class="metric-value" id="cpk-cpk">1.61</div><div class="metric-label">Cpk (Actual)</div></div>
+                                <div id="be-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div id="lc-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div class="metric-card highlight"><div class="metric-value" id="cpk-cpk">1.61</div><div class="metric-label">Cpk (Actual)</div></div>
                             </div>
                             <div class="grid-2">
                                 <div class="metric-card"><div class="metric-value" id="cpk-cpu">1.61</div><div class="metric-label">Cpu (Upper)</div></div>
@@ -4042,7 +4076,9 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <div class="metric-card highlight">
+                                    <div id="be-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div id="lc-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div class="metric-card highlight">
                                         <div class="metric-value" id="samp-pa">0.541</div>
                                         <div class="metric-label">P(Accept Lot)</div>
                                     </div>
@@ -4123,7 +4159,9 @@
                                 </div>
                                 <div>
                                     <div class="grid-2">
-                                        <div class="metric-card highlight"><div class="metric-value" id="dpmo-result">3,300</div><div class="metric-label">DPMO</div></div>
+                                        <div id="be-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div id="lc-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div class="metric-card highlight"><div class="metric-value" id="dpmo-result">3,300</div><div class="metric-label">DPMO</div></div>
                                         <div class="metric-card success"><div class="metric-value" id="dpmo-sigma">4.2u03C3</div><div class="metric-label">Sigma Level</div></div>
                                     </div>
                                     <div class="grid-2 mt-3">
@@ -4196,7 +4234,9 @@
                             </div>
                             <div class="grid-3 mt-4">
                                 <div class="metric-card danger"><div class="metric-value" id="fmea-total-rpn">388</div><div class="metric-label">Total RPN</div></div>
-                                <div class="metric-card highlight"><div class="metric-value" id="fmea-highest-rpn">280</div><div class="metric-label">Highest RPN</div></div>
+                                <div id="be-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div id="lc-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div class="metric-card highlight"><div class="metric-value" id="fmea-highest-rpn">280</div><div class="metric-label">Highest RPN</div></div>
                                 <div class="metric-card"><div class="metric-value" id="fmea-avg-rpn">194</div><div class="metric-label">Average RPN</div></div>
                             </div>
                         </div>
@@ -4407,11 +4447,15 @@
                             <button class="btn btn-primary mt-4" onclick="calcCent()" style="width: 100%;">Calculate
                                 Optimal Location</button>
                             <div class="grid-2 mt-4">
-                                <div class="metric-card highlight">
+                                <div id="be-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div id="lc-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div class="metric-card highlight">
                                     <div class="metric-value" id="c-rx">40.9</div>
                                     <div class="metric-label">Optimal X (C<sub>x</sub>)</div>
                                 </div>
-                                <div class="metric-card highlight">
+                                <div id="be-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div id="lc-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div class="metric-card highlight">
                                     <div class="metric-value" id="c-ry">55.7</div>
                                     <div class="metric-label">Optimal Y (C<sub>y</sub>)</div>
                                 </div>
@@ -4461,7 +4505,9 @@
                             <button class="btn btn-primary mt-3" onclick="calcCentroid()">Optimize Multi-Point</button>
                         </div>
                         <div class="card">
-                            <div class="metric-card highlight">
+                            <div id="be-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div id="lc-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div class="metric-card highlight">
                                 <div class="metric-value" id="p-centroid-res">X: 47.1, Y: 49.3</div>
                                 <div class="metric-label">Weighted Center of Gravity</div>
                             </div>
@@ -4594,7 +4640,9 @@
                                 <div class="input-group"><label class="input-label">Demand t-3</label><input type="number" id="wma-d3" value="130" oninput="calcWMA()"></div>
                             </div>
                             <div>
-                                <div class="metric-card highlight"><div class="metric-value" id="wma-result">119.0</div><div class="metric-label">WMA Forecast</div></div>
+                                <div id="be-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div id="lc-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div class="metric-card highlight"><div class="metric-value" id="wma-result">119.0</div><div class="metric-label">WMA Forecast</div></div>
                             </div>
                         </div>
                     </div>
@@ -4672,7 +4720,9 @@
                         </table>
                         <div class="grid-3 mt-3">
                             <div class="metric-card"><div class="metric-value" id="ts-mad">—</div><div class="metric-label">MAD</div></div>
-                            <div class="metric-card highlight"><div class="metric-value" id="ts-signal">—</div><div class="metric-label">Tracking Signal</div></div>
+                            <div id="be-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div id="lc-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div class="metric-card highlight"><div class="metric-value" id="ts-signal">—</div><div class="metric-label">Tracking Signal</div></div>
                             <div class="metric-card"><div class="metric-value" id="ts-mape">—</div><div class="metric-label">MAPE</div></div>
                         </div>
                     </div>
@@ -5078,7 +5128,9 @@
                                             class="equation-result" id="eoq-tc-r">=$447</span></div>
                                 </div>
                                 <div class="grid-3 mt-4">
-                                    <div class="metric-card highlight">
+                                    <div id="be-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div id="lc-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div class="metric-card highlight">
                                         <div class="metric-value" id="eoq-q-m">224</div>
                                         <div class="metric-label">Q*</div>
                                     </div>
@@ -5123,7 +5175,8 @@
                                             id="cmp-eoq-s1" type="number" value="50" /></div>
                                     <div class="input-group"><label class="input-label">Holding Cost (H)</label><input
                                             id="cmp-eoq-h1" type="number" value="2" /></div>
-                                    <div class="metric-card highlight mt-4">
+                                    <div id="risk-chart" style="width:100%; height:350px; margin-bottom:20px;"></div>
+<div class="metric-card highlight mt-4">
                                         <div class="metric-value" id="cmp-eoq-tc1">$447</div>
                                         <div class="metric-label">Total Cost</div>
                                     </div>
@@ -5196,7 +5249,9 @@
                             </div>
                         </div>
                         <div class="card">
-                            <div class="metric-card highlight"><div class="metric-value" id="epq-q-res">559</div><div class="metric-label">Optimal Production Lot</div></div>
+                            <div id="be-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div id="lc-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div class="metric-card highlight"><div class="metric-value" id="epq-q-res">559</div><div class="metric-label">Optimal Production Lot</div></div>
                             <div class="metric-card mt-3"><div class="metric-value" id="epq-tc-res">$1,073</div><div class="metric-label">Total Annual Cost</div></div>
                         </div>
                     </div>
@@ -5378,7 +5433,9 @@
                                         class="equation-result" id="ss-rop-r">=787</span></div>
                             </div>
                             <div class="grid-2 mt-4">
-                                <div class="metric-card highlight">
+                                <div id="be-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div id="lc-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div class="metric-card highlight">
                                     <div class="metric-value" id="ss-ss-m">87</div>
                                     <div class="metric-label">Safety Stock</div>
                                 </div>
@@ -6009,7 +6066,9 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <div class="metric-card highlight">
+                                    <div id="be-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div id="lc-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div class="metric-card highlight">
                                         <div class="metric-value" id="lean-future-lt">5.1</div>
                                         <div class="metric-label">Future Lead Time (Days)</div>
                                     </div>
@@ -6364,7 +6423,8 @@
                         </tbody>
                     </table>
 
-                    <div class="metric-card highlight mt-4">
+                    <div id="risk-chart" style="width:100%; height:350px; margin-bottom:20px;"></div>
+<div class="metric-card highlight mt-4">
                         <div class="metric-value" id="risk-total-score">49</div>
                         <div class="metric-label">Aggregate Risk Exposure Score</div>
                     </div>
@@ -6433,7 +6493,9 @@
                                 </div>
                             </div>
                             <div class="grid-2">
-                                <div class="metric-card highlight">
+                                <div id="be-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div id="lc-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div class="metric-card highlight">
                                     <div class="metric-value" id="sc-flow">8.50</div>
                                     <div class="metric-label">Avg Flow Time</div>
                                 </div>
@@ -6505,7 +6567,9 @@
                             </div>
                             <div class="grid-4 mt-4">
                                 <div class="metric-card"><div class="metric-value" id="crash-normal-dur">9</div><div class="metric-label">Normal Dur</div></div>
-                                <div class="metric-card highlight"><div class="metric-value" id="crash-min-dur">5</div><div class="metric-label">Min Dur</div></div>
+                                <div id="be-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div id="lc-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div class="metric-card highlight"><div class="metric-value" id="crash-min-dur">5</div><div class="metric-label">Min Dur</div></div>
                                 <div class="metric-card danger"><div class="metric-value" id="crash-total-cost">$3,200</div><div class="metric-label">Full Crash Cost</div></div>
                             </div>
                         </div>
@@ -6665,7 +6729,9 @@ u2514u2500 (Level 1) Sub-O (u00D71)
                             <div class="input-group"><label class="input-label">Rate (&lambda; per time unit)</label><input type="number" id="exp-lambda" value="1" step="0.1" min="0.1" oninput="calcExponential()"></div>
                             <div class="input-group"><label class="input-label">Time (t)</label><input type="number" id="exp-t" value="2" step="0.1" min="0" oninput="calcExponential()"></div>
                             <div class="grid-2 mt-3">
-                                <div class="metric-card highlight"><div class="metric-value" id="exp-within">86.5%</div><div class="metric-label">P(within t)</div></div>
+                                <div id="be-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div id="lc-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div class="metric-card highlight"><div class="metric-value" id="exp-within">86.5%</div><div class="metric-label">P(within t)</div></div>
                                 <div class="metric-card"><div class="metric-value" id="exp-beyond">13.5%</div><div class="metric-label">P(more than t)</div></div>
                             </div>
                         </div>
@@ -6733,7 +6799,9 @@ u2514u2500 (Level 1) Sub-O (u00D71)
                     <div class="grid-3 mb-4">
                         <div class="input-group"><label class="input-label">Ratio (&lambda;/&mu;)</label><input type="number" id="lq-lookup-ratio" value="0.50" step="0.05" min="0.1" max="5.0" oninput="highlightLqTable()"></div>
                         <div class="input-group"><label class="input-label">Servers (S)</label><input type="number" id="lq-lookup-s" value="2" min="1" max="4" oninput="highlightLqTable()"></div>
-                        <div class="metric-card highlight"><div class="metric-value" id="lq-lookup-result">0.033</div><div class="metric-label">Expected Lq</div></div>
+                        <div id="be-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div id="lc-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div class="metric-card highlight"><div class="metric-value" id="lq-lookup-result">0.033</div><div class="metric-label">Expected Lq</div></div>
                     </div>
 
                     <div style="overflow-x:auto">
@@ -6882,7 +6950,9 @@ u2514u2500 (Level 1) Sub-O (u00D71)
                             <div class="input-group"><label class="input-label">Option 5 (e.g., Color)</label><input type="number" id="cfg-5" value="4" min="1" oninput="calcConfig()"></div>
                         </div>
                         <div>
-                            <div class="metric-card highlight"><div class="metric-value" id="cfg-total">288</div><div class="metric-label">Total Configurations</div></div>
+                            <div id="be-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div id="lc-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+<div class="metric-card highlight"><div class="metric-value" id="cfg-total">288</div><div class="metric-label">Total Configurations</div></div>
                             <div class="metric-card mt-3"><div class="metric-value" id="cfg-components">16</div><div class="metric-label">Total Components</div></div>
                             <div class="alert alert-success mt-3"><div class="alert-icon">💡</div><div>Only <strong id="cfg-comp-text">16</strong> components create <strong id="cfg-config-text">288</strong> unique products — the power of modular design!</div></div>
                         </div>
@@ -9573,6 +9643,186 @@ u2514u2500 (Level 1) Sub-O (u00D71)
         document.getElementById("bom-o").innerText = q * 1;
         document.getElementById("bom-p-total").innerText = (q * 2 * 3) + (q * 1 * 2);
     }
+
+    
+    // --- PLOTLY CHARTS PORTED FROM APP.PY ---
+
+    function drawRiskChart() {
+        if(!document.getElementById('risk-chart')) return;
+        const probs = Array.from(document.querySelectorAll('.risk-p')).map(i => parseFloat(i.value) || 1);
+        const impacts = Array.from(document.querySelectorAll('.risk-i')).map(i => parseFloat(i.value) || 1);
+        const labels = ['Supplier Failure', 'Natural Disaster', 'Quality Issue', 'Logistics Delay'];
+        
+        Plotly.newPlot('risk-chart', [
+            {
+                x: impacts, y: probs, text: labels, mode: 'markers+text', type: 'scatter',
+                textposition: 'top center',
+                marker: { size: 15, color: '#ef4444', opacity: 0.8 }
+            }
+        ], {
+            title: 'Risk Heat Map (Probability vs Impact)',
+            xaxis: {title: 'Impact', range: [0, 6]},
+            yaxis: {title: 'Probability', range: [0, 6]},
+            margin: {t: 40, b: 40, l: 40, r: 20}
+        }, {responsive: true});
+    }
+
+    function drawCrashChart() {
+        if(!document.getElementById('crash-chart')) return;
+        const normalTimes = Array.from(document.querySelectorAll('.crash-nt')).map(i => parseFloat(i.value) || 0);
+        const normalCosts = Array.from(document.querySelectorAll('.crash-nc')).map(i => parseFloat(i.value) || 0);
+        const crashTimes = Array.from(document.querySelectorAll('.crash-ct')).map(i => parseFloat(i.value) || 0);
+        const crashCosts = Array.from(document.querySelectorAll('.crash-cc')).map(i => parseFloat(i.value) || 0);
+        
+        let totalNT = normalTimes.reduce((a, b) => a + b, 0);
+        let totalNC = normalCosts.reduce((a, b) => a + b, 0);
+        let totalCT = crashTimes.reduce((a, b) => a + b, 0);
+        let totalCC = crashCosts.reduce((a, b) => a + b, 0);
+        
+        Plotly.newPlot('crash-chart', [
+            {
+                x: [totalCT, totalNT], y: [totalCC, totalNC],
+                mode: 'lines+markers', type: 'scatter', name: 'Time-Cost Tradeoff',
+                line: {color: '#6366f1', width: 3}, marker: {size: 10}
+            }
+        ], {
+            title: 'Project Crashing: Time-Cost Tradeoff',
+            xaxis: {title: 'Project Duration (Days)'},
+            yaxis: {title: 'Total Cost ($)'},
+            margin: {t: 40, b: 40, l: 40, r: 20}
+        }, {responsive: true});
+    }
+
+    const old_calcRisk = typeof calcRisk !== 'undefined' ? calcRisk : function(){};
+    calcRisk = function() {
+        old_calcRisk();
+        drawRiskChart();
+    };
+
+    const old_calcCrash = typeof calcCrash !== 'undefined' ? calcCrash : function(){};
+    calcCrash = function() {
+        old_calcCrash();
+        drawCrashChart();
+    };
+
+
+    function drawEOQChart(d, s, h) {
+        if(!document.getElementById('eoq-chart')) return;
+        let q_star = Math.sqrt((2*d*s)/h);
+        let q = []; let tc = []; let hc = []; let oc = [];
+        for(let i=Math.max(1, q_star*0.2); i<=q_star*2.5; i+=q_star/10) {
+            q.push(i);
+            tc.push((d/i)*s + (i/2)*h);
+            hc.push((i/2)*h);
+            oc.push((d/i)*s);
+        }
+        Plotly.newPlot('eoq-chart', [
+            {x: q, y: tc, type: 'scatter', name: 'Total Cost', line: {color: '#ef4444', width: 3}},
+            {x: q, y: hc, type: 'scatter', name: 'Holding Cost', line: {color: '#10b981', dash: 'dash'}},
+            {x: q, y: oc, type: 'scatter', name: 'Ordering Cost', line: {color: '#6366f1', dash: 'dash'}},
+            {x: [q_star, q_star], y: [0, Math.max(...tc)], mode: 'lines', name: 'EOQ', line: {color: '#334155', dash: 'dot'}}
+        ], {
+            title: 'EOQ Cost Curve',
+            margin: {t: 40, b: 30, l: 40, r: 20}
+        }, {responsive: true});
+    }
+
+    function drawLCChart(k, b) {
+        if(!document.getElementById('lc-chart')) return;
+        let n = Math.log(b/100) / Math.log(2);
+        let x = []; let y = [];
+        for(let i=1; i<=50; i++) {
+            x.push(i);
+            y.push(k * Math.pow(i, n));
+        }
+        Plotly.newPlot('lc-chart', [
+            {x: x, y: y, type: 'scatter', name: 'Unit Time', line: {color: '#6366f1', width: 3}}
+        ], {
+            title: ,
+            margin: {t: 40, b: 30, l: 40, r: 20}
+        }, {responsive: true});
+    }
+
+    const old_updEOQ = typeof updEOQ !== 'undefined' ? updEOQ : function(){};
+    updEOQ = function() {
+        old_updEOQ();
+        const d = parseFloat(document.getElementById('eoq-d').value);
+        const s = parseFloat(document.getElementById('eoq-s').value);
+        const h = parseFloat(document.getElementById('eoq-h').value);
+        if(d>0 && s>0 && h>0) drawEOQChart(d, s, h);
+    };
+
+    const old_calcCumulativeLC = typeof calcCumulativeLC !== 'undefined' ? calcCumulativeLC : function(){};
+    calcCumulativeLC = function() {
+        old_calcCumulativeLC();
+        const k = parseFloat(document.getElementById('lc-k').value);
+        const b = parseFloat(document.getElementById('lc-b').value);
+        if(k>0 && b>0) drawLCChart(k, b);
+    };
+
+    function drawPERTChart(te, d, v, prob) {
+        if(!document.getElementById('pert-chart')) return;
+        let x = [], y = [];
+        let sigma = Math.sqrt(v);
+        for(let i=te-3*sigma; i<=te+3*sigma; i+=0.1) {
+            x.push(i);
+            y.push((1/(sigma*Math.sqrt(2*Math.PI))) * Math.exp(-0.5*Math.pow((i-te)/sigma, 2)));
+        }
+        let trace1 = {x: x, y: y, type: 'scatter', name: 'Distribution', line: {color: '#6366f1'}};
+        
+        // Fill area under curve
+        let x_fill = [], y_fill = [];
+        for(let i=0; i<x.length; i++) {
+            if(x[i] <= d) { x_fill.push(x[i]); y_fill.push(y[i]); }
+        }
+        x_fill.push(d); y_fill.push(0); x_fill.unshift(x_fill[0]); y_fill.unshift(0);
+        let trace2 = {x: x_fill, y: y_fill, fill: 'toself', mode: 'lines', name: 'Probability', fillcolor: 'rgba(99, 102, 241, 0.3)', line: {color: 'transparent'}};
+        
+        Plotly.newPlot('pert-chart', [trace1, trace2], {
+            title: `Probability of completion by week ${d} is ${prob}%`,
+            margin: {t: 40, b: 30, l: 40, r: 20},
+            showlegend: false
+        }, {responsive: true});
+    }
+
+    function drawBEChart(fc, p, vc) {
+        if(!document.getElementById('be-chart')) return;
+        let be = fc / (p - vc);
+        let q_max = be * 2;
+        let q = [0, be, q_max];
+        let rev = [0, be*p, q_max*p];
+        let cost = [fc, fc + be*vc, fc + q_max*vc];
+        
+        Plotly.newPlot('be-chart', [
+            {x: q, y: rev, type: 'scatter', name: 'Revenue', line: {color: '#10b981'}},
+            {x: q, y: cost, type: 'scatter', name: 'Total Cost', line: {color: '#ef4444'}},
+            {x: [be, be], y: [0, be*p], mode: 'lines', line: {dash: 'dash', color: '#6366f1'}, name: 'BEP'}
+        ], {
+            title: 'Break-Even Chart',
+            margin: {t: 40, b: 30, l: 40, r: 20}
+        }, {responsive: true});
+    }
+
+    // Hook into existing functions
+    const old_calcPERTProb = calcPERTProb;
+    calcPERTProb = function() {
+        old_calcPERTProb();
+        const te=parseFloat(document.getElementById('pert-te').value);
+        const d=parseFloat(document.getElementById('pert-d').value);
+        const v=parseFloat(document.getElementById('pert-var').value);
+        const z=(d-te)/Math.sqrt(v);
+        const prob=(normalCDF(z)*100).toFixed(1);
+        drawPERTChart(te, d, v, prob);
+    };
+
+    const old_updBE = typeof updBE !== 'undefined' ? updBE : function(){};
+    updBE = function() {
+        old_updBE();
+        const fc=parseFloat(document.getElementById('be-fc').value)||0;
+        const p=parseFloat(document.getElementById('be-p').value)||0;
+        const vc=parseFloat(document.getElementById('be-vc').value)||0;
+        if(p > vc) drawBEChart(fc, p, vc);
+    };
 
     // === Patch v3.3 JS === 
     function toggleAns(id){const e=document.getElementById(id);if(e)e.classList.toggle("show");}
