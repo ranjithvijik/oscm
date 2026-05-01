@@ -11,7 +11,7 @@ A high-performance, interactive web-based simulator for Operations and Supply Ch
   - Supply Chain Coordination
   - Project Management
 - **Real-time Calculations**: Integrated mathematical models with live updates.
-- **Rich Visualizations**: Dynamic charts and diagrams using modern web technologies.
+- **Rich Visualizations**: Dynamic, interactive charts and diagrams using Plotly.js and raw SVG rendering.
 - **Dark Mode Support**: Seamless transition between light and dark themes.
 - **Mathematical Accuracy**: High-fidelity formulas rendered via MathJax.
 
@@ -29,6 +29,7 @@ To run the simulator locally:
 
 - **Frontend**: HTML5, Vanilla JavaScript, CSS3
 - **Math Rendering**: MathJax
+- **Data Visualization**: Plotly.js (interactive graphs and probability charts)
 - **Typography**: Google Fonts (Inter)
 - **Design**: Modern, glassmorphic UI with responsive layout
 
