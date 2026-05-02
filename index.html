@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html data-theme="light" lang="en">
-
-<head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<!DOCTYPE html><html data-theme="light" lang="en"><head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Operations and Supply Chain Management Simulator</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
 
     <!-- MathJax Integration -->
     <script>
@@ -20,7 +16,7 @@
             }
         };
     </script>
-    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
     <style>
         :root {
@@ -2411,8 +2407,8 @@
                     <div class="module-icon">🔗</div>
                     <div>
                         <div class="module-chapter">Chapter 4 / Exhibits 4.8–4.9</div>
-                        <div class="module-title">PERT Network Diagram & Completion Probability</div>
-                        <div class="module-subtitle">Critical path identification, slack calculation & Z-score probability</div>
+                        <div class="module-title">PERT Network Diagram &amp; Completion Probability</div>
+                        <div class="module-subtitle">Critical path identification, slack calculation &amp; Z-score probability</div>
                     </div>
                 </div>
 
@@ -2425,7 +2421,7 @@
                         <p>The textbook shows a project with <strong>critical path A–B–E–G–I</strong> (22 days) and three other paths. When there are two critical paths, use the one with the <strong>largest total variance</strong> for probability calculations.</p>
                         <div class="citation-box">
                             "A conservative approach dictates using the critical path with the largest total variance to focus management's attention on the activities most likely to exhibit broad variations."
-                            <span class="citation-source">— Jacobs & Chase (2024, p. 99)</span>
+                            <span class="citation-source">— Jacobs &amp; Chase (2024, p. 99)</span>
                         </div>
                         <div class="equation-box">
                             <div class="equation-label">PERT Expected Time</div>
@@ -2440,7 +2436,7 @@
                         <div class="equation-box">
                             <div class="equation-label">Project Completion Probability</div>
                             <div class="equation-formula">\[Z = \frac{D - T_E}{\sqrt{\sum \sigma^2_{cp}}}\]</div>
-                            <div class="equation-description">From textbook: T<sub>E</sub> = 38 weeks, D = 35 weeks, Z = &minus;0.87, P = 0.1922 (19% chance of completing in 35 weeks).</div>
+                            <div class="equation-description">From textbook: T<sub>E</sub> = 38 weeks, D = 35 weeks, Z = −0.87, P = 0.1922 (19% chance of completing in 35 weeks).</div>
                         </div>
                     </div>
                 </div>
@@ -2466,13 +2462,13 @@
                         <div>
                             <div class="input-group"><label class="input-label">Expected Project Duration (T<sub>E</sub>)</label><input type="number" id="pert-te" value="38" step="0.5" oninput="calcPERTProb()"></div>
                             <div class="input-group"><label class="input-label">Desired Completion (D)</label><input type="number" id="pert-d" value="35" step="0.5" oninput="calcPERTProb()"></div>
-                            <div class="input-group"><label class="input-label">Sum of CP Variances (&Sigma;&sigma;&sup2;)</label><input type="number" id="pert-var" value="11.89" step="0.1" oninput="calcPERTProb()"></div>
+                            <div class="input-group"><label class="input-label">Sum of CP Variances (Σσ²)</label><input type="number" id="pert-var" value="11.89" step="0.1" oninput="calcPERTProb()"></div>
                         </div>
                         <div>
                             <div id="pert-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
 <div class="grid-2 mb-3">
-                                <div id="be-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
-<div id="lc-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+                                
+
 <div class="metric-card highlight"><div class="metric-value" id="pert-z">-0.87</div><div class="metric-label">Z-Score</div></div>
                                 <div class="metric-card danger"><div class="metric-value" id="pert-prob">19.2%</div><div class="metric-label">P(Complete by D)</div></div>
                             </div>
@@ -2482,7 +2478,7 @@
                 </div>
 
                 <div class="card">
-                    <div class="card-header"><div class="card-icon">📋</div><div><h3 class="card-title">Standard Normal Z-Table (Appendix C)</h3><p class="card-subtitle">P(Z &le; z) — Cumulative probability from left tail</p></div></div>
+                    <div class="card-header"><div class="card-icon">📋</div><div><h3 class="card-title">Standard Normal Z-Table (Appendix C)</h3><p class="card-subtitle">P(Z ≤ z) — Cumulative probability from left tail</p></div></div>
                     <div style="overflow-x:auto">
                         <table class="data-table z-table" id="z-table">
                             <thead><tr><th>z</th><th>.00</th><th>.01</th><th>.02</th><th>.03</th><th>.04</th><th>.05</th><th>.06</th><th>.07</th><th>.08</th><th>.09</th></tr></thead>
@@ -2509,14 +2505,9 @@
                             </div>
                         </div>
                         <div class="canonical-tabs">
-                            <button class="canonical-tab active" data-canonical-target="all"
-                                onclick="OSCMCanonical.openView('breakeven','all', this)" type="button">All</button>
-                            <button class="canonical-tab" data-canonical-target="simulator"
-                                onclick="OSCMCanonical.openView('breakeven','simulator', this)"
-                                type="button">Simulator</button>
-                            <button class="canonical-tab" data-canonical-target="theory"
-                                onclick="OSCMCanonical.openView('breakeven','theory', this)"
-                                type="button">Theory</button>
+                            <button class="canonical-tab active" data-canonical-target="all" onclick="OSCMCanonical.openView('breakeven','all', this)" type="button">All</button>
+                            <button class="canonical-tab" data-canonical-target="simulator" onclick="OSCMCanonical.openView('breakeven','simulator', this)" type="button">Simulator</button>
+                            <button class="canonical-tab" data-canonical-target="theory" onclick="OSCMCanonical.openView('breakeven','theory', this)" type="button">Theory</button>
                         </div>
                     </div>
                     <div class="tabs" data-canon-tags="simulator">
@@ -2545,7 +2536,7 @@
                                     "Break-even analysis is a standard approach to determine the volume of output at
                                     which total revenue equals total cost. It is useful for comparing capacity
                                     alternatives and for determining the volume needed to achieve a target profit."
-                                    <span class="citation-source">— Jacobs & Chase (2024, p. 155)</span>
+                                    <span class="citation-source">— Jacobs &amp; Chase (2024, p. 155)</span>
                                 </div>
                                 <h3>Cost Structure Components</h3>
                                 <div class="concepts-grid">
@@ -2594,7 +2585,7 @@
                                         needed to achieve a specific profit goal.</div>
                                 </div>
                                 <div class="equation-box">
-                                    <div class="equation-label">Total Cost & Total Revenue Functions</div>
+                                    <div class="equation-label">Total Cost &amp; Total Revenue Functions</div>
                                     <div class="equation-formula">
                                         \[TC = F + V \cdot Q \quad ; \quad TR = P \cdot Q\]
                                     </div>
@@ -2610,7 +2601,7 @@
                                         indifference point where both options yield equal total cost is: Q* = (F₂ − F₁)
                                         / (V₁ − V₂).</div>
                                 </div>
-                                <h3>Assumptions & Limitations</h3>
+                                <h3>Assumptions &amp; Limitations</h3>
                                 <ul class="assumptions-list">
                                     <li>Revenue and costs are linear functions of volume (constant price and variable
                                         cost per unit)</li>
@@ -2629,19 +2620,13 @@
                                     </div>
                                 </div>
                                 <div class="slider-group">
-                                    <div class="slider-header"><span class="slider-label">Fixed Costs ($)</span><span
-                                            class="slider-value" id="be-fc-v">$50,000</span></div><input id="be-fc"
-                                        max="200000" min="10000" step="5000" type="range" value="50000" />
+                                    <div class="slider-header"><span class="slider-label">Fixed Costs ($)</span><span class="slider-value" id="be-fc-v">$50,000</span></div><input id="be-fc" max="200000" min="10000" step="5000" type="range" value="50000">
                                 </div>
                                 <div class="slider-group">
-                                    <div class="slider-header"><span class="slider-label">Price/Unit ($)</span><span
-                                            class="slider-value" id="be-p-v">$100</span></div><input id="be-p" max="500"
-                                        min="10" step="5" type="range" value="100" />
+                                    <div class="slider-header"><span class="slider-label">Price/Unit ($)</span><span class="slider-value" id="be-p-v">$100</span></div><input id="be-p" max="500" min="10" step="5" type="range" value="100">
                                 </div>
                                 <div class="slider-group">
-                                    <div class="slider-header"><span class="slider-label">Variable Cost ($)</span><span
-                                            class="slider-value" id="be-vc-v">$60</span></div><input id="be-vc"
-                                        max="400" min="5" step="5" type="range" value="60" />
+                                    <div class="slider-header"><span class="slider-label">Variable Cost ($)</span><span class="slider-value" id="be-vc-v">$60</span></div><input id="be-vc" max="400" min="5" step="5" type="range" value="60">
                                 </div>
                             </div>
                             <div class="card">
@@ -2659,7 +2644,7 @@
                                 </div>
                                 <div class="grid-2 mt-4">
                                     <div id="be-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
-<div id="lc-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+
 <div class="metric-card highlight">
                                         <div class="metric-value" id="be-u-m">1,250</div>
                                         <div class="metric-label">BEP Units</div>
@@ -2695,13 +2680,10 @@
                             <div class="comparison-container">
                                 <div class="comparison-panel active-panel">
                                     <div class="comp-label">Scenario A (Current)</div>
-                                    <div class="input-group"><label class="input-label">Fixed Costs ($)</label><input
-                                            id="cmp-be-fc1" type="number" value="50000" /></div>
-                                    <div class="input-group"><label class="input-label">Price/Unit ($)</label><input
-                                            id="cmp-be-p1" type="number" value="100" /></div>
-                                    <div class="input-group"><label class="input-label">Variable Cost ($)</label><input
-                                            id="cmp-be-vc1" type="number" value="60" /></div>
-                                    <div id="risk-chart" style="width:100%; height:350px; margin-bottom:20px;"></div>
+                                    <div class="input-group"><label class="input-label">Fixed Costs ($)</label><input id="cmp-be-fc1" type="number" value="50000"></div>
+                                    <div class="input-group"><label class="input-label">Price/Unit ($)</label><input id="cmp-be-p1" type="number" value="100"></div>
+                                    <div class="input-group"><label class="input-label">Variable Cost ($)</label><input id="cmp-be-vc1" type="number" value="60"></div>
+                                    
 <div class="metric-card highlight mt-4">
                                         <div class="metric-value" id="cmp-be-bep1">1,250</div>
                                         <div class="metric-label">BEP Units</div>
@@ -2709,12 +2691,9 @@
                                 </div>
                                 <div class="comparison-panel">
                                     <div class="comp-label">Scenario B (Alternative)</div>
-                                    <div class="input-group"><label class="input-label">Fixed Costs ($)</label><input
-                                            id="cmp-be-fc2" type="number" value="70000" /></div>
-                                    <div class="input-group"><label class="input-label">Price/Unit ($)</label><input
-                                            id="cmp-be-p2" type="number" value="100" /></div>
-                                    <div class="input-group"><label class="input-label">Variable Cost ($)</label><input
-                                            id="cmp-be-vc2" type="number" value="50" /></div>
+                                    <div class="input-group"><label class="input-label">Fixed Costs ($)</label><input id="cmp-be-fc2" type="number" value="70000"></div>
+                                    <div class="input-group"><label class="input-label">Price/Unit ($)</label><input id="cmp-be-p2" type="number" value="100"></div>
+                                    <div class="input-group"><label class="input-label">Variable Cost ($)</label><input id="cmp-be-vc2" type="number" value="50"></div>
                                     <div class="metric-card mt-4">
                                         <div class="metric-value" id="cmp-be-bep2">1,400</div>
                                         <div class="metric-label">BEP Units</div>
@@ -2741,8 +2720,7 @@
                                 <span class="practice-badge">BE Analysis Problem</span>
                                 <div class="practice-q" id="be-prac-q">Fixed Costs = $40,000, Price = $120, Variable
                                     Cost = $80. Calculate the Break-Even Point (units).</div>
-                                <div class="input-group"><label class="input-label">Your BEP Units:</label><input
-                                        id="be-prac-ans-input" placeholder="Enter BEP Units" type="number" /></div>
+                                <div class="input-group"><label class="input-label">Your BEP Units:</label><input id="be-prac-ans-input" placeholder="Enter BEP Units" type="number"></div>
                                 <div class="btn-group"><button class="btn btn-primary" onclick="checkBeAns()">Check
                                         Answer</button><button class="btn btn-secondary" onclick="showBeSol()">Show
                                         Solution</button></div>
@@ -2760,7 +2738,7 @@
                                 <div class="patch-icon">🎯</div>
                                 <div>
                                     <div class="patch-chapter">Goal Seeking</div>
-                                    <div class="patch-title">Target Volume & Profit Analysis</div>
+                                    <div class="patch-title">Target Volume &amp; Profit Analysis</div>
                                     <div class="patch-subtitle">calculate required volume for financial goals</div>
                                 </div>
                             </div>
@@ -2776,8 +2754,8 @@
                                     </div>
                                 </div>
                                 <div class="card">
-                                    <div id="be-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
-<div id="lc-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+                                    
+
 <div class="metric-card highlight">
                                         <div class="metric-value" id="tv-q-result">1,875</div>
                                         <div class="metric-label">Required Units</div>
@@ -2799,7 +2777,7 @@
                     <div class="main-header-content">
                         <div>
                             <div class="breadcrumb">OSCM Simulator › Capacity Planning</div>
-                            <h1 class="page-title"><span class="chapter-badge">🌳 Ch 5</span>Decision Trees & Expected
+                            <h1 class="page-title"><span class="chapter-badge">🌳 Ch 5</span>Decision Trees &amp; Expected
                                 Monetary Value</h1>
                         </div>
                     </div>
@@ -2812,14 +2790,9 @@
                             </div>
                         </div>
                         <div class="canonical-tabs">
-                            <button class="canonical-tab active" data-canonical-target="all"
-                                onclick="OSCMCanonical.openView('decision','all', this)" type="button">All</button>
-                            <button class="canonical-tab" data-canonical-target="simulator"
-                                onclick="OSCMCanonical.openView('decision','simulator', this)"
-                                type="button">Simulator</button>
-                            <button class="canonical-tab" data-canonical-target="theory"
-                                onclick="OSCMCanonical.openView('decision','theory', this)"
-                                type="button">Theory</button>
+                            <button class="canonical-tab active" data-canonical-target="all" onclick="OSCMCanonical.openView('decision','all', this)" type="button">All</button>
+                            <button class="canonical-tab" data-canonical-target="simulator" onclick="OSCMCanonical.openView('decision','simulator', this)" type="button">Simulator</button>
+                            <button class="canonical-tab" data-canonical-target="theory" onclick="OSCMCanonical.openView('decision','theory', this)" type="button">Theory</button>
                         </div>
                     </div>
                     <section class="theory-section" data-canon-tags="simulator theory">
@@ -2839,7 +2812,7 @@
                                 "A decision tree is a schematic model of alternatives available to the decision maker,
                                 along with their possible consequences. The term gets its name from the tree-like
                                 appearance of the diagram."
-                                <span class="citation-source">— Jacobs & Chase (2024, p. 148)</span>
+                                <span class="citation-source">— Jacobs &amp; Chase (2024, p. 148)</span>
                             </div>
                             <h3>Decision Tree Components</h3>
                             <div class="concepts-grid">
@@ -2901,14 +2874,10 @@
                                 </div>
                             </div>
                             <div class="slider-group">
-                                <div class="slider-header"><span class="slider-label">P(High Demand)</span><span
-                                        class="slider-value" id="dt-p-v">0.60</span></div><input id="dt-p" max="100"
-                                    min="0" type="range" value="60" />
+                                <div class="slider-header"><span class="slider-label">P(High Demand)</span><span class="slider-value" id="dt-p-v">0.60</span></div><input id="dt-p" max="100" min="0" type="range" value="60">
                             </div>
-                            <div class="input-group"><label class="input-label">High Payoff ($)</label><input id="dt-v1"
-                                    type="number" value="200000" /></div>
-                            <div class="input-group"><label class="input-label">Low Payoff ($)</label><input id="dt-v2"
-                                    type="number" value="-50000" /></div>
+                            <div class="input-group"><label class="input-label">High Payoff ($)</label><input id="dt-v1" type="number" value="200000"></div>
+                            <div class="input-group"><label class="input-label">Low Payoff ($)</label><input id="dt-v2" type="number" value="-50000"></div>
                         </div>
                         <div class="card">
                             <div class="card-header">
@@ -2918,10 +2887,8 @@
                                     <p class="card-subtitle">Lower risk, more conservative</p>
                                 </div>
                             </div>
-                            <div class="input-group"><label class="input-label">High Payoff ($)</label><input id="dt-v3"
-                                    type="number" value="90000" /></div>
-                            <div class="input-group"><label class="input-label">Low Payoff ($)</label><input id="dt-v4"
-                                    type="number" value="25000" /></div>
+                            <div class="input-group"><label class="input-label">High Payoff ($)</label><input id="dt-v3" type="number" value="90000"></div>
+                            <div class="input-group"><label class="input-label">Low Payoff ($)</label><input id="dt-v4" type="number" value="25000"></div>
                             <div class="grid-2 mt-4">
                                 <div class="metric-card highlight" id="dt-lc">
                                     <div class="metric-value" id="dt-e1">$100,000</div>
@@ -2959,14 +2926,9 @@
                             </div>
                         </div>
                         <div class="canonical-tabs">
-                            <button class="canonical-tab active" data-canonical-target="all"
-                                onclick="OSCMCanonical.openView('learning','all', this)" type="button">All</button>
-                            <button class="canonical-tab" data-canonical-target="simulator"
-                                onclick="OSCMCanonical.openView('learning','simulator', this)"
-                                type="button">Simulator</button>
-                            <button class="canonical-tab" data-canonical-target="theory"
-                                onclick="OSCMCanonical.openView('learning','theory', this)"
-                                type="button">Theory</button>
+                            <button class="canonical-tab active" data-canonical-target="all" onclick="OSCMCanonical.openView('learning','all', this)" type="button">All</button>
+                            <button class="canonical-tab" data-canonical-target="simulator" onclick="OSCMCanonical.openView('learning','simulator', this)" type="button">Simulator</button>
+                            <button class="canonical-tab" data-canonical-target="theory" onclick="OSCMCanonical.openView('learning','theory', this)" type="button">Theory</button>
                         </div>
                     </div>
                     <div class="tabs" data-canon-tags="simulator">
@@ -2992,7 +2954,7 @@
                                 required to complete a given task or unit of a product will be less each time the task
                                 is undertaken, (2) the unit time will decrease at a decreasing rate, and (3) the
                                 reduction in time will follow a specific and predictable pattern."
-                                <span class="citation-source">— Jacobs & Chase (2024, p. 168)</span>
+                                <span class="citation-source">— Jacobs &amp; Chase (2024, p. 168)</span>
                             </div>
                             <div class="equation-box">
                                 <div class="equation-label">Unit Time (Log-Linear Model)</div>
@@ -3052,20 +3014,15 @@
                                 </div>
                             </div>
                             <div class="slider-group">
-                                <div class="slider-header"><span class="slider-label">First Unit (K)</span><span
-                                        class="slider-value"><span id="lc-k-v">100</span> hrs</span></div><input
-                                    id="lc-k" max="500" min="10" type="range" value="100" />
+                                <div class="slider-header"><span class="slider-label">First Unit (K)</span><span class="slider-value"><span id="lc-k-v">100</span> hrs</span></div><input id="lc-k" max="500" min="10" type="range" value="100">
                             </div>
                             <div class="slider-group">
-                                <div class="slider-header"><span class="slider-label">Learning Rate</span><span
-                                        class="slider-value"><span id="lc-b-v">80</span>%</span></div><input id="lc-b"
-                                    max="100" min="50" type="range" value="80" />
+                                <div class="slider-header"><span class="slider-label">Learning Rate</span><span class="slider-value"><span id="lc-b-v">80</span>%</span></div><input id="lc-b" max="100" min="50" type="range" value="80">
                             </div>
                             <div class="equation-box">
                                 <div class="equation-label">Exponent</div>
                                 <div class="equation-formula"><span id="lc-n-f">\[n =
-                                        \frac{\log(0.80)}{\log(2)}\]</span><span class="equation-result"
-                                        id="lc-n-r">=−0.322</span></div>
+                                        \frac{\log(0.80)}{\log(2)}\]</span><span class="equation-result" id="lc-n-r">=−0.322</span></div>
                             </div>
                         </div>
                         <div class="card">
@@ -3090,7 +3047,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    </tr>
+                                    
                                 </tbody>
                             </table>
                         </div>
@@ -3101,7 +3058,7 @@
                                 <div class="patch-icon">📈</div>
                                 <div>
                                     <div class="patch-chapter">Activity Analysis</div>
-                                    <div class="patch-title">Cumulative Time & Average Analysis</div>
+                                    <div class="patch-title">Cumulative Time &amp; Average Analysis</div>
                                     <div class="patch-subtitle">textbook-aligned power law calculations</div>
                                 </div>
                             </div>
@@ -3118,7 +3075,7 @@
                                 </div>
                                 <div class="card">
                                     <div class="grid-2">
-                                        <div id="be-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+                                        
 <div id="lc-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
 <div class="metric-card highlight">
                                             <div class="metric-value" id="lc-unit-time">47.5</div>
@@ -3166,7 +3123,7 @@
                         <div class="equation-box">
                             <div class="equation-label">Theoretical Minimum Workstations</div>
                             <div class="equation-formula">\[N_{min} = \left\lceil \frac{\sum t_i}{C} \right\rceil\]</div>
-                            <div class="equation-description">Where &Sigma;t<sub>i</sub> = sum of all task times, C = cycle time. Round up to next integer.</div>
+                            <div class="equation-description">Where Σt<sub>i</sub> = sum of all task times, C = cycle time. Round up to next integer.</div>
                         </div>
                         <div class="equation-box">
                             <div class="equation-label">Line Efficiency</div>
@@ -3186,10 +3143,10 @@
                             <div class="input-group"><label class="input-label">Actual Number of Workstations</label><input type="number" id="lb-stations" value="4" oninput="calcLineBalance()"></div>
                         </div>
                         <div>
-                            <div id="pert-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+                            
 <div class="grid-2 mb-3">
-                                <div id="be-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
-<div id="lc-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+                                
+
 <div class="metric-card highlight"><div class="metric-value" id="lb-cycle">60s</div><div class="metric-label">Cycle Time</div></div>
                                 <div class="metric-card"><div class="metric-value" id="lb-nmin">4</div><div class="metric-label">Min Workstations</div></div>
                             </div>
@@ -3225,16 +3182,10 @@
                             </div>
                         </div>
                         <div class="canonical-tabs">
-                            <button class="canonical-tab active" data-canonical-target="all"
-                                onclick="OSCMCanonical.openView('queuing','all', this)" type="button">All</button>
-                            <button class="canonical-tab" data-canonical-target="simulator"
-                                onclick="OSCMCanonical.openView('queuing','simulator', this)"
-                                type="button">Simulator</button>
-                            <button class="canonical-tab" data-canonical-target="theory"
-                                onclick="OSCMCanonical.openView('queuing','theory', this)" type="button">Theory</button>
-                            <button class="canonical-tab" data-canonical-target="practice"
-                                onclick="OSCMCanonical.openView('queuing','practice', this)"
-                                type="button">Practice</button>
+                            <button class="canonical-tab active" data-canonical-target="all" onclick="OSCMCanonical.openView('queuing','all', this)" type="button">All</button>
+                            <button class="canonical-tab" data-canonical-target="simulator" onclick="OSCMCanonical.openView('queuing','simulator', this)" type="button">Simulator</button>
+                            <button class="canonical-tab" data-canonical-target="theory" onclick="OSCMCanonical.openView('queuing','theory', this)" type="button">Theory</button>
+                            <button class="canonical-tab" data-canonical-target="practice" onclick="OSCMCanonical.openView('queuing','practice', this)" type="button">Practice</button>
                         </div>
                     </div>
                     <div class="tabs" data-canon-tags="simulator">
@@ -3266,7 +3217,7 @@
                                     system and the delays suffered by users of that system. It helps managers make
                                     capacity decisions by quantifying the relationship between arrival rates, service
                                     rates, and system performance."
-                                    <span class="citation-source">— Jacobs & Chase (2024, p. 286)</span>
+                                    <span class="citation-source">— Jacobs &amp; Chase (2024, p. 286)</span>
                                 </div>
                                 <h3>Kendall's Notation: A/B/s</h3>
                                 <ul class="assumptions-list">
@@ -3285,7 +3236,7 @@
                                         \[\rho = \frac{\lambda}{\mu}\]
                                     </div>
                                     <div class="equation-description">Where λ = mean arrival rate, μ = mean service
-                                        rate. System is stable only when ρ < 1 (i.e., λ < μ). Utilization represents the
+                                        rate. System is stable only when ρ &lt; 1 (i.e., λ &lt; μ). Utilization represents the
                                             fraction of time the server is busy.</div>
                                     </div>
                                     <div class="equation-box">
@@ -3338,7 +3289,7 @@
                                             for determining the probability of exceeding a certain queue length.</div>
                                     </div>
                                     <h3 style="margin-top: 24px;">Model 3: M/M/s — Multi-Server Queue</h3>
-                                    <p>Multiple parallel servers (s channels) drawing from a single queue. Requires λ <
+                                    <p>Multiple parallel servers (s channels) drawing from a single queue. Requires λ &lt;
                                             sμ for stability.</p>
                                             <div class="equation-box">
                                                 <div class="equation-label">Probability of Empty System (P<sub>0</sub>)
@@ -3397,14 +3348,10 @@
                                     </div>
                                 </div>
                                 <div class="slider-group">
-                                    <div class="slider-header"><span class="slider-label">Arrival (λ)</span><span
-                                            class="slider-value"><span id="q-l-v">10</span>/hr</span></div><input
-                                        id="q-l" max="50" min="1" type="range" value="10" />
+                                    <div class="slider-header"><span class="slider-label">Arrival (λ)</span><span class="slider-value"><span id="q-l-v">10</span>/hr</span></div><input id="q-l" max="50" min="1" type="range" value="10">
                                 </div>
                                 <div class="slider-group">
-                                    <div class="slider-header"><span class="slider-label">Service (μ)</span><span
-                                            class="slider-value"><span id="q-m-v">15</span>/hr</span></div><input
-                                        id="q-m" max="60" min="1" type="range" value="15" />
+                                    <div class="slider-header"><span class="slider-label">Service (μ)</span><span class="slider-value"><span id="q-m-v">15</span>/hr</span></div><input id="q-m" max="60" min="1" type="range" value="15">
                                 </div>
                                 <div class="alert alert-danger" id="q-alert" style="display:none">
                                     <div class="alert-icon">⚠️</div>
@@ -3421,17 +3368,15 @@
                                 <div class="equation-box">
                                     <div class="equation-label">Utilization</div>
                                     <div class="equation-formula"><span id="q-rho-f">\[\rho =
-                                            \frac{10}{15}\]</span><span class="equation-result"
-                                            id="q-rho-r">=0.67</span></div>
+                                            \frac{10}{15}\]</span><span class="equation-result" id="q-rho-r">=0.67</span></div>
                                 </div>
                                 <div class="equation-box">
                                     <div class="equation-label">Lq</div>
-                                    <div class="equation-formula"><span id="q-lq-f">\[L_q = \frac{100}{75}\]</span><span
-                                            class="equation-result" id="q-lq-r">=1.33</span></div>
+                                    <div class="equation-formula"><span id="q-lq-f">\[L_q = \frac{100}{75}\]</span><span class="equation-result" id="q-lq-r">=1.33</span></div>
                                 </div>
                                 <div class="grid-2 mt-4">
-                                    <div id="be-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
-<div id="lc-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+                                    
+
 <div class="metric-card highlight">
                                         <div class="metric-value" id="q-rho-m">66.7%</div>
                                         <div class="metric-label">Utilization</div>
@@ -3479,11 +3424,9 @@
                             <div class="comparison-container">
                                 <div class="comparison-panel active-panel">
                                     <div class="comp-label">System A (Current)</div>
-                                    <div class="input-group"><label class="input-label">Arrival Rate (λ)</label><input
-                                            id="cmp-q-l1" type="number" value="10" /></div>
-                                    <div class="input-group"><label class="input-label">Service Rate (μ)</label><input
-                                            id="cmp-q-m1" type="number" value="15" /></div>
-                                    <div id="risk-chart" style="width:100%; height:350px; margin-bottom:20px;"></div>
+                                    <div class="input-group"><label class="input-label">Arrival Rate (λ)</label><input id="cmp-q-l1" type="number" value="10"></div>
+                                    <div class="input-group"><label class="input-label">Service Rate (μ)</label><input id="cmp-q-m1" type="number" value="15"></div>
+                                    
 <div class="metric-card highlight mt-4">
                                         <div class="metric-value" id="cmp-q-lq1">1.33</div>
                                         <div class="metric-label">Avg in Queue (Lq)</div>
@@ -3491,10 +3434,8 @@
                                 </div>
                                 <div class="comparison-panel">
                                     <div class="comp-label">System B (Alternative)</div>
-                                    <div class="input-group"><label class="input-label">Arrival Rate (λ)</label><input
-                                            id="cmp-q-l2" type="number" value="10" /></div>
-                                    <div class="input-group"><label class="input-label">Service Rate (μ)</label><input
-                                            id="cmp-q-m2" type="number" value="20" /></div>
+                                    <div class="input-group"><label class="input-label">Arrival Rate (λ)</label><input id="cmp-q-l2" type="number" value="10"></div>
+                                    <div class="input-group"><label class="input-label">Service Rate (μ)</label><input id="cmp-q-m2" type="number" value="20"></div>
                                     <div class="metric-card mt-4">
                                         <div class="metric-value" id="cmp-q-lq2">0.50</div>
                                         <div class="metric-label">Avg in Queue (Lq)</div>
@@ -3521,8 +3462,7 @@
                                 <span class="practice-badge">Queuing Problem</span>
                                 <div class="practice-q" id="q-prac-q">Arrival Rate (λ) = 12/hr, Service Rate (μ) =
                                     18/hr. Calculate Avg in Queue (Lq).</div>
-                                <div class="input-group"><label class="input-label">Your Lq Answer:</label><input
-                                        id="q-prac-ans-input" placeholder="Enter Lq" step=".01" type="number" /></div>
+                                <div class="input-group"><label class="input-label">Your Lq Answer:</label><input id="q-prac-ans-input" placeholder="Enter Lq" step=".01" type="number"></div>
                                 <div class="btn-group"><button class="btn btn-primary" onclick="checkQAns()">Check
                                         Answer</button><button class="btn btn-secondary" onclick="showQSol()">Show
                                         Solution</button></div>
@@ -3552,8 +3492,8 @@
                                 </div>
                                 <div class="card">
                                     <div class="grid-2">
-                                        <div id="be-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
-<div id="lc-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+                                        
+
 <div class="metric-card highlight"><div class="metric-value" id="mms-lq">0.889</div><div class="metric-label">Avg in Queue (Lq)</div></div>
                                         <div class="metric-card"><div class="metric-value" id="mms-wq">0.059</div><div class="metric-label">Wait in Queue (Wq)</div></div>
                                     </div>
@@ -3569,7 +3509,7 @@
                                 <div>
                                     <div class="patch-chapter">Finite Population</div>
                                     <div class="patch-title">Finite Population Model (M/M/1/N/N)</div>
-                                    <div class="patch-subtitle">Machine repair & specialized maintenance scenarios</div>
+                                    <div class="patch-subtitle">Machine repair &amp; specialized maintenance scenarios</div>
                                 </div>
                             </div>
                             <div class="grid-2">
@@ -3579,8 +3519,8 @@
                                     <div class="input-group"><label class="input-label">Running Time (U)</label><input type="number" id="fq-u" value="100" oninput="calcFiniteQueue()"></div>
                                 </div>
                                 <div class="card">
-                                    <div id="be-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
-<div id="lc-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+                                    
+
 <div class="metric-card highlight"><div class="metric-value" id="fq-l">2.54</div><div class="metric-label">Avg # in System (L)</div></div>
                                     <div class="metric-card mt-3"><div class="metric-value" id="fq-w">31.7</div><div class="metric-label">Avg Wait Time (W)</div></div>
                                     <div class="alert alert-info mt-4">
@@ -3612,13 +3552,9 @@
                             </div>
                         </div>
                         <div class="canonical-tabs">
-                            <button class="canonical-tab active" data-canonical-target="all"
-                                onclick="OSCMCanonical.openView('littles','all', this)" type="button">All</button>
-                            <button class="canonical-tab" data-canonical-target="simulator"
-                                onclick="OSCMCanonical.openView('littles','simulator', this)"
-                                type="button">Simulator</button>
-                            <button class="canonical-tab" data-canonical-target="theory"
-                                onclick="OSCMCanonical.openView('littles','theory', this)" type="button">Theory</button>
+                            <button class="canonical-tab active" data-canonical-target="all" onclick="OSCMCanonical.openView('littles','all', this)" type="button">All</button>
+                            <button class="canonical-tab" data-canonical-target="simulator" onclick="OSCMCanonical.openView('littles','simulator', this)" type="button">Simulator</button>
+                            <button class="canonical-tab" data-canonical-target="theory" onclick="OSCMCanonical.openView('littles','theory', this)" type="button">Theory</button>
                         </div>
                     </div>
                     <section class="theory-section" data-canon-tags="simulator theory">
@@ -3638,7 +3574,7 @@
                                 "Little's law states a mathematical relationship between throughput rate, flow time, and
                                 the amount of work-in-process inventory. It applies to any stable system, regardless of
                                 the distribution of arrivals or service times."
-                                <span class="citation-source">— Jacobs & Chase (2024, p. 312)</span>
+                                <span class="citation-source">— Jacobs &amp; Chase (2024, p. 312)</span>
                             </div>
                             <div class="equation-box">
                                 <div class="equation-label">Little's Law</div>
@@ -3686,21 +3622,16 @@
                                 </div>
                             </div>
                             <div class="slider-group">
-                                <div class="slider-header"><span class="slider-label">Throughput (R)</span><span
-                                        class="slider-value"><span id="ll-r-v">10</span> u/hr</span></div><input
-                                    id="ll-r" max="50" min="1" type="range" value="10" />
+                                <div class="slider-header"><span class="slider-label">Throughput (R)</span><span class="slider-value"><span id="ll-r-v">10</span> u/hr</span></div><input id="ll-r" max="50" min="1" type="range" value="10">
                             </div>
                             <div class="slider-group">
-                                <div class="slider-header"><span class="slider-label">Flow Time (T)</span><span
-                                        class="slider-value"><span id="ll-t-v">5</span> hrs</span></div><input id="ll-t"
-                                    max="24" min="1" type="range" value="5" />
+                                <div class="slider-header"><span class="slider-label">Flow Time (T)</span><span class="slider-value"><span id="ll-t-v">5</span> hrs</span></div><input id="ll-t" max="24" min="1" type="range" value="5">
                             </div>
                             <div class="equation-box">
                                 <div class="equation-label">Calculation</div>
-                                <div class="equation-formula"><span id="ll-f">\[I = 10 \times 5\]</span><span
-                                        class="equation-result" id="ll-r2">=50</span></div>
+                                <div class="equation-formula"><span id="ll-f">\[I = 10 \times 5\]</span><span class="equation-result" id="ll-r2">=50</span></div>
                             </div>
-                            <div id="risk-chart" style="width:100%; height:350px; margin-bottom:20px;"></div>
+                            
 <div class="metric-card highlight mt-4">
                                 <div class="metric-value" id="ll-wip">50</div>
                                 <div class="metric-label">WIP Inventory</div>
@@ -3715,8 +3646,7 @@
                             </div>
                             <div style="padding:16px">
                                 <div class="pipeline-visual">
-                                    <div class="pipeline-flow"></div><span class="pipeline-wip">WIP: <span
-                                            id="ll-wip2">50</span></span>
+                                    <div class="pipeline-flow"></div><span class="pipeline-wip">WIP: <span id="ll-wip2">50</span></span>
                                 </div>
                             </div>
                         </div>
@@ -3779,8 +3709,8 @@
                                     <div class="metric-value">4</div>
                                     <div class="metric-label">Triangle Features</div>
                                 </div>
-                                <div id="be-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
-<div id="lc-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+                                
+
 <div class="metric-card highlight">
                                     <div class="metric-value">Customer</div>
                                     <div class="metric-label">Central Focus</div>
@@ -3788,7 +3718,7 @@
                             </div>
                         </div>
 
-                        <div id="crash-chart" style="width:100%; height:350px; margin-bottom:20px;"></div>
+                        
 <div class="card mt-4">
                             <div class="card-header">
                                 <div class="card-icon">👥</div>
@@ -3875,7 +3805,7 @@
                             <p><strong>Service design</strong> differs from product design because the process IS the product. Key factors include simultaneity, lack of legal protection, and the service package.</p>
                             <div class="citation-box">
                                 "The process and the product must be developed simultaneously; indeed, in services, the process is the product."
-                                <span class="citation-source">— Jacobs & Chase (2024, p. 229)</span>
+                                <span class="citation-source">— Jacobs &amp; Chase (2024, p. 229)</span>
                             </div>
                         </div>
                     </section>
@@ -3889,7 +3819,7 @@
                     <div class="module-icon">📉</div>
                     <div>
                         <div class="module-chapter">Chapter 13 / SQC — Exhibit 13.6</div>
-                        <div class="module-title">p-Chart & c-Chart Calculators</div>
+                        <div class="module-title">p-Chart &amp; c-Chart Calculators</div>
                         <div class="module-subtitle">Attribute control charts for proportion defective and defects per unit</div>
                     </div>
                 </div>
@@ -3914,7 +3844,7 @@
                         <div class="equation-box">
                             <div class="equation-label">p-Chart: Control Limits</div>
                             <div class="equation-formula">\[UCL = ar{p} + 3S_p \quad,\quad LCL = ar{p} - 3S_p\]</div>
-                            <div class="equation-description">If LCL < 0, set LCL = 0. A z-value of 3 gives 99.7% confidence that the process is within these limits.</div>
+                            <div class="equation-description">If LCL &lt; 0, set LCL = 0. A z-value of 3 gives 99.7% confidence that the process is within these limits.</div>
                         </div>
                     </div>
                 </div>
@@ -3932,10 +3862,10 @@
                             </div>
                         </div>
                         <div>
-                            <div id="eoq-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+                            
 <div class="grid-3 mb-3">
-                                <div id="be-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
-<div id="lc-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+                                
+
 <div class="metric-card highlight"><div class="metric-value" id="pc-pbar">0.0303</div><div class="metric-label">p̄ (Center)</div></div>
                                 <div class="metric-card danger"><div class="metric-value" id="pc-ucl">0.0600</div><div class="metric-label">UCL</div></div>
                                 <div class="metric-card success"><div class="metric-value" id="pc-lcl">0.0007</div><div class="metric-label">LCL</div></div>
@@ -3956,10 +3886,10 @@
                             </table>
                         </div>
                         <div>
-                            <div id="eoq-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+                            
 <div class="grid-3 mb-3">
-                                <div id="be-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
-<div id="lc-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+                                
+
 <div class="metric-card highlight"><div class="metric-value" id="cc-cbar">4.5</div><div class="metric-label">c̄ (Center)</div></div>
                                 <div class="metric-card danger"><div class="metric-value" id="cc-ucl">10.86</div><div class="metric-label">UCL</div></div>
                                 <div class="metric-card success"><div class="metric-value" id="cc-lcl">0.00</div><div class="metric-label">LCL</div></div>
@@ -3977,7 +3907,7 @@
                     <div class="module-icon">🎯</div>
                     <div>
                         <div class="module-chapter">Chapter 13 / Exhibit 13.4</div>
-                        <div class="module-title">Process Capability — Cp & Cpk</div>
+                        <div class="module-title">Process Capability — Cp &amp; Cpk</div>
                         <div class="module-subtitle">Measuring process performance relative to specification limits</div>
                     </div>
                 </div>
@@ -3992,16 +3922,16 @@
                         <div class="equation-box">
                             <div class="equation-label">Process Capability Index (Cp)</div>
                             <div class="equation-formula">\[C_p = \frac{USL - LSL}{6\sigma}\]</div>
-                            <div class="equation-description">Measures the spread of the process relative to the specification width. Cp &ge; 1.0 means the process CAN fit within specs if centered.</div>
+                            <div class="equation-description">Measures the spread of the process relative to the specification width. Cp ≥ 1.0 means the process CAN fit within specs if centered.</div>
                         </div>
                         <div class="equation-box">
                             <div class="equation-label">Actual Process Capability (Cpk)</div>
                             <div class="equation-formula">\[C_{pk} = \min\left(\frac{USL - \bar{X}}{3\sigma},\; \frac{\bar{X} - LSL}{3\sigma}\right)\]</div>
-                            <div class="equation-description">Accounts for process centering. Cpk &ge; 1.33 is typically required. From textbook: process centered at 1.251 with &sigma; = 0.00083 gives Cpk = 1.6.</div>
+                            <div class="equation-description">Accounts for process centering. Cpk ≥ 1.33 is typically required. From textbook: process centered at 1.251 with σ = 0.00083 gives Cpk = 1.6.</div>
                         </div>
                         <div class="citation-box">
-                            "Working with our example in Exhibit 13.4, let's assume our process is centered at 1.251 and &sigma; = 0.00083. Cpk = 1.6, which is the smaller number. This is a pretty good capability index because few defects will be produced by this process."
-                            <span class="citation-source">— Jacobs & Chase (2024, p. 374)</span>
+                            "Working with our example in Exhibit 13.4, let's assume our process is centered at 1.251 and σ = 0.00083. Cpk = 1.6, which is the smaller number. This is a pretty good capability index because few defects will be produced by this process."
+                            <span class="citation-source">— Jacobs &amp; Chase (2024, p. 374)</span>
                         </div>
                     </div>
                 </div>
@@ -4013,21 +3943,21 @@
                             <div class="input-group"><label class="input-label">Upper Spec Limit (USL)</label><input type="number" id="cpk-usl" value="1.255" step="0.001" oninput="calcCpk()"></div>
                             <div class="input-group"><label class="input-label">Lower Spec Limit (LSL)</label><input type="number" id="cpk-lsl" value="1.245" step="0.001" oninput="calcCpk()"></div>
                             <div class="input-group"><label class="input-label">Process Mean (X̄)</label><input type="number" id="cpk-mean" value="1.251" step="0.001" oninput="calcCpk()"></div>
-                            <div class="input-group"><label class="input-label">Process Std Dev (&sigma;)</label><input type="number" id="cpk-sigma" value="0.00083" step="0.0001" oninput="calcCpk()"></div>
+                            <div class="input-group"><label class="input-label">Process Std Dev (σ)</label><input type="number" id="cpk-sigma" value="0.00083" step="0.0001" oninput="calcCpk()"></div>
                         </div>
                         <div>
-                            <div id="pert-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+                            
 <div class="grid-2 mb-3">
                                 <div class="metric-card"><div class="metric-value" id="cpk-cp">2.01</div><div class="metric-label">Cp (Potential)</div></div>
-                                <div id="be-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
-<div id="lc-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+                                
+
 <div class="metric-card highlight"><div class="metric-value" id="cpk-cpk">1.61</div><div class="metric-label">Cpk (Actual)</div></div>
                             </div>
                             <div class="grid-2">
                                 <div class="metric-card"><div class="metric-value" id="cpk-cpu">1.61</div><div class="metric-label">Cpu (Upper)</div></div>
                                 <div class="metric-card"><div class="metric-value" id="cpk-cpl">2.41</div><div class="metric-label">Cpl (Lower)</div></div>
                             </div>
-                            <div class="alert mt-3" id="cpk-assessment"><div class="alert-icon">✅</div><div id="cpk-assess-text"><strong>Excellent:</strong> Cpk = 1.61 &ge; 1.33. Process is capable with very few defects expected.</div></div>
+                            <div class="alert mt-3" id="cpk-assessment"><div class="alert-icon">✅</div><div id="cpk-assess-text"><strong>Excellent:</strong> Cpk = 1.61 ≥ 1.33. Process is capable with very few defects expected.</div></div>
                         </div>
                     </div>
                 </div>
@@ -4076,8 +4006,8 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <div id="be-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
-<div id="lc-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+                                    
+
 <div class="metric-card highlight">
                                         <div class="metric-value" id="samp-pa">0.541</div>
                                         <div class="metric-label">P(Accept Lot)</div>
@@ -4108,9 +4038,9 @@
                             </div>
                             <div class="oc-curve-container">
                                 <svg id="oc-curve-svg" viewBox="0 0 500 300">
-                                    <line x1="50" y1="250" x2="450" y2="250" stroke="#334155" stroke-width="2"/>
-                                    <line x1="50" y1="250" x2="50" y2="30" stroke="#334155" stroke-width="2"/>
-                                    <path id="oc-curve-path" d="M50,35 Q100,40 130,60 Q180,100 210,140 Q260,190 310,220 Q370,240 450,248" fill="none" stroke="#6366f1" stroke-width="3"/>
+                                    <line x1="50" y1="250" x2="450" y2="250" stroke="#334155" stroke-width="2"></line>
+                                    <line x1="50" y1="250" x2="50" y2="30" stroke="#334155" stroke-width="2"></line>
+                                    <path id="oc-curve-path" d="M50,35 Q100,40 130,60 Q180,100 210,140 Q260,190 310,220 Q370,240 450,248" fill="none" stroke="#6366f1" stroke-width="3"></path>
                                 </svg>
                             </div>
                         </div>
@@ -4136,7 +4066,7 @@
                     <div class="main-header-content">
                         <div>
                             <div class="breadcrumb">OSCM Simulator › Six Sigma</div>
-                            <h1 class="page-title"><span class="chapter-badge">🎯 Ch 12</span>DPMO & DMAIC</h1>
+                            <h1 class="page-title"><span class="chapter-badge">🎯 Ch 12</span>DPMO &amp; DMAIC</h1>
                         </div>
                         <div class="header-actions">
                             <button class="btn btn-secondary" onclick="OSCMCanonical.openView('dpmo','theory', this)">Theory</button>
@@ -4159,8 +4089,8 @@
                                 </div>
                                 <div>
                                     <div class="grid-2">
-                                        <div id="be-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
-<div id="lc-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+                                        
+
 <div class="metric-card highlight"><div class="metric-value" id="dpmo-result">3,300</div><div class="metric-label">DPMO</div></div>
                                         <div class="metric-card success"><div class="metric-value" id="dpmo-sigma">4.2u03C3</div><div class="metric-label">Sigma Level</div></div>
                                     </div>
@@ -4234,8 +4164,8 @@
                             </div>
                             <div class="grid-3 mt-4">
                                 <div class="metric-card danger"><div class="metric-value" id="fmea-total-rpn">388</div><div class="metric-label">Total RPN</div></div>
-                                <div id="be-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
-<div id="lc-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+                                
+
 <div class="metric-card highlight"><div class="metric-value" id="fmea-highest-rpn">280</div><div class="metric-label">Highest RPN</div></div>
                                 <div class="metric-card"><div class="metric-value" id="fmea-avg-rpn">194</div><div class="metric-label">Average RPN</div></div>
                             </div>
@@ -4343,14 +4273,9 @@
                             </div>
                         </div>
                         <div class="canonical-tabs">
-                            <button class="canonical-tab active" data-canonical-target="all"
-                                onclick="OSCMCanonical.openView('centroid','all', this)" type="button">All</button>
-                            <button class="canonical-tab" data-canonical-target="simulator"
-                                onclick="OSCMCanonical.openView('centroid','simulator', this)"
-                                type="button">Simulator</button>
-                            <button class="canonical-tab" data-canonical-target="theory"
-                                onclick="OSCMCanonical.openView('centroid','theory', this)"
-                                type="button">Theory</button>
+                            <button class="canonical-tab active" data-canonical-target="all" onclick="OSCMCanonical.openView('centroid','all', this)" type="button">All</button>
+                            <button class="canonical-tab" data-canonical-target="simulator" onclick="OSCMCanonical.openView('centroid','simulator', this)" type="button">Simulator</button>
+                            <button class="canonical-tab" data-canonical-target="theory" onclick="OSCMCanonical.openView('centroid','theory', this)" type="button">Theory</button>
                         </div>
                     </div>
                     <div class="tabs" data-canon-tags="simulator">
@@ -4373,7 +4298,7 @@
                                 shipments.</p>
                             <div class="citation-box">"The centroid method considers existing facilities, the distances
                                 between them, and the volumes of goods to be shipped."<span class="citation-source">—
-                                    Jacobs & Chase (2024, p. 456)</span></div>
+                                    Jacobs &amp; Chase (2024, p. 456)</span></div>
                             <div class="equation-box">
                                 <div class="equation-label">Centroid Coordinates (X, Y)</div>
                                 <div class="equation-formula">\[C_x = \frac{\sum(d_{ix} \times V_i)}{\sum V_i} \quad ;
@@ -4413,33 +4338,21 @@
                                     <tbody>
                                         <tr>
                                             <td><strong>A</strong></td>
-                                            <td><input id="c-ax" style="width:80px; padding:4px;" type="number"
-                                                    value="20" /></td>
-                                            <td><input id="c-ay" style="width:80px; padding:4px;" type="number"
-                                                    value="80" /></td>
-                                            <td style="background: #f0f9ff;"><input id="c-av"
-                                                    style="width:100px; padding:4px; font-weight:bold;" type="number"
-                                                    value="1000" /></td>
+                                            <td><input id="c-ax" style="width:80px; padding:4px;" type="number" value="20"></td>
+                                            <td><input id="c-ay" style="width:80px; padding:4px;" type="number" value="80"></td>
+                                            <td style="background: #f0f9ff;"><input id="c-av" style="width:100px; padding:4px; font-weight:bold;" type="number" value="1000"></td>
                                         </tr>
                                         <tr>
                                             <td><strong>B</strong></td>
-                                            <td><input id="c-bx" style="width:80px; padding:4px;" type="number"
-                                                    value="80" /></td>
-                                            <td><input id="c-by" style="width:80px; padding:4px;" type="number"
-                                                    value="60" /></td>
-                                            <td style="background: #f0f9ff;"><input id="c-bv"
-                                                    style="width:100px; padding:4px; font-weight:bold;" type="number"
-                                                    value="500" /></td>
+                                            <td><input id="c-bx" style="width:80px; padding:4px;" type="number" value="80"></td>
+                                            <td><input id="c-by" style="width:80px; padding:4px;" type="number" value="60"></td>
+                                            <td style="background: #f0f9ff;"><input id="c-bv" style="width:100px; padding:4px; font-weight:bold;" type="number" value="500"></td>
                                         </tr>
                                         <tr>
                                             <td><strong>C</strong></td>
-                                            <td><input id="c-cx" style="width:80px; padding:4px;" type="number"
-                                                    value="40" /></td>
-                                            <td><input id="c-cy" style="width:80px; padding:4px;" type="number"
-                                                    value="20" /></td>
-                                            <td style="background: #f0f9ff;"><input id="c-cv"
-                                                    style="width:100px; padding:4px; font-weight:bold;" type="number"
-                                                    value="800" /></td>
+                                            <td><input id="c-cx" style="width:80px; padding:4px;" type="number" value="40"></td>
+                                            <td><input id="c-cy" style="width:80px; padding:4px;" type="number" value="20"></td>
+                                            <td style="background: #f0f9ff;"><input id="c-cv" style="width:100px; padding:4px; font-weight:bold;" type="number" value="800"></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -4447,14 +4360,14 @@
                             <button class="btn btn-primary mt-4" onclick="calcCent()" style="width: 100%;">Calculate
                                 Optimal Location</button>
                             <div class="grid-2 mt-4">
-                                <div id="be-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
-<div id="lc-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+                                
+
 <div class="metric-card highlight">
                                     <div class="metric-value" id="c-rx">40.9</div>
                                     <div class="metric-label">Optimal X (C<sub>x</sub>)</div>
                                 </div>
-                                <div id="be-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
-<div id="lc-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+                                
+
 <div class="metric-card highlight">
                                     <div class="metric-value" id="c-ry">55.7</div>
                                     <div class="metric-label">Optimal Y (C<sub>y</sub>)</div>
@@ -4472,8 +4385,7 @@
                             </div>
 
                             <!-- Dynamic SVG Container -->
-                            <div class="chart-container"
-                                style="position: relative; height: 350px; width: 100%; margin-top: 16px; border: 1px solid var(--border-color); border-radius: 8px; background: #f8fafc; overflow: hidden;">
+                            <div class="chart-container" style="position: relative; height: 350px; width: 100%; margin-top: 16px; border: 1px solid var(--border-color); border-radius: 8px; background: #f8fafc; overflow: hidden;">
                                 <svg id="centroid-svg" width="100%" height="100%" style="display: block;">
                                     <!-- SVG content will be injected by the calcCent() JavaScript function -->
                                 </svg>
@@ -4505,8 +4417,8 @@
                             <button class="btn btn-primary mt-3" onclick="calcCentroid()">Optimize Multi-Point</button>
                         </div>
                         <div class="card">
-                            <div id="be-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
-<div id="lc-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+                            
+
 <div class="metric-card highlight">
                                 <div class="metric-value" id="p-centroid-res">X: 47.1, Y: 49.3</div>
                                 <div class="metric-label">Weighted Center of Gravity</div>
@@ -4583,7 +4495,7 @@
                         <div class="equation-box">
                             <div class="equation-label">Transportation Problem Objective</div>
                             <div class="equation-formula">\[\text{Minimize } Z = \sum_{i}\sum_{j} c_{ij} \cdot x_{ij}\]</div>
-                            <div class="equation-description">Subject to: &Sigma;<sub>j</sub> x<sub>ij</sub> = S<sub>i</sub> (supply), &Sigma;<sub>i</sub> x<sub>ij</sub> = D<sub>j</sub> (demand), x<sub>ij</sub> &ge; 0. If total supply &ne; total demand, add a dummy row or column.</div>
+                            <div class="equation-description">Subject to: Σ<sub>j</sub> x<sub>ij</sub> = S<sub>i</sub> (supply), Σ<sub>i</sub> x<sub>ij</sub> = D<sub>j</sub> (demand), x<sub>ij</sub> ≥ 0. If total supply ≠ total demand, add a dummy row or column.</div>
                         </div>
                     </div>
                 </div>
@@ -4611,7 +4523,7 @@
                     <div class="module-icon">📈</div>
                     <div>
                         <div class="module-chapter">Chapter 18 / Forecasting</div>
-                        <div class="module-title">Enhanced Forecasting — WMA, Holt's, Seasonal & Tracking Signal</div>
+                        <div class="module-title">Enhanced Forecasting — WMA, Holt's, Seasonal &amp; Tracking Signal</div>
                         <div class="module-subtitle">Complete forecasting toolkit with interactive UIs</div>
                     </div>
                 </div>
@@ -4640,8 +4552,8 @@
                                 <div class="input-group"><label class="input-label">Demand t-3</label><input type="number" id="wma-d3" value="130" oninput="calcWMA()"></div>
                             </div>
                             <div>
-                                <div id="be-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
-<div id="lc-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+                                
+
 <div class="metric-card highlight"><div class="metric-value" id="wma-result">119.0</div><div class="metric-label">WMA Forecast</div></div>
                             </div>
                         </div>
@@ -4666,8 +4578,8 @@
                         </div>
                         <div class="grid-2">
                             <div>
-                                <div class="input-group"><label class="input-label">Alpha (&alpha;) — Level smoothing</label><input type="number" id="holt-alpha" value="0.3" step="0.05" min="0" max="1" oninput="calcHolts()"></div>
-                                <div class="input-group"><label class="input-label">Beta (&beta;) — Trend smoothing</label><input type="number" id="holt-beta" value="0.2" step="0.05" min="0" max="1" oninput="calcHolts()"></div>
+                                <div class="input-group"><label class="input-label">Alpha (α) — Level smoothing</label><input type="number" id="holt-alpha" value="0.3" step="0.05" min="0" max="1" oninput="calcHolts()"></div>
+                                <div class="input-group"><label class="input-label">Beta (β) — Trend smoothing</label><input type="number" id="holt-beta" value="0.2" step="0.05" min="0" max="1" oninput="calcHolts()"></div>
                                 <div class="input-group"><label class="input-label">Initial Level (L<sub>0</sub>)</label><input type="number" id="holt-l0" value="100" oninput="calcHolts()"></div>
                                 <div class="input-group"><label class="input-label">Initial Trend (T<sub>0</sub>)</label><input type="number" id="holt-t0" value="10" oninput="calcHolts()"></div>
                                 <div class="input-group"><label class="input-label">Latest Actual (A<sub>t</sub>)</label><input type="number" id="holt-at" value="125" oninput="calcHolts()"></div>
@@ -4687,7 +4599,7 @@
                         <div class="equation-box mb-3">
                             <div class="equation-label">Seasonal Index</div>
                             <div class="equation-formula">\[SI_i = \frac{\text{Average demand in season } i}{\text{Overall average demand}}\]</div>
-                            <div class="equation-description">SI > 1.0 means above-average season; SI < 1.0 means below-average. Indices should average to 1.0.</div>
+                            <div class="equation-description">SI &gt; 1.0 means above-average season; SI &lt; 1.0 means below-average. Indices should average to 1.0.</div>
                         </div>
                         <table class="data-table">
                             <thead><tr><th>Quarter</th><th>Year 1</th><th>Year 2</th><th>Year 3</th><th>Avg</th><th>Seasonal Index</th></tr></thead>
@@ -4708,7 +4620,7 @@
                         <div class="equation-box mb-3">
                             <div class="equation-label">Tracking Signal</div>
                             <div class="equation-formula">\[TS = \frac{RSFE}{MAD}\]</div>
-                            <div class="equation-description">RSFE = Running Sum of Forecast Errors = &Sigma;(A<sub>t</sub> &minus; F<sub>t</sub>). MAD = Mean Absolute Deviation. If |TS| > 4, the forecast model may need adjustment.</div>
+                            <div class="equation-description">RSFE = Running Sum of Forecast Errors = Σ(A<sub>t</sub> − F<sub>t</sub>). MAD = Mean Absolute Deviation. If |TS| &gt; 4, the forecast model may need adjustment.</div>
                         </div>
                         <div class="equation-box mb-3">
                             <div class="equation-label">MAPE (Mean Absolute Percentage Error)</div>
@@ -4720,8 +4632,8 @@
                         </table>
                         <div class="grid-3 mt-3">
                             <div class="metric-card"><div class="metric-value" id="ts-mad">—</div><div class="metric-label">MAD</div></div>
-                            <div id="be-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
-<div id="lc-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+                            
+
 <div class="metric-card highlight"><div class="metric-value" id="ts-signal">—</div><div class="metric-label">Tracking Signal</div></div>
                             <div class="metric-card"><div class="metric-value" id="ts-mape">—</div><div class="metric-label">MAPE</div></div>
                         </div>
@@ -4734,7 +4646,7 @@
                     <div class="main-header-content">
                         <div>
                             <div class="breadcrumb">OSCM Simulator › Planning</div>
-                            <h1 class="page-title"><span class="chapter-badge">📋 Ch 19</span>Aggregate Planning & S&OP
+                            <h1 class="page-title"><span class="chapter-badge">📋 Ch 19</span>Aggregate Planning &amp; S&amp;OP
                             </h1>
                         </div>
                     </div>
@@ -4748,14 +4660,9 @@
                             </div>
                         </div>
                         <div class="canonical-tabs">
-                            <button class="canonical-tab active" data-canonical-target="all"
-                                onclick="OSCMCanonical.openView('aggregate','all', this)" type="button">All</button>
-                            <button class="canonical-tab" data-canonical-target="simulator"
-                                onclick="OSCMCanonical.openView('aggregate','simulator', this)"
-                                type="button">Simulator</button>
-                            <button class="canonical-tab" data-canonical-target="theory"
-                                onclick="OSCMCanonical.openView('aggregate','theory', this)"
-                                type="button">Theory</button>
+                            <button class="canonical-tab active" data-canonical-target="all" onclick="OSCMCanonical.openView('aggregate','all', this)" type="button">All</button>
+                            <button class="canonical-tab" data-canonical-target="simulator" onclick="OSCMCanonical.openView('aggregate','simulator', this)" type="button">Simulator</button>
+                            <button class="canonical-tab" data-canonical-target="theory" onclick="OSCMCanonical.openView('aggregate','theory', this)" type="button">Theory</button>
                         </div>
                     </div>
 
@@ -4763,7 +4670,7 @@
                         <div class="theory-header">
                             <div class="theory-icon">📚</div>
                             <div>
-                                <h2 class="theory-title">Sales & Operations Planning (S&OP)</h2>
+                                <h2 class="theory-title">Sales &amp; Operations Planning (S&amp;OP)</h2>
                                 <p class="theory-subtitle">The modern approach to aggregate planning</p>
                             </div>
                         </div>
@@ -4773,10 +4680,10 @@
                                 helps firms keep demand and supply in balance. In operations management, this process
                                 traditionally was called aggregate planning. The new terminology is meant to capture the
                                 importance of cross-functional work."
-                                <span class="citation-source">— Jacobs & Chase (2024)</span>
+                                <span class="citation-source">— Jacobs &amp; Chase (2024)</span>
                             </div>
 
-                            <p>Within S&OP, marketing develops a sales plan that extends through the next <strong>3 to
+                            <p>Within S&amp;OP, marketing develops a sales plan that extends through the next <strong>3 to
                                     18 months</strong> (intermediate-range planning). The operations team then develops
                                 an aggregate operations plan to minimize the cost of resources needed to meet demand.
                                 Outputs of the plan are <strong>planned production rates, aggregate labor requirements,
@@ -4836,7 +4743,7 @@
                         <div class="card-header">
                             <div class="card-icon">⚙️</div>
                             <div>
-                                <h3 class="card-title">Demand & Cost Parameters</h3>
+                                <h3 class="card-title">Demand &amp; Cost Parameters</h3>
                                 <p class="card-subtitle">Enter quarterly forecasts and operational costs</p>
                             </div>
                         </div>
@@ -4844,32 +4751,24 @@
                         <h4 style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 8px;">Quarterly
                             Demand Forecast</h4>
                         <div class="grid-4 mb-4">
-                            <div class="input-group"><label class="input-label">Q1 Demand</label><input id="ag-q1"
-                                    type="number" value="1200" /></div>
-                            <div class="input-group"><label class="input-label">Q2 Demand</label><input id="ag-q2"
-                                    type="number" value="1500" /></div>
-                            <div class="input-group"><label class="input-label">Q3 Demand</label><input id="ag-q3"
-                                    type="number" value="1800" /></div>
-                            <div class="input-group"><label class="input-label">Q4 Demand</label><input id="ag-q4"
-                                    type="number" value="1100" /></div>
+                            <div class="input-group"><label class="input-label">Q1 Demand</label><input id="ag-q1" type="number" value="1200"></div>
+                            <div class="input-group"><label class="input-label">Q2 Demand</label><input id="ag-q2" type="number" value="1500"></div>
+                            <div class="input-group"><label class="input-label">Q3 Demand</label><input id="ag-q3" type="number" value="1800"></div>
+                            <div class="input-group"><label class="input-label">Q4 Demand</label><input id="ag-q4" type="number" value="1100"></div>
                         </div>
 
-                        <h4 style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 8px;">Cost & Labor
+                        <h4 style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 8px;">Cost &amp; Labor
                             Variables</h4>
                         <div class="grid-4">
-                            <div class="input-group"><label class="input-label">Reg Cost/Unit ($)</label><input
-                                    id="ag-rc" type="number" value="40" /></div>
-                            <div class="input-group"><label class="input-label">Hold Cost/Unit ($)</label><input
-                                    id="ag-hc" type="number" value="5" /></div>
-                            <div class="input-group"><label class="input-label">Hire/Fire per Worker ($)</label><input
-                                    id="ag-hf" type="number" value="200" /></div>
-                            <div class="input-group"><label class="input-label">Units per Worker</label><input
-                                    id="ag-upw" type="number" value="10" /></div>
+                            <div class="input-group"><label class="input-label">Reg Cost/Unit ($)</label><input id="ag-rc" type="number" value="40"></div>
+                            <div class="input-group"><label class="input-label">Hold Cost/Unit ($)</label><input id="ag-hc" type="number" value="5"></div>
+                            <div class="input-group"><label class="input-label">Hire/Fire per Worker ($)</label><input id="ag-hf" type="number" value="200"></div>
+                            <div class="input-group"><label class="input-label">Units per Worker</label><input id="ag-upw" type="number" value="10"></div>
                         </div>
 
                         <div class="input-group mt-4" style="max-width: 200px;">
                             <label class="input-label">Initial Workforce (Start of Q1)</label>
-                            <input id="ag-iw" type="number" value="120" />
+                            <input id="ag-iw" type="number" value="120">
                         </div>
 
                         <button class="btn btn-primary mt-4" onclick="calcAgg()" style="width: 100%;">Generate Aggregate
@@ -4966,13 +4865,9 @@
                             </div>
                         </div>
                         <div class="canonical-tabs">
-                            <button class="canonical-tab active" data-canonical-target="all"
-                                onclick="OSCMCanonical.openView('eoq','all', this)" type="button">All</button>
-                            <button class="canonical-tab" data-canonical-target="simulator"
-                                onclick="OSCMCanonical.openView('eoq','simulator', this)"
-                                type="button">Simulator</button>
-                            <button class="canonical-tab" data-canonical-target="theory"
-                                onclick="OSCMCanonical.openView('eoq','theory', this)" type="button">Theory</button>
+                            <button class="canonical-tab active" data-canonical-target="all" onclick="OSCMCanonical.openView('eoq','all', this)" type="button">All</button>
+                            <button class="canonical-tab" data-canonical-target="simulator" onclick="OSCMCanonical.openView('eoq','simulator', this)" type="button">Simulator</button>
+                            <button class="canonical-tab" data-canonical-target="theory" onclick="OSCMCanonical.openView('eoq','theory', this)" type="button">Theory</button>
                         </div>
                     </div>
                     <div class="tabs" data-canon-tags="simulator">
@@ -5004,7 +4899,7 @@
                                     "The EOQ model attempts to find the order quantity that minimizes total annual
                                     holding and ordering costs. At the optimal order quantity Q*, the annual ordering
                                     cost exactly equals the annual holding cost."
-                                    <span class="citation-source">— Jacobs & Chase (2024, p. 598)</span>
+                                    <span class="citation-source">— Jacobs &amp; Chase (2024, p. 598)</span>
                                 </div>
                                 <h3>Cost Components</h3>
                                 <div class="concepts-grid">
@@ -5057,7 +4952,7 @@
                                         (Q*/2)H.</div>
                                 </div>
                                 <div class="equation-box">
-                                    <div class="equation-label">Number of Orders per Year & Reorder Interval</div>
+                                    <div class="equation-label">Number of Orders per Year &amp; Reorder Interval</div>
                                     <div class="equation-formula">
                                         \[N = \frac{D}{Q^*} \quad ; \quad T = \frac{Q^*}{D} \times 365 \text{ days}\]
                                     </div>
@@ -5093,19 +4988,13 @@
                                     </div>
                                 </div>
                                 <div class="slider-group">
-                                    <div class="slider-header"><span class="slider-label">Demand (D)</span><span
-                                            class="slider-value"><span id="eoq-d-v">1000</span></span></div><input
-                                        id="eoq-d" max="10000" min="100" step="100" type="range" value="1000" />
+                                    <div class="slider-header"><span class="slider-label">Demand (D)</span><span class="slider-value"><span id="eoq-d-v">1000</span></span></div><input id="eoq-d" max="10000" min="100" step="100" type="range" value="1000">
                                 </div>
                                 <div class="slider-group">
-                                    <div class="slider-header"><span class="slider-label">Order Cost (S)</span><span
-                                            class="slider-value">$<span id="eoq-s-v">50</span></span></div><input
-                                        id="eoq-s" max="500" min="5" step="5" type="range" value="50" />
+                                    <div class="slider-header"><span class="slider-label">Order Cost (S)</span><span class="slider-value">$<span id="eoq-s-v">50</span></span></div><input id="eoq-s" max="500" min="5" step="5" type="range" value="50">
                                 </div>
                                 <div class="slider-group">
-                                    <div class="slider-header"><span class="slider-label">Holding (H)</span><span
-                                            class="slider-value">$<span id="eoq-h-v">2</span>/yr</span></div><input
-                                        id="eoq-h" max="50" min="1" type="range" value="2" />
+                                    <div class="slider-header"><span class="slider-label">Holding (H)</span><span class="slider-value">$<span id="eoq-h-v">2</span>/yr</span></div><input id="eoq-h" max="50" min="1" type="range" value="2">
                                 </div>
                             </div>
                             <div class="card">
@@ -5118,18 +5007,16 @@
                                 <div class="equation-box">
                                     <div class="equation-label">Q*</div>
                                     <div class="equation-formula"><span id="eoq-q-f">\[Q^* = \sqrt{\frac{2 \times 1000
-                                            \times 50}{2}}\]</span><span class="equation-result"
-                                            id="eoq-q-r">=224</span></div>
+                                            \times 50}{2}}\]</span><span class="equation-result" id="eoq-q-r">=224</span></div>
                                 </div>
                                 <div class="equation-box">
                                     <div class="equation-label">Total Cost</div>
                                     <div class="equation-formula"><span id="eoq-tc-f">\[TC =
-                                            \left(\frac{1000}{224}\right)50 + \left(\frac{224}{2}\right)2\]</span><span
-                                            class="equation-result" id="eoq-tc-r">=$447</span></div>
+                                            \left(\frac{1000}{224}\right)50 + \left(\frac{224}{2}\right)2\]</span><span class="equation-result" id="eoq-tc-r">=$447</span></div>
                                 </div>
                                 <div class="grid-3 mt-4">
-                                    <div id="be-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
-<div id="lc-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+                                    
+
 <div class="metric-card highlight">
                                         <div class="metric-value" id="eoq-q-m">224</div>
                                         <div class="metric-label">Q*</div>
@@ -5169,13 +5056,10 @@
                             <div class="comparison-container">
                                 <div class="comparison-panel active-panel">
                                     <div class="comp-label">Scenario A (Current)</div>
-                                    <div class="input-group"><label class="input-label">Demand (D)</label><input
-                                            id="cmp-eoq-d1" type="number" value="1000" /></div>
-                                    <div class="input-group"><label class="input-label">Order Cost (S)</label><input
-                                            id="cmp-eoq-s1" type="number" value="50" /></div>
-                                    <div class="input-group"><label class="input-label">Holding Cost (H)</label><input
-                                            id="cmp-eoq-h1" type="number" value="2" /></div>
-                                    <div id="risk-chart" style="width:100%; height:350px; margin-bottom:20px;"></div>
+                                    <div class="input-group"><label class="input-label">Demand (D)</label><input id="cmp-eoq-d1" type="number" value="1000"></div>
+                                    <div class="input-group"><label class="input-label">Order Cost (S)</label><input id="cmp-eoq-s1" type="number" value="50"></div>
+                                    <div class="input-group"><label class="input-label">Holding Cost (H)</label><input id="cmp-eoq-h1" type="number" value="2"></div>
+                                    
 <div class="metric-card highlight mt-4">
                                         <div class="metric-value" id="cmp-eoq-tc1">$447</div>
                                         <div class="metric-label">Total Cost</div>
@@ -5183,12 +5067,9 @@
                                 </div>
                                 <div class="comparison-panel">
                                     <div class="comp-label">Scenario B (Alternative)</div>
-                                    <div class="input-group"><label class="input-label">Demand (D)</label><input
-                                            id="cmp-eoq-d2" type="number" value="1000" /></div>
-                                    <div class="input-group"><label class="input-label">Order Cost (S)</label><input
-                                            id="cmp-eoq-s2" type="number" value="25" /></div>
-                                    <div class="input-group"><label class="input-label">Holding Cost (H)</label><input
-                                            id="cmp-eoq-h2" type="number" value="2" /></div>
+                                    <div class="input-group"><label class="input-label">Demand (D)</label><input id="cmp-eoq-d2" type="number" value="1000"></div>
+                                    <div class="input-group"><label class="input-label">Order Cost (S)</label><input id="cmp-eoq-s2" type="number" value="25"></div>
+                                    <div class="input-group"><label class="input-label">Holding Cost (H)</label><input id="cmp-eoq-h2" type="number" value="2"></div>
                                     <div class="metric-card mt-4">
                                         <div class="metric-value" id="cmp-eoq-tc2">$316</div>
                                         <div class="metric-label">Total Cost</div>
@@ -5216,8 +5097,7 @@
                                 <span class="practice-badge">EOQ Problem</span>
                                 <div class="practice-q" id="eoq-prac-q">Demand = 5,000, Order Cost = $100, Holding Cost
                                     = $4. Calculate optimal Q*.</div>
-                                <div class="input-group"><label class="input-label">Your Q* Answer:</label><input
-                                        id="eoq-prac-ans-input" placeholder="Enter Q*" type="number" /></div>
+                                <div class="input-group"><label class="input-label">Your Q* Answer:</label><input id="eoq-prac-ans-input" placeholder="Enter Q*" type="number"></div>
                                 <div class="btn-group"><button class="btn btn-primary" onclick="checkEoqAns()">Check
                                         Answer</button><button class="btn btn-secondary" onclick="showEoqSol()">Show
                                         Solution</button></div>
@@ -5249,8 +5129,8 @@
                             </div>
                         </div>
                         <div class="card">
-                            <div id="be-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
-<div id="lc-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+                            
+
 <div class="metric-card highlight"><div class="metric-value" id="epq-q-res">559</div><div class="metric-label">Optimal Production Lot</div></div>
                             <div class="metric-card mt-3"><div class="metric-value" id="epq-tc-res">$1,073</div><div class="metric-label">Total Annual Cost</div></div>
                         </div>
@@ -5286,7 +5166,7 @@
                     <div class="main-header-content">
                         <div>
                             <div class="breadcrumb">OSCM Simulator › Inventory Management</div>
-                            <h1 class="page-title"><span class="chapter-badge">🛡️ Ch 20</span>Safety Stock & Reorder
+                            <h1 class="page-title"><span class="chapter-badge">🛡️ Ch 20</span>Safety Stock &amp; Reorder
                                 Point</h1>
                         </div>
                     </div>
@@ -5299,21 +5179,16 @@
                             </div>
                         </div>
                         <div class="canonical-tabs">
-                            <button class="canonical-tab active" data-canonical-target="all"
-                                onclick="OSCMCanonical.openView('safetystock','all', this)" type="button">All</button>
-                            <button class="canonical-tab" data-canonical-target="simulator"
-                                onclick="OSCMCanonical.openView('safetystock','simulator', this)"
-                                type="button">Simulator</button>
-                            <button class="canonical-tab" data-canonical-target="theory"
-                                onclick="OSCMCanonical.openView('safetystock','theory', this)"
-                                type="button">Theory</button>
+                            <button class="canonical-tab active" data-canonical-target="all" onclick="OSCMCanonical.openView('safetystock','all', this)" type="button">All</button>
+                            <button class="canonical-tab" data-canonical-target="simulator" onclick="OSCMCanonical.openView('safetystock','simulator', this)" type="button">Simulator</button>
+                            <button class="canonical-tab" data-canonical-target="theory" onclick="OSCMCanonical.openView('safetystock','theory', this)" type="button">Theory</button>
                         </div>
                     </div>
                     <section class="theory-section" data-canon-tags="simulator theory">
                         <div class="theory-header">
                             <div class="theory-icon">📚</div>
                             <div>
-                                <h2 class="theory-title">Safety Stock & Reorder Point Analysis</h2>
+                                <h2 class="theory-title">Safety Stock &amp; Reorder Point Analysis</h2>
                                 <p class="theory-subtitle">Protecting against stockouts due to demand and lead time
                                     variability</p>
                             </div>
@@ -5334,7 +5209,7 @@
                                     variability.</div>
                             </div>
                             <div class="equation-box">
-                                <div class="equation-label">Safety Stock (Both Demand & Lead Time Variability)</div>
+                                <div class="equation-label">Safety Stock (Both Demand &amp; Lead Time Variability)</div>
                                 <div class="equation-formula">
                                     \[SS = z \cdot \sqrt{LT \cdot \sigma_d^2 + \bar{d}^2 \cdot \sigma_{LT}^2}\]
                                 </div>
@@ -5392,19 +5267,13 @@
                                 </div>
                             </div>
                             <div class="slider-group">
-                                <div class="slider-header"><span class="slider-label">Avg Demand</span><span
-                                        class="slider-value"><span id="ss-d-v">100</span></span></div><input id="ss-d"
-                                    max="500" min="10" type="range" value="100" />
+                                <div class="slider-header"><span class="slider-label">Avg Demand</span><span class="slider-value"><span id="ss-d-v">100</span></span></div><input id="ss-d" max="500" min="10" type="range" value="100">
                             </div>
                             <div class="slider-group">
-                                <div class="slider-header"><span class="slider-label">σd</span><span
-                                        class="slider-value"><span id="ss-sig-v">20</span></span></div><input
-                                    id="ss-sig" max="100" min="1" type="range" value="20" />
+                                <div class="slider-header"><span class="slider-label">σd</span><span class="slider-value"><span id="ss-sig-v">20</span></span></div><input id="ss-sig" max="100" min="1" type="range" value="20">
                             </div>
                             <div class="slider-group">
-                                <div class="slider-header"><span class="slider-label">Lead Time</span><span
-                                        class="slider-value"><span id="ss-lt-v">7</span> days</span></div><input
-                                    id="ss-lt" max="30" min="1" type="range" value="7" />
+                                <div class="slider-header"><span class="slider-label">Lead Time</span><span class="slider-value"><span id="ss-lt-v">7</span> days</span></div><input id="ss-lt" max="30" min="1" type="range" value="7">
                             </div>
                             <div class="input-group">
                                 <label class="input-label">Service Level</label>
@@ -5424,17 +5293,15 @@
                             </div>
                             <div class="equation-box">
                                 <div class="equation-label">Safety Stock</div>
-                                <div class="equation-formula"><span id="ss-ss-f">\[SS = 1.65 \times 52.9\]</span><span
-                                        class="equation-result" id="ss-ss-r">=87</span></div>
+                                <div class="equation-formula"><span id="ss-ss-f">\[SS = 1.65 \times 52.9\]</span><span class="equation-result" id="ss-ss-r">=87</span></div>
                             </div>
                             <div class="equation-box">
                                 <div class="equation-label">Reorder Point</div>
-                                <div class="equation-formula"><span id="ss-rop-f">\[ROP = 700 + 87\]</span><span
-                                        class="equation-result" id="ss-rop-r">=787</span></div>
+                                <div class="equation-formula"><span id="ss-rop-f">\[ROP = 700 + 87\]</span><span class="equation-result" id="ss-rop-r">=787</span></div>
                             </div>
                             <div class="grid-2 mt-4">
-                                <div id="be-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
-<div id="lc-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+                                
+
 <div class="metric-card highlight">
                                     <div class="metric-value" id="ss-ss-m">87</div>
                                     <div class="metric-label">Safety Stock</div>
@@ -5469,13 +5336,9 @@
                             </div>
                         </div>
                         <div class="canonical-tabs">
-                            <button class="canonical-tab active" data-canonical-target="all"
-                                onclick="OSCMCanonical.openView('mrp','all', this)" type="button">All</button>
-                            <button class="canonical-tab" data-canonical-target="simulator"
-                                onclick="OSCMCanonical.openView('mrp','simulator', this)"
-                                type="button">Simulator</button>
-                            <button class="canonical-tab" data-canonical-target="theory"
-                                onclick="OSCMCanonical.openView('mrp','theory', this)" type="button">Theory</button>
+                            <button class="canonical-tab active" data-canonical-target="all" onclick="OSCMCanonical.openView('mrp','all', this)" type="button">All</button>
+                            <button class="canonical-tab" data-canonical-target="simulator" onclick="OSCMCanonical.openView('mrp','simulator', this)" type="button">Simulator</button>
+                            <button class="canonical-tab" data-canonical-target="theory" onclick="OSCMCanonical.openView('mrp','theory', this)" type="button">Theory</button>
                         </div>
                     </div>
                     <div class="tabs" data-canon-tags="simulator">
@@ -5496,7 +5359,7 @@
                                 "The MRP system uses three sources of information: 1. Demand comes from the master
                                 schedule. 2. The bill-of-materials identifies exactly what is needed to make each end
                                 item. 3. The current inventory status of the items managed by the system."
-                                <span class="citation-source">— Jacobs & Chase (2024)</span>
+                                <span class="citation-source">— Jacobs &amp; Chase (2024)</span>
                             </div>
 
                             <div class="concepts-grid">
@@ -5558,27 +5421,25 @@
                             <div class="grid-2 mb-4">
                                 <div class="input-group">
                                     <label class="input-label">Lead Time (Weeks)</label>
-                                    <input id="mrp-lt" max="4" min="1" type="number" value="1" onchange="calcMRP()" />
+                                    <input id="mrp-lt" max="4" min="1" type="number" value="1" onchange="calcMRP()">
                                 </div>
                                 <div class="input-group">
                                     <label class="input-label">Beginning Inventory</label>
-                                    <input id="mrp-inv" type="number" value="20" onchange="calcMRP()" />
+                                    <input id="mrp-inv" type="number" value="20" onchange="calcMRP()">
                                 </div>
                             </div>
 
                             <div class="grid-2">
                                 <div class="input-group">
                                     <label class="input-label">Lot Sizing Rule</label>
-                                    <select id="mrp-lot-rule" onchange="toggleLotSize()"
-                                        style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid var(--border-color);">
+                                    <select id="mrp-lot-rule" onchange="toggleLotSize()" style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid var(--border-color);">
                                         <option value="L4L">Lot-for-Lot (L4L)</option>
                                         <option value="FOQ">Fixed Order Qty (FOQ)</option>
                                     </select>
                                 </div>
                                 <div class="input-group">
                                     <label class="input-label">Lot Size Multiplier</label>
-                                    <input id="mrp-lot-size" type="number" value="50" min="1" disabled
-                                        onchange="calcMRP()" />
+                                    <input id="mrp-lot-size" type="number" value="50" min="1" disabled="" onchange="calcMRP()">
                                 </div>
                             </div>
 
@@ -5594,37 +5455,27 @@
                                     <p class="card-subtitle">Low-level coding hierarchy</p>
                                 </div>
                             </div>
-                            <div class="bom-tree"
-                                style="background: var(--bg-secondary); padding: 16px; border-radius: 8px; border: 1px solid var(--border-color); text-align: center;">
-                                <div class="bom-node"
-                                    style="background: var(--primary); color: white; padding: 8px 16px; border-radius: 6px; display: inline-block; font-weight: bold; margin-bottom: 16px; position: relative;">
+                            <div class="bom-tree" style="background: var(--bg-secondary); padding: 16px; border-radius: 8px; border: 1px solid var(--border-color); text-align: center;">
+                                <div class="bom-node" style="background: var(--primary); color: white; padding: 8px 16px; border-radius: 6px; display: inline-block; font-weight: bold; margin-bottom: 16px; position: relative;">
                                     End Item: Product X
-                                    <div
-                                        style="position: absolute; bottom: -16px; left: 50%; width: 2px; height: 16px; background: var(--border-color);">
+                                    <div style="position: absolute; bottom: -16px; left: 50%; width: 2px; height: 16px; background: var(--border-color);">
                                     </div>
                                 </div>
                                 <div style="display: flex; justify-content: center; gap: 24px; position: relative;">
-                                    <div
-                                        style="position: absolute; top: -16px; left: 20%; right: 20%; height: 2px; background: var(--border-color);">
+                                    <div style="position: absolute; top: -16px; left: 20%; right: 20%; height: 2px; background: var(--border-color);">
                                     </div>
-                                    <div class="bom-child"
-                                        style="background: white; border: 1px solid var(--border-color); padding: 8px; border-radius: 6px; position: relative;">
-                                        <div
-                                            style="position: absolute; top: -16px; left: 50%; width: 2px; height: 16px; background: var(--border-color);">
+                                    <div class="bom-child" style="background: white; border: 1px solid var(--border-color); padding: 8px; border-radius: 6px; position: relative;">
+                                        <div style="position: absolute; top: -16px; left: 50%; width: 2px; height: 16px; background: var(--border-color);">
                                         </div>
                                         <strong>Item A (1)</strong><br><small>LT = 1 wk</small>
                                     </div>
-                                    <div class="bom-child"
-                                        style="background: white; border: 1px solid var(--border-color); padding: 8px; border-radius: 6px; position: relative;">
-                                        <div
-                                            style="position: absolute; top: -16px; left: 50%; width: 2px; height: 16px; background: var(--border-color);">
+                                    <div class="bom-child" style="background: white; border: 1px solid var(--border-color); padding: 8px; border-radius: 6px; position: relative;">
+                                        <div style="position: absolute; top: -16px; left: 50%; width: 2px; height: 16px; background: var(--border-color);">
                                         </div>
                                         <strong>Item B (2)</strong><br><small>LT = 2 wks</small>
                                     </div>
-                                    <div class="bom-child"
-                                        style="background: white; border: 1px solid var(--border-color); padding: 8px; border-radius: 6px; position: relative;">
-                                        <div
-                                            style="position: absolute; top: -16px; left: 50%; width: 2px; height: 16px; background: var(--border-color);">
+                                    <div class="bom-child" style="background: white; border: 1px solid var(--border-color); padding: 8px; border-radius: 6px; position: relative;">
+                                        <div style="position: absolute; top: -16px; left: 50%; width: 2px; height: 16px; background: var(--border-color);">
                                         </div>
                                         <strong>Item C (1)</strong><br><small>LT = 1 wk</small>
                                     </div>
@@ -5756,7 +5607,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </main></div>
 
 
             <!-- ===== SCHEDULING MODULE ===== -->
@@ -5778,14 +5629,9 @@
                             </div>
                         </div>
                         <div class="canonical-tabs">
-                            <button class="canonical-tab active" data-canonical-target="all"
-                                onclick="OSCMCanonical.openView('scheduling','all', this)" type="button">All</button>
-                            <button class="canonical-tab" data-canonical-target="simulator"
-                                onclick="OSCMCanonical.openView('scheduling','simulator', this)"
-                                type="button">Simulator</button>
-                            <button class="canonical-tab" data-canonical-target="theory"
-                                onclick="OSCMCanonical.openView('scheduling','theory', this)"
-                                type="button">Theory</button>
+                            <button class="canonical-tab active" data-canonical-target="all" onclick="OSCMCanonical.openView('scheduling','all', this)" type="button">All</button>
+                            <button class="canonical-tab" data-canonical-target="simulator" onclick="OSCMCanonical.openView('scheduling','simulator', this)" type="button">Simulator</button>
+                            <button class="canonical-tab" data-canonical-target="theory" onclick="OSCMCanonical.openView('scheduling','theory', this)" type="button">Theory</button>
                         </div>
                     </div>
                     <section class="theory-section" data-canon-tags="simulator theory">
@@ -5804,7 +5650,7 @@
                                 "Priority rules are simple heuristics used to select the order in which jobs will be
                                 processed. They are especially important in job shop environments where different jobs
                                 compete for the same resources."
-                                <span class="citation-source">— Jacobs & Chase (2024, p. 672)</span>
+                                <span class="citation-source">— Jacobs &amp; Chase (2024, p. 672)</span>
                             </div>
                             <h3>Common Priority Rules</h3>
                             <div class="concepts-grid">
@@ -5839,8 +5685,8 @@
                                     \[CR = \frac{\text{Due Date} - \text{Today's Date}}{\text{Processing Time
                                     Remaining}}\]
                                 </div>
-                                <div class="equation-description">CR < 1: Job is behind schedule (urgent). CR=1: Job is
-                                        exactly on schedule. CR> 1: Job is ahead of schedule. Process the job with the
+                                <div class="equation-description">CR &lt; 1: Job is behind schedule (urgent). CR=1: Job is
+                                        exactly on schedule. CR&gt; 1: Job is ahead of schedule. Process the job with the
                                         smallest CR first.</div>
                             </div>
                             <h3>Performance Metrics</h3>
@@ -5905,11 +5751,9 @@
                             </div>
 
                             <!-- Added Current Day for accurate Critical Ratio calculation -->
-                            <div class="input-group"
-                                style="margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid var(--border-color);">
+                            <div class="input-group" style="margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid var(--border-color);">
                                 <label class="input-label">Current Day (for CR rule)</label>
-                                <input id="sc-today" onchange="updSch()" type="number" value="0" min="0"
-                                    style="max-width: 120px; padding: 6px 10px;" />
+                                <input id="sc-today" onchange="updSch()" type="number" value="0" min="0" style="max-width: 120px; padding: 6px 10px;">
                             </div>
 
                             <div style="overflow-x:auto;">
@@ -5924,31 +5768,23 @@
                                     <tbody>
                                         <tr>
                                             <td><strong>A</strong></td>
-                                            <td><input id="sc-at" onchange="updSch()" style="width:60px; padding:6px;"
-                                                    type="number" value="3" min="1" /></td>
-                                            <td><input id="sc-ad" onchange="updSch()" style="width:60px; padding:6px;"
-                                                    type="number" value="5" min="1" /></td>
+                                            <td><input id="sc-at" onchange="updSch()" style="width:60px; padding:6px;" type="number" value="3" min="1"></td>
+                                            <td><input id="sc-ad" onchange="updSch()" style="width:60px; padding:6px;" type="number" value="5" min="1"></td>
                                         </tr>
                                         <tr>
                                             <td><strong>B</strong></td>
-                                            <td><input id="sc-bt" onchange="updSch()" style="width:60px; padding:6px;"
-                                                    type="number" value="4" min="1" /></td>
-                                            <td><input id="sc-bd" onchange="updSch()" style="width:60px; padding:6px;"
-                                                    type="number" value="6" min="1" /></td>
+                                            <td><input id="sc-bt" onchange="updSch()" style="width:60px; padding:6px;" type="number" value="4" min="1"></td>
+                                            <td><input id="sc-bd" onchange="updSch()" style="width:60px; padding:6px;" type="number" value="6" min="1"></td>
                                         </tr>
                                         <tr>
                                             <td><strong>C</strong></td>
-                                            <td><input id="sc-ct" onchange="updSch()" style="width:60px; padding:6px;"
-                                                    type="number" value="2" min="1" /></td>
-                                            <td><input id="sc-cd" onchange="updSch()" style="width:60px; padding:6px;"
-                                                    type="number" value="7" min="1" /></td>
+                                            <td><input id="sc-ct" onchange="updSch()" style="width:60px; padding:6px;" type="number" value="2" min="1"></td>
+                                            <td><input id="sc-cd" onchange="updSch()" style="width:60px; padding:6px;" type="number" value="7" min="1"></td>
                                         </tr>
                                         <tr>
                                             <td><strong>D</strong></td>
-                                            <td><input id="sc-dt" onchange="updSch()" style="width:60px; padding:6px;"
-                                                    type="number" value="5" min="1" /></td>
-                                            <td><input id="sc-dd" onchange="updSch()" style="width:60px; padding:6px;"
-                                                    type="number" value="9" min="1" /></td>
+                                            <td><input id="sc-dt" onchange="updSch()" style="width:60px; padding:6px;" type="number" value="5" min="1"></td>
+                                            <td><input id="sc-dd" onchange="updSch()" style="width:60px; padding:6px;" type="number" value="9" min="1"></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -5994,7 +5830,7 @@
                         <div class="equation-box">
                             <div class="equation-label">Optimal Order Quantity (Q*)</div>
                             <div class="equation-formula">\[Q^* = \mu + z\sigma\]</div>
-                            <div class="equation-description">Where &mu; = mean demand, &sigma; = standard deviation, and z = Z-score corresponding to the critical ratio.</div>
+                            <div class="equation-description">Where μ = mean demand, σ = standard deviation, and z = Z-score corresponding to the critical ratio.</div>
                         </div>
                     </div>
                 </div>
@@ -6006,8 +5842,8 @@
                             <div class="input-group"><label class="input-label">Selling Price ($)</label><input type="number" id="nv-price" value="100" oninput="calcNewsvendor()"></div>
                             <div class="input-group"><label class="input-label">Unit Cost ($)</label><input type="number" id="nv-cost" value="70" oninput="calcNewsvendor()"></div>
                             <div class="input-group"><label class="input-label">Salvage Value ($)</label><input type="number" id="nv-salvage" value="20" oninput="calcNewsvendor()"></div>
-                            <div class="input-group"><label class="input-label">Mean Demand (&mu;)</label><input type="number" id="nv-mu" value="200" oninput="calcNewsvendor()"></div>
-                            <div class="input-group"><label class="input-label">Demand Std Dev (&sigma;)</label><input type="number" id="nv-sigma" value="40" oninput="calcNewsvendor()"></div>
+                            <div class="input-group"><label class="input-label">Mean Demand (μ)</label><input type="number" id="nv-mu" value="200" oninput="calcNewsvendor()"></div>
+                            <div class="input-group"><label class="input-label">Demand Std Dev (σ)</label><input type="number" id="nv-sigma" value="40" oninput="calcNewsvendor()"></div>
                         </div>
                         <div>
                             <div class="metric-card highlight mb-3"><div class="metric-value" id="nv-cr">0.375</div><div class="metric-label">Critical Ratio (P)</div></div>
@@ -6066,8 +5902,8 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <div id="be-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
-<div id="lc-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+                                    
+
 <div class="metric-card highlight">
                                         <div class="metric-value" id="lean-future-lt">5.1</div>
                                         <div class="metric-label">Future Lead Time (Days)</div>
@@ -6392,7 +6228,7 @@
                                 <th>Risk Event Category</th>
                                 <th>Probability (P)</th>
                                 <th>Impact (I)</th>
-                                <th>Risk Score (P&times;I)</th>
+                                <th>Risk Score (P×I)</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -6472,17 +6308,15 @@
                     </div>
                 </div>
             </div>
-                                        <tr>
-                                            <td><strong>E</strong></td>
-                                            <td><input id="sc-et" onchange="updSch()" style="width:60px; padding:6px;"
-                                                    type="number" value="1" min="1" /></td>
-                                            <td><input id="sc-ed" onchange="updSch()" style="width:60px; padding:6px;"
-                                                    type="number" value="2" min="1" /></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+                                        
+                                            <strong>E</strong>
+                                            <input id="sc-et" onchange="updSch()" style="width:60px; padding:6px;" type="number" value="1" min="1">
+                                            <input id="sc-ed" onchange="updSch()" style="width:60px; padding:6px;" type="number" value="2" min="1">
+                                        
+                                    
+                                
+                            
+                        
 
                         <div class="card">
                             <div class="card-header">
@@ -6493,8 +6327,8 @@
                                 </div>
                             </div>
                             <div class="grid-2">
-                                <div id="be-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
-<div id="lc-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+                                
+
 <div class="metric-card highlight">
                                     <div class="metric-value" id="sc-flow">8.50</div>
                                     <div class="metric-label">Avg Flow Time</div>
@@ -6505,7 +6339,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    
                     <div class="card" data-canon-tags="simulator visuals">
                         <div class="card-header">
                             <div class="card-icon">📊</div>
@@ -6515,8 +6349,7 @@
                         </div>
                         <div class="gantt-container">
                             <div class="gantt-bar" id="sc-gantt"></div>
-                            <div
-                                style="display:flex;justify-content:space-between;font-size:.72rem;color:var(--text-secondary)">
+                            <div style="display:flex;justify-content:space-between;font-size:.72rem;color:var(--text-secondary)">
                                 <span>Day 0</span><span id="sc-total">Day 14</span>
                             </div>
                         </div>
@@ -6534,8 +6367,8 @@
                             <tbody id="sc-tbody"></tbody>
                         </table>
                     </div>
-                </div>
-            </div>
+                
+            
             <!-- ===== PROJECT CRASHING MODULE ===== -->
             <div class="module" data-cmodule="crashing" id="crashing-module">
                 <header class="main-header">
@@ -6567,8 +6400,8 @@
                             </div>
                             <div class="grid-4 mt-4">
                                 <div class="metric-card"><div class="metric-value" id="crash-normal-dur">9</div><div class="metric-label">Normal Dur</div></div>
-                                <div id="be-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
-<div id="lc-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+                                
+
 <div class="metric-card highlight"><div class="metric-value" id="crash-min-dur">5</div><div class="metric-label">Min Dur</div></div>
                                 <div class="metric-card danger"><div class="metric-value" id="crash-total-cost">$3,200</div><div class="metric-label">Full Crash Cost</div></div>
                             </div>
@@ -6699,24 +6532,24 @@ u2514u2500 (Level 1) Sub-O (u00D71)
                         <div class="equation-box">
                             <div class="equation-label">Exponential Distribution (Equation 10.1)</div>
                             <div class="equation-formula">\[f(t) = \lambda e^{-\lambda t}\]</div>
-                            <div class="equation-description">Probability density function for inter-arrival times. P(service time &le; t) = 1 &minus; e<sup>&minus;&lambda;t</sup>. The mean of the exponential distribution is 1/&lambda;.</div>
+                            <div class="equation-description">Probability density function for inter-arrival times. P(service time ≤ t) = 1 − e<sup>−λt</sup>. The mean of the exponential distribution is 1/λ.</div>
                         </div>
 
                         <div class="equation-box">
                             <div class="equation-label">Probability of Completion Within Time t</div>
                             <div class="equation-formula">\[P(t \leq T) = 1 - e^{-\lambda T}\]</div>
-                            <div class="equation-description">Probability that an event occurs within T time units. Complement: P(more than T) = e<sup>&minus;&lambda;T</sup>.</div>
+                            <div class="equation-description">Probability that an event occurs within T time units. Complement: P(more than T) = e<sup>−λT</sup>.</div>
                         </div>
 
                         <div class="equation-box">
                             <div class="equation-label">Poisson Distribution (Equation 10.2)</div>
                             <div class="equation-formula">\[P_T(n) = \frac{(\lambda T)^n \cdot e^{-\lambda T}}{n!}\]</div>
-                            <div class="equation-description">Probability of exactly n arrivals in time period T, where &lambda; = mean arrival rate per time unit.</div>
+                            <div class="equation-description">Probability of exactly n arrivals in time period T, where λ = mean arrival rate per time unit.</div>
                         </div>
 
                         <div class="key-insight">
                             <div class="key-insight-title">💡 Relationship Between Distributions</div>
-                            <div class="key-insight-text">If arrivals follow a Poisson process with rate &lambda;, then the time between consecutive arrivals follows an exponential distribution with parameter &lambda;. Mean inter-arrival time = 1/&lambda;. These are two sides of the same coin.</div>
+                            <div class="key-insight-text">If arrivals follow a Poisson process with rate λ, then the time between consecutive arrivals follows an exponential distribution with parameter λ. Mean inter-arrival time = 1/λ. These are two sides of the same coin.</div>
                         </div>
                     </div>
                 </div>
@@ -6726,17 +6559,17 @@ u2514u2500 (Level 1) Sub-O (u00D71)
                     <div class="card-header"><div class="card-icon">📊</div><div><h3 class="card-title">Exponential Distribution Calculator</h3><p class="card-subtitle">P(service within t minutes) — Textbook Exhibit 10.4</p></div></div>
                     <div class="grid-2">
                         <div>
-                            <div class="input-group"><label class="input-label">Rate (&lambda; per time unit)</label><input type="number" id="exp-lambda" value="1" step="0.1" min="0.1" oninput="calcExponential()"></div>
+                            <div class="input-group"><label class="input-label">Rate (λ per time unit)</label><input type="number" id="exp-lambda" value="1" step="0.1" min="0.1" oninput="calcExponential()"></div>
                             <div class="input-group"><label class="input-label">Time (t)</label><input type="number" id="exp-t" value="2" step="0.1" min="0" oninput="calcExponential()"></div>
                             <div class="grid-2 mt-3">
-                                <div id="be-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
-<div id="lc-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+                                
+
 <div class="metric-card highlight"><div class="metric-value" id="exp-within">86.5%</div><div class="metric-label">P(within t)</div></div>
                                 <div class="metric-card"><div class="metric-value" id="exp-beyond">13.5%</div><div class="metric-label">P(more than t)</div></div>
                             </div>
                         </div>
                         <div>
-                            <h4 style="font-size:.82rem;margin-bottom:10px">Probability Table (&lambda; = <span id="exp-table-lambda">1</span>)</h4>
+                            <h4 style="font-size:.82rem;margin-bottom:10px">Probability Table (λ = <span id="exp-table-lambda">1</span>)</h4>
                             <table class="data-table" id="exp-table">
                                 <thead><tr><th>t</th><th>P(more than t)</th><th>P(within t)</th></tr></thead>
                                 <tbody id="exp-table-body"></tbody>
@@ -6750,15 +6583,15 @@ u2514u2500 (Level 1) Sub-O (u00D71)
                     <div class="card-header"><div class="card-icon">🎲</div><div><h3 class="card-title">Poisson Distribution Calculator</h3><p class="card-subtitle">P(exactly n arrivals in time T)</p></div></div>
                     <div class="grid-2">
                         <div>
-                            <div class="input-group"><label class="input-label">Arrival Rate (&lambda; per time unit)</label><input type="number" id="poi-lambda" value="3" step="0.5" min="0.1" oninput="calcPoisson()"></div>
+                            <div class="input-group"><label class="input-label">Arrival Rate (λ per time unit)</label><input type="number" id="poi-lambda" value="3" step="0.5" min="0.1" oninput="calcPoisson()"></div>
                             <div class="input-group"><label class="input-label">Time Period (T)</label><input type="number" id="poi-T" value="1" step="0.5" min="0.1" oninput="calcPoisson()"></div>
                             <div class="input-group"><label class="input-label">Number of Arrivals (n)</label><input type="number" id="poi-n" value="2" min="0" oninput="calcPoisson()"></div>
                             <div class="metric-card highlight mt-3"><div class="metric-value" id="poi-result">22.4%</div><div class="metric-label">P(exactly n arrivals)</div></div>
                         </div>
                         <div>
-                            <h4 style="font-size:.82rem;margin-bottom:10px">Distribution Table (&lambda;T = <span id="poi-table-lt">3</span>)</h4>
+                            <h4 style="font-size:.82rem;margin-bottom:10px">Distribution Table (λT = <span id="poi-table-lt">3</span>)</h4>
                             <table class="data-table" id="poi-table">
-                                <thead><tr><th>n</th><th>P(n)</th><th>P(&le;n)</th></tr></thead>
+                                <thead><tr><th>n</th><th>P(n)</th><th>P(≤n)</th></tr></thead>
                                 <tbody id="poi-table-body"></tbody>
                             </table>
                         </div>
@@ -6785,22 +6618,22 @@ u2514u2500 (Level 1) Sub-O (u00D71)
                         <div><h2 class="theory-title">Using Exhibit 10.9</h2><p class="theory-subtitle">Simplifying complex queuing calculations</p></div>
                     </div>
                     <div class="theory-content">
-                        <p>This table provides the <strong>Expected Number of People in Queue (L<sub>q</sub>)</strong> based on the utilization ratio (&lambda;/&mu;) and the number of servers (S). It is used to quickly find L<sub>q</sub> without solving complex multi-server equations.</p>
+                        <p>This table provides the <strong>Expected Number of People in Queue (L<sub>q</sub>)</strong> based on the utilization ratio (λ/μ) and the number of servers (S). It is used to quickly find L<sub>q</sub> without solving complex multi-server equations.</p>
                         
                         <div class="key-insight">
                             <div class="key-insight-title">💡 Important Constraints</div>
-                            <div class="key-insight-text">The system is only stable if <strong>&lambda; < S&mu;</strong> (i.e., &lambda;/&mu; < S). If the arrival rate exceeds the total service capacity, the queue will grow infinitely.</div>
+                            <div class="key-insight-text">The system is only stable if <strong>λ &lt; Sμ</strong> (i.e., λ/μ &lt; S). If the arrival rate exceeds the total service capacity, the queue will grow infinitely.</div>
                         </div>
                     </div>
                 </div>
 
                 <div class="card">
-                    <div class="card-header"><div class="card-icon">🔍</div><div><h3 class="card-title">Lq Interactive Lookup</h3><p class="card-subtitle">Search for &lambda;/&mu; and Number of Servers</p></div></div>
+                    <div class="card-header"><div class="card-icon">🔍</div><div><h3 class="card-title">Lq Interactive Lookup</h3><p class="card-subtitle">Search for λ/μ and Number of Servers</p></div></div>
                     <div class="grid-3 mb-4">
-                        <div class="input-group"><label class="input-label">Ratio (&lambda;/&mu;)</label><input type="number" id="lq-lookup-ratio" value="0.50" step="0.05" min="0.1" max="5.0" oninput="highlightLqTable()"></div>
+                        <div class="input-group"><label class="input-label">Ratio (λ/μ)</label><input type="number" id="lq-lookup-ratio" value="0.50" step="0.05" min="0.1" max="5.0" oninput="highlightLqTable()"></div>
                         <div class="input-group"><label class="input-label">Servers (S)</label><input type="number" id="lq-lookup-s" value="2" min="1" max="4" oninput="highlightLqTable()"></div>
-                        <div id="be-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
-<div id="lc-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+                        
+
 <div class="metric-card highlight"><div class="metric-value" id="lq-lookup-result">0.033</div><div class="metric-label">Expected Lq</div></div>
                     </div>
 
@@ -6808,7 +6641,7 @@ u2514u2500 (Level 1) Sub-O (u00D71)
                         <table class="data-table" id="lq-table">
                             <thead>
                                 <tr>
-                                    <th>&lambda;/&mu;</th>
+                                    <th>λ/μ</th>
                                     <th>S=1</th>
                                     <th>S=2</th>
                                     <th>S=3</th>
@@ -6860,7 +6693,7 @@ u2514u2500 (Level 1) Sub-O (u00D71)
                 <div class="card">
                     <div class="card-header"><div class="card-icon">💵</div><div><h3 class="card-title">Economic Trade-off Calculator</h3><p class="card-subtitle">Compare different staffing levels</p></div></div>
                     <div class="grid-3 mb-4">
-                        <div class="input-group"><label class="input-label">Arrival Rate (&lambda;)</label><input type="number" id="qc-lambda" value="3" oninput="calcQueueCost()"></div>
+                        <div class="input-group"><label class="input-label">Arrival Rate (λ)</label><input type="number" id="qc-lambda" value="3" oninput="calcQueueCost()"></div>
                         <div class="input-group"><label class="input-label">Waiting Cost ($/hr/cust)</label><input type="number" id="qc-cw" value="25" oninput="calcQueueCost()"></div>
                         <div class="input-group"><label class="input-label">Service Labor Cost ($/hr/server)</label><input type="number" id="qc-cs" value="16" oninput="calcQueueCost()"></div>
                     </div>
@@ -6871,8 +6704,8 @@ u2514u2500 (Level 1) Sub-O (u00D71)
                                 <tr>
                                     <th>Scenario</th>
                                     <th>Workers (S)</th>
-                                    <th>Service Rate (&mu;)</th>
-                                    <th>Utilization (&rho;)</th>
+                                    <th>Service Rate (μ)</th>
+                                    <th>Utilization (ρ)</th>
                                     <th>Avg. In System (Ls)</th>
                                     <th>Wait Cost (Ls*Cw)</th>
                                     <th>Labor Cost (S*Cs)</th>
@@ -6913,7 +6746,7 @@ u2514u2500 (Level 1) Sub-O (u00D71)
                     <div class="module-icon">🔀</div>
                     <div>
                         <div class="module-chapter">Chapter 7 / Equation 7.1</div>
-                        <div class="module-title">Customer Order Decoupling Point & Product Configurations</div>
+                        <div class="module-title">Customer Order Decoupling Point &amp; Product Configurations</div>
                         <div class="module-subtitle">MTS vs. MTO vs. ATO vs. ETO strategies</div>
                     </div>
                 </div>
@@ -6928,7 +6761,7 @@ u2514u2500 (Level 1) Sub-O (u00D71)
                         <div class="equation-box">
                             <div class="equation-label">Total Product Configurations (Equation 7.1)</div>
                             <div class="equation-formula">\[\text{Configurations} = \prod_{i=1}^{n} N_i = N_1 \times N_2 \times \cdots \times N_n\]</div>
-                            <div class="equation-description">Example: 3 processors &times; 3 memory &times; 4 SSD &times; 2 LCD &times; 4 colors = 288 configurations from only 16 components.</div>
+                            <div class="equation-description">Example: 3 processors × 3 memory × 4 SSD × 2 LCD × 4 colors = 288 configurations from only 16 components.</div>
                         </div>
                         <div class="concepts-grid">
                             <div class="concept-card"><div class="concept-icon">📦</div><div class="concept-title">Make-to-Stock (MTS)</div><div class="concept-desc">Produce to forecast, sell from inventory. Fast delivery but high inventory risk. Example: consumer goods.</div></div>
@@ -6950,8 +6783,8 @@ u2514u2500 (Level 1) Sub-O (u00D71)
                             <div class="input-group"><label class="input-label">Option 5 (e.g., Color)</label><input type="number" id="cfg-5" value="4" min="1" oninput="calcConfig()"></div>
                         </div>
                         <div>
-                            <div id="be-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
-<div id="lc-chart" style="width:100%; height:300px; margin-bottom:20px;"></div>
+                            
+
 <div class="metric-card highlight"><div class="metric-value" id="cfg-total">288</div><div class="metric-label">Total Configurations</div></div>
                             <div class="metric-card mt-3"><div class="metric-value" id="cfg-components">16</div><div class="metric-label">Total Components</div></div>
                             <div class="alert alert-success mt-3"><div class="alert-icon">💡</div><div>Only <strong id="cfg-comp-text">16</strong> components create <strong id="cfg-config-text">288</strong> unique products — the power of modular design!</div></div>
@@ -6991,27 +6824,26 @@ u2514u2500 (Level 1) Sub-O (u00D71)
                 </div>
                 <div class="practice-box">
                     <span class="practice-badge">Q4</span>
-                    <div class="practice-q">What is the Cpk if USL=1.255, LSL=1.245, mean=1.251, &sigma;=0.00083?</div>
+                    <div class="practice-q">What is the Cpk if USL=1.255, LSL=1.245, mean=1.251, σ=0.00083?</div>
                     <button class="btn btn-primary mt-2" onclick="toggleAns('sqc-4')">Show Answer</button>
                     <div class="practice-answer" id="sqc-4"><strong>Cpk = 1.6</strong> (the smaller of Cpu and Cpl). This is a pretty good capability index because few defects will be produced.</div>
                 </div>
                 <div class="practice-box">
                     <span class="practice-badge">Q5</span>
-                    <div class="practice-q">Washers have mean thickness 2.0mm, &sigma;=0.2mm. What fraction is expected to be greater than 2.4mm?</div>
+                    <div class="practice-q">Washers have mean thickness 2.0mm, σ=0.2mm. What fraction is expected to be greater than 2.4mm?</div>
                     <button class="btn btn-primary mt-2" onclick="toggleAns('sqc-5')">Show Answer</button>
-                    <div class="practice-answer" id="sqc-5">Z = (2.4 &minus; 2.0)/0.2 = 2.0. P(Z &gt; 2.0) = 1 &minus; 0.9772 = <strong>0.0228 or 2.28%</strong></div>
+                    <div class="practice-answer" id="sqc-5">Z = (2.4 − 2.0)/0.2 = 2.0. P(Z &gt; 2.0) = 1 − 0.9772 = <strong>0.0228 or 2.28%</strong></div>
                 </div>
             </div>
 
-</main>
-    </div>
+
+    
 
     <!-- Tutorial Modal -->
     <div class="modal-overlay" id="tut-modal">
         <div class="modal">
             <div class="modal-header">
-                <h3 class="modal-title">📚 Step-by-Step Tutorial</h3><button class="modal-close"
-                    onclick="closeTut()">×</button>
+                <h3 class="modal-title">📚 Step-by-Step Tutorial</h3><button class="modal-close" onclick="closeTut()">×</button>
             </div>
             <div class="modal-body">
                 <div class="tut-step active" data-s="1">
@@ -10213,6 +10045,6 @@ u2514u2500 (Level 1) Sub-O (u00D71)
         setText('cfg-comp-text',components);setText('cfg-config-text',total.toLocaleString());
     }
 </script>
-</body>
 
-</html>
+
+</body></html>
