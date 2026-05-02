@@ -20,44 +20,46 @@
 
     <style>
         :root {
-            --primary: #6366f1;
-            --primary-dark: #4f46e5;
-            --primary-light: #a5b4fc;
-            --accent: #8b5cf6;
-            --success: #10b981;
-            --warning: #f59e0b;
-            --danger: #ef4444;
-            --dark: #0f172a;
-            --dark-800: #1e293b;
-            --dark-700: #334155;
-            --dark-600: #475569;
-            --light: #f8fafc;
-            --light-100: #f1f5f9;
-            --light-200: #e2e8f0;
-            --light-300: #cbd5e1;
-            --gradient-primary: linear-gradient(135deg, #6366f1, #8b5cf6, #a855f7);
-            --gradient-dark: linear-gradient(180deg, #0f172a, #1e293b);
-            --bg-main: var(--light);
-            --bg-card: white;
-            --text-primary: var(--dark);
-            --text-secondary: var(--dark-600);
-            --border-color: var(--light-200);
-            --shadow: 0 4px 6px -1px rgb(0 0 0/.1);
-            --shadow-lg: 0 10px 15px -3px rgb(0 0 0/.1);
-            --glass: rgba(255, 255, 255, .75)
+            /* Streamlit Default Dark Theme Colors */
+            --primary: #ff4b4b;
+            --primary-dark: #ff3333;
+            --primary-light: #ff7777;
+            --accent: #ff4b4b;
+            --success: #09ab3b;
+            --warning: #faca2b;
+            --danger: #ff4b4b;
+            --dark: #fafafa;
+            --dark-800: #e0e0e0;
+            --dark-700: #c0c0c0;
+            --dark-600: #a0a0a0;
+            --light: #0e1117;
+            --light-100: #262730;
+            --light-200: rgba(250, 250, 250, 0.2);
+            --light-300: rgba(250, 250, 250, 0.4);
+            --gradient-primary: #ff4b4b;
+            --gradient-dark: #262730;
+            --bg-main: #0e1117;
+            --bg-card: #262730;
+            --text-primary: #fafafa;
+            --text-secondary: #e0e0e0;
+            --border-color: rgba(250, 250, 250, 0.2);
+            --shadow: 0 1px 4px rgba(0,0,0,0.2);
+            --shadow-lg: 0 4px 12px rgba(0,0,0,0.4);
+            --glass: #0e1117; /* No glassmorphism in Streamlit */
         }
 
         [data-theme="dark"] {
-            --bg-main: #0f172a;
-            --bg-card: #1e293b;
-            --text-primary: #f1f5f9;
-            --text-secondary: #94a3b8;
-            --border-color: #334155;
-            --light: #0f172a;
-            --light-100: #1e293b;
-            --light-200: #334155;
-            --light-300: #475569;
-            --glass: rgba(30, 41, 59, .85)
+            /* Same as root because we default to Streamlit Dark */
+            --bg-main: #0e1117;
+            --bg-card: #262730;
+            --text-primary: #fafafa;
+            --text-secondary: #e0e0e0;
+            --border-color: rgba(250, 250, 250, 0.2);
+            --light: #0e1117;
+            --light-100: #262730;
+            --light-200: rgba(250, 250, 250, 0.2);
+            --light-300: rgba(250, 250, 250, 0.4);
+            --glass: #0e1117;
         }
 
         * {
